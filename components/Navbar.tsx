@@ -20,7 +20,11 @@ export default function Navbar() {
       <div className="hidden lg:block">
         <div className="flex justify-between px-8 py-4">
           <Link href="/" className="text-xl font-bold text-black">Leung Auto</Link>
-          <p> Tuesday-Friday: 8AM - 6PM</p>
+          <div className="flex gap-10 items-end text-right text-gray-600">
+            <p> 12025 149 St NW</p>
+            <p> Tuesday-Friday: 8AM - 6PM</p>
+            <p> 780-452-0134</p>
+          </div>
         </div>
         <nav className="relative hidden bg-[#2D3047] px-8 py-4 lg:block">
 
