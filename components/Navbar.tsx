@@ -15,7 +15,6 @@ export default function Navbar() {
   return (
     <>
 
-
       {/* Desktop: lg and up */}
       <div className="hidden lg:block">
         <div className="flex justify-between px-8 py-4">
@@ -26,30 +25,37 @@ export default function Navbar() {
             <p> 780-452-0134</p>
           </div>
         </div>
-        <nav className="relative hidden bg-[#2D3047] px-8 py-4 lg:block">
 
+        {/* Mouse leaving the whole nav (links + dropdown) closes the dropdown */}
+        <nav
+          className="relative hidden bg-[#2D3047] px-8 py-4 lg:block"
+          onMouseLeave={() => setServicesOpen(false)}
+        >
           <div className="flex items-center gap-8">
             <Link href="/" className="text-xl text-gray-300 hover:text-white" onClick={close}>Home</Link>
-            <Link href="/" className="text-xl text-gray-300 hover:text-white" onClick={close}>About</Link>
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              aria-expanded={servicesOpen}
+            <Link href="/about" className="text-xl text-gray-300 hover:text-white" onClick={close}>About</Link>
+
+            {/* Hover opens the dropdown, click goes to the services page */}
+            <Link
+              href="/services"
               className="text-xl text-gray-300 hover:text-white"
+              onMouseEnter={() => setServicesOpen(true)}
+              onClick={close}
             >
               Services
-            </button>
+            </Link>
           </div>
-          
+
+          {/* Dropdown: one link per service hub */}
           {servicesOpen && (
             <div className="absolute left-0 top-full z-10 flex w-full flex-row gap-8 bg-white px-8 py-3 shadow-lg">
-              <Link href="/services/inspections" className="hover:text-gray-500" onClick={close}>Inspections</Link>
-              <Link href="/services/diagnostics" className="hover:text-gray-500" onClick={close}>Diagnostics</Link>
-              <Link href="/services/brake-suspensions" className="hover:text-gray-500" onClick={close}>Brake And Suspensions</Link>
-              <Link href="/services/routine-maintenance" className="hover:text-gray-500" onClick={close}>Routine Maintenance</Link>
+              <Link href="/services/brakes" className="hover:text-gray-500" onClick={close}>Brake Repair</Link>
+              <Link href="/services/suspension" className="hover:text-gray-500" onClick={close}>Suspension Repair</Link>
+              <Link href="/services/diagnostics" className="hover:text-gray-500" onClick={close}>Car Diagnostics</Link>
+              <Link href="/services/routine-maintenance" className="hover:text-gray-500" onClick={close}>Car Maintenance</Link>
+              <Link href="/services/inspections" className="hover:text-gray-500" onClick={close}>Car Inspections</Link>
               <Link href="/services/system-flushes" className="hover:text-gray-500" onClick={close}>System Flushes</Link>
               <Link href="/services/oil-change" className="hover:text-gray-500" onClick={close}>Oil Change</Link>
-              
-              
             </div>
           )}
         </nav>
@@ -70,11 +76,17 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="absolute left-0 top-full z-10 flex w-full flex-col bg-white py-2 shadow-lg">
+          <div className="absolute left-0 top-full z-50 flex w-full flex-col bg-white py-2 shadow-lg">
             <Link href="/" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Home</Link>
-            <Link href="/services/brake-suspensions" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Brake And Suspensions</Link>
-            <Link href="/services/oil-change" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Oil Change</Link>
-            <Link href="/services/diagnostics" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Diagnostics</Link>
+            <Link href="/about" className="px-8 py-2 hover:bg-gray-100" onClick={close}>About</Link>
+            <Link href="/services" className="px-8 py-2 font-bold hover:bg-gray-100" onClick={close}>All Services</Link>
+            <Link href="/services/brakes" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Brake Repair</Link>
+            <Link href="/services/suspension" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Suspension Repair</Link>
+            <Link href="/services/diagnostics" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Car Diagnostics</Link>
+            <Link href="/services/routine-maintenance" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Car Maintenance</Link>
+            <Link href="/services/inspections" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Car Inspections</Link>
+            <Link href="/services/system-flushes" className="px-12 py-2 hover:bg-gray-100" onClick={close}>System Flushes</Link>
+            <Link href="/services/oil-change" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Oil Change</Link>
           </div>
         )}
       </nav>
