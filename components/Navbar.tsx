@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { services } from "@/lib/services"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -28,14 +29,14 @@ export default function Navbar() {
 
         {/* Mouse leaving the whole nav (links + dropdown) closes the dropdown */}
         <nav
-          className="relative hidden bg-[#2D3047] px-8 py-4 lg:block"
+          className="relative z-50 bg-[#2D3047] px-8 py-4"
           onMouseLeave={() => setServicesOpen(false)}
         >
           <div className="flex items-center gap-8">
             <Link href="/" className="text-xl text-gray-300 hover:text-white" onClick={close}>Home</Link>
             <Link href="/about" className="text-xl text-gray-300 hover:text-white" onClick={close}>About</Link>
 
-            {/* Hover opens the dropdown, click goes to the services page */}
+            {/* Hover opens the mega menu, click goes to the services page */}
             <Link
               href="/services"
               className="text-xl text-gray-300 hover:text-white"
@@ -46,23 +47,40 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Dropdown: one link per service hub */}
+          {/* Mega menu: each hub is a heading with its specific repairs under it */}
           {servicesOpen && (
-            <div className="absolute left-0 top-full z-10 flex w-full flex-row gap-8 bg-white px-8 py-3 shadow-lg">
-              <Link href="/services/brakes" className="hover:text-gray-500" onClick={close}>Brake Repair</Link>
-              <Link href="/services/suspension" className="hover:text-gray-500" onClick={close}>Suspension Repair</Link>
-              <Link href="/services/diagnostics" className="hover:text-gray-500" onClick={close}>Car Diagnostics</Link>
-              <Link href="/services/routine-maintenance" className="hover:text-gray-500" onClick={close}>Car Maintenance</Link>
-              <Link href="/services/inspections" className="hover:text-gray-500" onClick={close}>Car Inspections</Link>
-              <Link href="/services/system-flushes" className="hover:text-gray-500" onClick={close}>System Flushes</Link>
-              <Link href="/services/oil-change" className="hover:text-gray-500" onClick={close}>Oil Change</Link>
+            <div className="absolute left-0 top-full z-50 grid w-full grid-cols-3 gap-8 bg-white px-8 py-6 shadow-lg">
+              {services.map((service) => (
+                <div key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="font-bold text-[#2D3047] hover:underline"
+                    onClick={close}
+                  >
+                    {service.title}
+                  </Link>
+                  <ul className="mt-2 flex flex-col gap-1">
+                    {service.spokes.map((spoke) => (
+                      <li key={spoke.href}>
+                        <Link
+                          href={spoke.href}
+                          className="text-sm text-gray-600 hover:text-black"
+                          onClick={close}
+                        >
+                          {spoke.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           )}
         </nav>
       </div>
 
       {/* Mobile: below lg */}
-      <nav className="relative bg-[#2D3047] px-8 py-4 lg:hidden">
+      <nav className="relative z-50 bg-[#2D3047] px-8 py-4 lg:hidden">
         <div className="flex justify-between">
           <div><Link href="/" className="text-xl font-bold text-white">Leung Auto</Link></div>
           <button
@@ -79,14 +97,8 @@ export default function Navbar() {
           <div className="absolute left-0 top-full z-50 flex w-full flex-col bg-white py-2 shadow-lg">
             <Link href="/" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Home</Link>
             <Link href="/about" className="px-8 py-2 hover:bg-gray-100" onClick={close}>About</Link>
-            <Link href="/services" className="px-8 py-2 font-bold hover:bg-gray-100" onClick={close}>All Services</Link>
-            <Link href="/services/brakes" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Brake Repair</Link>
-            <Link href="/services/suspension" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Suspension Repair</Link>
-            <Link href="/services/diagnostics" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Car Diagnostics</Link>
-            <Link href="/services/routine-maintenance" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Car Maintenance</Link>
-            <Link href="/services/inspections" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Car Inspections</Link>
-            <Link href="/services/system-flushes" className="px-12 py-2 hover:bg-gray-100" onClick={close}>System Flushes</Link>
-            <Link href="/services/oil-change" className="px-12 py-2 hover:bg-gray-100" onClick={close}>Oil Change</Link>
+            <Link href="/services" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Services</Link>
+            <Link href="/contact" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Contact</Link>
           </div>
         )}
       </nav>
