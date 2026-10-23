@@ -70,7 +70,7 @@ export default function AbsBrakeRepair() {
         <h2 className="text-2xl font-bold">Related Services</h2>
         <div className="mt-4 flex flex-wrap justify-center gap-6">
           <Link href="/services/brakes" className="text-[#2D3047] underline">Brake Repair</Link>
-          <Link href="/services/brakes/brake-pad-replacement" className="text-[#2D3047] underline">Brake Pad Replacement</Link>
+          <Link href="/services/brakes/brake-pad-rotor-replacement" className="text-[#2D3047] underline">Brake Pad and Rotor Replacement</Link>
           <Link href="/services/diagnostics" className="text-[#2D3047] underline">Car Diagnostics</Link>
         </div>
       </section>

@@ -7,6 +7,20 @@ const nextConfig: NextConfig = {
   experimental: {
     agentUpgrade: "security",
   },
+  async redirects() {
+    return [
+      {
+        source: "/services/brakes/brake-pad-replacement",
+        destination: "/services/brakes/brake-pad-rotor-replacement",
+        permanent: true,
+      },
+      {
+        source: "/services/brakes/brake-rotor-replacement",
+        destination: "/services/brakes/brake-pad-rotor-replacement",
+        permanent: true,
+      },
+    ];
+  },
   turbopack: {
     rules: {
       "*.css": {
