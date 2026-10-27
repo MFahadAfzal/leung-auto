@@ -78,7 +78,7 @@ export default function TransmissionFlush() {
         <div className="mt-4 flex flex-wrap justify-center gap-6">
           <Link href="/services/flushes" className="text-[#2D3047] underline">System Flushes</Link>
           <Link href="/services/flushes/coolant-flush" className="text-[#2D3047] underline">Coolant Flush</Link>
-          <Link href="/services/diagnostics/transmission-diagnostics" className="text-[#2D3047] underline">Transmission Diagnostics</Link>
+          <Link href="/services/diagnostics#transmission-diagnostics" className="text-[#2D3047] underline">Transmission Diagnostics</Link>
         </div>
       </section>
 

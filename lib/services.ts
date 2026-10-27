@@ -25,9 +25,9 @@ export const services = [
     href: "/services/diagnostics",
     blurb: "Find the cause of warning lights and performance problems.",
     spokes: [
-      { title: "Check Engine Light Diagnostics", href: "/services/diagnostics/check-engine-light", blurb: "The check engine light is on or flashing." },
-      { title: "Transmission Diagnostics", href: "/services/diagnostics/transmission-diagnostics", blurb: "Slipping, rough or delayed shifts, or a transmission warning light." },
-      { title: "Electrical Diagnostics", href: "/services/diagnostics/electrical-diagnostics", blurb: "Dead batteries, flickering lights, or electrical parts that stop working." },
+      { title: "Check Engine Light Diagnostics", href: "/services/diagnostics#check-engine-light", blurb: "The check engine light is on or flashing." },
+      { title: "Transmission Diagnostics", href: "/services/diagnostics#transmission-diagnostics", blurb: "Slipping, rough or delayed shifts, or a transmission warning light." },
+      { title: "Electrical Diagnostics", href: "/services/diagnostics#electrical-diagnostics", blurb: "Dead batteries, flickering lights, or electrical parts that stop working." },
     ],
   },
   {
