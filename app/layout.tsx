@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import { business } from "@/lib/business"
 import { Montserrat } from "next/font/google"
 
 const montserrat = Montserrat({
@@ -21,31 +22,35 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Leung Auto | Auto Repair in Edmonton",
-  description: "Honest auto repair in Edmonton: brakes, oil changes, diagnostics and more. Call or book online.",
+  title: "Leung's Auto Service | Auto Repair in Edmonton",
+  description: "Honest auto repair in Edmonton: brakes, oil changes, diagnostics and more. Call 780-452-0134 to book.",
 }
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
-  name: "Leung Auto",
-  url: "https://yourdomain.com",
-  telephone: "+1-780-555-0123",
-  image: "https://yourdomain.com/shop.jpg",
+  name: business.name,
+  url: business.siteUrl,
+  telephone: "+1-780-452-0134",
+  foundingDate: "2002",
+  founder: { "@type": "Person", name: "Allan Leung" },
+  description:
+    "Independent, AMVIC certified auto repair shop in West Edmonton serving domestic and import vehicles since 2002.",
+  image: `${business.siteUrl}/images/front.jpeg`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Example St",
-    addressLocality: "Edmonton",
-    addressRegion: "AB",
-    postalCode: "T5J 0A1",
+    streetAddress: business.street,
+    addressLocality: business.city,
+    addressRegion: business.province,
+    postalCode: business.postalCode,
     addressCountry: "CA",
   },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "17:00",
+      opens: "08:30",
+      closes: "18:00",
     },
   ],
 }

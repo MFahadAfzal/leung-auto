@@ -3,6 +3,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { services } from "@/lib/services"
+import { business } from "@/lib/business"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -19,11 +20,11 @@ export default function Navbar() {
       {/* Desktop: lg and up */}
       <div className="hidden lg:block">
         <div className="flex justify-between px-8 py-4">
-          <Link href="/" className="text-xl font-bold text-black">Leung Auto</Link>
+          <Link href="/" className="text-xl font-bold text-black">{business.name}</Link>
           <div className="flex gap-10 items-end text-right text-gray-600">
-            <p> 12025 149 St NW</p>
-            <p> Tuesday-Friday: 8AM - 6PM</p>
-            <p> 780-452-0134</p>
+            <p>{business.street}</p>
+            <p>{business.hours}</p>
+            <a href={business.phoneHref} className="hover:text-black">{business.phone}</a>
           </div>
         </div>
 
@@ -44,6 +45,9 @@ export default function Navbar() {
               onClick={close}
             >
               Services
+            </Link>
+            <Link href="/contact" className="ml-auto rounded bg-white px-4 py-2 font-bold text-[#2D3047] hover:bg-gray-200" onClick={close}>
+              Book Now
             </Link>
           </div>
 
@@ -82,7 +86,7 @@ export default function Navbar() {
       {/* Mobile: below lg */}
       <nav className="relative z-50 bg-[#2D3047] px-8 py-4 lg:hidden">
         <div className="flex justify-between">
-          <div><Link href="/" className="text-xl font-bold text-white">Leung Auto</Link></div>
+          <div><Link href="/" className="text-xl font-bold text-white">{business.name}</Link></div>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
@@ -98,7 +102,8 @@ export default function Navbar() {
             <Link href="/" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Home</Link>
             <Link href="/about" className="px-8 py-2 hover:bg-gray-100" onClick={close}>About</Link>
             <Link href="/services" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Services</Link>
-            <Link href="/contact" className="px-8 py-2 hover:bg-gray-100" onClick={close}>Contact</Link>
+            <Link href="/contact" className="px-8 py-2 font-bold hover:bg-gray-100" onClick={close}>Book Now</Link>
+            <a href={business.phoneHref} className="px-8 py-2 hover:bg-gray-100">Call {business.phone}</a>
           </div>
         )}
       </nav>

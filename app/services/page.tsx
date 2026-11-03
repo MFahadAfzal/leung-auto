@@ -3,7 +3,7 @@ import Link from "next/link"
 import { services } from "@/lib/services"
 
 export const metadata = {
-  title: "Automotive Services in Edmonton | Leung Auto",
+  title: "Automotive Services in Edmonton | Leung's Auto Service",
   description:
     "Brake repair, suspension, diagnostics, maintenance, inspections and more at Leung's Auto Service in West Edmonton.",
 }
@@ -52,12 +52,12 @@ export default function Services() {
 
       {/* ===== CALL TO ACTION ===== */}
       <section className="px-6 py-12 text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">Not Sure What You Need?</h2>
+        <h2 className="text-3xl font-bold md:text-4xl">Not Sure Which Automotive Service You Need?</h2>
         <p className="mt-4 text-lg md:text-xl">
           Tell us what your vehicle is doing and we'll point you in the right direction.
         </p>
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Contact Us
+          Book Auto Repair
         </Link>
       </section>
 

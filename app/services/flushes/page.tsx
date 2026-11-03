@@ -4,7 +4,7 @@ import ServiceHub from "@/components/ServiceHub"
 export const metadata = {
   title: "Car Fluid Flushes Edmonton | Leung's Auto Service",
   description:
-    "Fluid flushes in West Edmonton: coolant, transmission fluid, and power steering flushes for domestic and import vehicles.",
+    "Fluid flushes in West Edmonton: transmission service and transmission fluid change, and antifreeze coolant flush for domestic and import vehicles.",
 }
 
 export default function SystemFlushes() {
@@ -12,6 +12,9 @@ export default function SystemFlushes() {
     <ServiceHub
       href="/services/flushes"
       intro="Old fluids wear out parts and lower performance. Pick the system below that needs fresh fluid."
+      servicesHeading="Our Fluid Flush Services"
+      ctaHeading="Not Sure Which Fluid Flush You Need?"
+      ctaLabel="Book a Fluid Flush"
     />
   )
 }

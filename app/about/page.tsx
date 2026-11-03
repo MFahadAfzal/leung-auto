@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata = {
-  title: "About Leung's Auto Service | Independent Auto Repair in Edmonton",
+  title: "About Leung's Auto Service | Auto Repair Shop in Edmonton",
   description:
     "Leung's Auto Service is an independent, AMVIC certified auto repair shop in West Edmonton, serving domestic and import vehicles since 2002.",
 }
@@ -29,7 +29,7 @@ export default function About() {
           <div className="relative h-72 w-full md:h-96 md:w-1/2">
             <Image
               src="/images/front.jpeg"
-              alt="Front of Leung's Auto Service on 149 Street in Edmonton"
+              alt="Front of Leung's Auto Service, an independent auto repair shop on 149 Street in West Edmonton"
               fill
               className="rounded object-cover"
             />
@@ -37,7 +37,7 @@ export default function About() {
 
           {/* Story text */}
           <div className="md:w-1/2">
-            <h2 className="text-3xl font-bold">Honest Repairs, Fair Prices</h2>
+            <h2 className="text-3xl font-bold">Honest Auto Repair at Fair Prices</h2>
             <p className="mt-4 text-lg">
               We work on both domestic and import vehicles. Before any repair starts, we explain what is wrong
               and what it will take to fix, so you know what you are paying for.
@@ -45,16 +45,25 @@ export default function About() {
             <p className="mt-4 text-lg">
               The shop is AMVIC certified, and most of our customers come back or send their friends and family.
             </p>
+            <p className="mt-4 text-lg">
+              We handle everything from{" "}
+              <Link href="/services/brakes" className="text-[#2D3047] underline">brake repair</Link> and{" "}
+              <Link href="/services/diagnostics" className="text-[#2D3047] underline">car diagnostics</Link> to{" "}
+              <Link href="/services/maintenance/oil-change-services" className="text-[#2D3047] underline">oil changes</Link>{" "}
+              and{" "}
+              <Link href="/services/inspection/out-of-province-inspection" className="text-[#2D3047] underline">out of province inspections</Link>.{" "}
+              <Link href="/services" className="text-[#2D3047] underline">See all our automotive services</Link>.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ===== CALL TO ACTION ===== */}
       <section className="px-6 py-12 text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">Visit Our Shop</h2>
+        <h2 className="text-3xl font-bold md:text-4xl">Visit Our Auto Repair Shop in West Edmonton</h2>
         <p className="mt-4 text-lg md:text-xl">12025 149 St NW, Edmonton, AB T5L 2J2</p>
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Contact Us
+          Book an Appointment
         </Link>
       </section>
 
