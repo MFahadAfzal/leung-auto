@@ -6,6 +6,9 @@ export const metadata = {
   title: "Automotive Services in Edmonton | Leung's Auto Service",
   description:
     "Brake repair, suspension, diagnostics, maintenance, inspections and more at Leung's Auto Service in West Edmonton.",
+  alternates: {
+    canonical: "/services",
+  },
 }
 
 export default function Services() {

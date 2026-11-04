@@ -1,12 +1,33 @@
 // app/services/suspension/car-suspension-replacement/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
+import ClusterLinks from "@/components/ClusterLinks"
+import BookingCta from "@/components/BookingCta"
+import Faq from "@/components/Faq"
 
 export const metadata = {
   title: "Car Suspension Replacement Edmonton | Leung's Auto Service",
   description:
     "Car suspension replacement and suspension auto repair in West Edmonton: suspension inspection, shock and strut replacement, and ball joint replacement.",
+  alternates: {
+    canonical: "/services/suspension/car-suspension-replacement",
+  },
 }
+
+// Questions shown in the FAQ section
+const faqs = [
+  {
+    question: "How much does car suspension replacement cost?",
+    answer:
+      "The price of car suspension replacement depends on your vehicle, the type of parts, and whether they are replaced in pairs. We inspect the suspension first and give you a price before any work starts.",
+  },
+  {
+    question: "How much does ball joint replacement cost?",
+    answer:
+      "Ball joint replacement cost depends on your vehicle and whether the ball joint can be replaced on its own or comes built into the control arm. A ball joint that is pressed in on its own usually costs less than replacing the whole control arm.",
+  },
+]
 
 export default function CarSuspensionReplacement() {
   return (
@@ -18,11 +39,12 @@ export default function CarSuspensionReplacement() {
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
           Your suspension keeps your tires on the road and your ride smooth and controlled. Leung's Auto Service does
           car suspension replacement and suspension auto repair on domestic and import vehicles at our shop in West
-          Edmonton, from shocks and struts to ball joints and control arms.
+          Edmonton, including shocks, struts, ball joints, and control arms.
         </p>
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book a Suspension Inspection
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -51,6 +73,11 @@ export default function CarSuspensionReplacement() {
             <li>Oil leaking from the shocks or struts</li>
             <li>Uneven or cupped tire wear</li>
           </ul>
+          <p className="mt-4 text-lg">
+            Worn tie rods or a power steering leak can also cause loose or wandering steering. If your symptoms are
+            mostly in the steering, see{" "}
+            <Link href="/services/suspension/steering-repair" className="text-[#2D3047] underline">steering repair</Link>.
+          </p>
         </div>
       </section>
 
@@ -94,38 +121,23 @@ export default function CarSuspensionReplacement() {
         </div>
       </section>
 
-      {/* ===== COST ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Car Suspension Replacement Cost</h2>
-          <p className="mt-4 text-lg">
-            The price of car suspension replacement depends on your vehicle, the type of parts, and whether they are
-            replaced in pairs.
-          </p>
+      {/* ===== FAQ ===== */}
+      <Faq title="Suspension Repair FAQ" faqs={faqs} gray />
 
-          <h3 className="mt-8 text-2xl font-bold">Ball Joint Replacement Cost</h3>
-          <p className="mt-4 text-lg">
-            Ball joint replacement cost depends on your vehicle and whether the ball joint can be replaced on its own
-            or comes built into the control arm. A ball joint that is pressed in on its own usually costs less than
-            replacing the whole control arm.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Get a Suspension Repair Quote
-          </Link>
-        </div>
-      </section>
+      <BookingCta
+        heading="Book Car Suspension Replacement in West Edmonton"
+        text="Start with a suspension inspection, and we'll give you a price before any work starts."
+        label="Get a Suspension Repair Quote"
+      />
 
-      {/* ===== RELATED PAGES ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-2xl font-bold">Related Services</h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-6">
-          <Link href="/services/suspension" className="text-[#2D3047] underline">Steering and Suspension Repair</Link>
-          <Link href="/services/suspension/steering-repair" className="text-[#2D3047] underline">Steering Repair</Link>
-          <Link href="/services/maintenance/wheel-alignment" className="text-[#2D3047] underline">Wheel Alignment</Link>
-          <Link href="/services/maintenance/tire-change" className="text-[#2D3047] underline">Tire Change and Tire Rotation</Link>
-          <Link href="/services/inspection/pre-purchase-inspection" className="text-[#2D3047] underline">Pre-Purchase Inspection</Link>
-        </div>
-      </section>
+      {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
+      <ClusterLinks
+        current="/services/suspension/car-suspension-replacement"
+        also={[
+          { title: "Wheel Alignment", href: "/services/maintenance/wheel-alignment" },
+          { title: "Tire Change and Tire Rotation", href: "/services/maintenance/tire-change" },
+        ]}
+      />
 
     </main>
   )

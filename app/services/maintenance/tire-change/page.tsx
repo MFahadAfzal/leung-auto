@@ -1,52 +1,47 @@
 // app/services/maintenance/tire-change/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
+import ClusterLinks from "@/components/ClusterLinks"
+import BookingCta from "@/components/BookingCta"
+import Faq from "@/components/Faq"
 
 export const metadata = {
   title: "Tire Change & Tire Rotation Edmonton | Leung's Auto Service",
   description:
     "Winter tire change, summer tire change, and tire rotation in West Edmonton. Learn when to switch to winter tires and how often to rotate tires.",
+  alternates: {
+    canonical: "/services/maintenance/tire-change",
+  },
 }
 
-// Questions shown in the FAQ section, also sent to Google as FAQ structured data
+// Questions shown in the FAQ section
 const faqs = [
   {
     question: "When should I switch to winter tires in Edmonton?",
     answer:
-      "Put winter tires on once daytime temperatures stay around 7°C or colder. In Edmonton, that's usually by mid-October, before the first snow. Switch back to summer or all-season tires once it stays above 7°C in spring.",
+      "Once temperatures stay at 7°C or colder, which is when the Tire and Rubber Association of Canada recommends switching. Below 7°C, all-season tires stiffen and lose grip. In Edmonton, that's usually by mid-October, before the first snow. Book early, since fall is one of the busiest times of year for tire changes. Switch back to summer or all-season tires once it stays above 7°C in spring.",
   },
   {
     question: "How often should you rotate tires?",
     answer:
-      "Many manufacturers recommend a tire rotation about every 8,000 to 12,000 km. An easy way to stay on schedule is to rotate your tires at each seasonal tire change.",
+      "Every 8,000 to 12,000 km, which is what many manufacturers recommend. An easy way to stay on schedule is to rotate your tires at each seasonal tire change, so each set wears evenly from year to year. Check your owner's manual, or ask us what your vehicle needs.",
   },
   {
     question: "Can you rotate my tires during a tire change?",
     answer:
       "Yes. When we do your winter or summer tire change, we can put each tire in a new position so they wear evenly from season to season.",
   },
+  {
+    question: "How much does a tire change cost?",
+    answer:
+      "The price depends on your vehicle and whether your tires are already on rims or need to be mounted and balanced. Adding a tire rotation to your seasonal tire change is an easy way to get both done in one visit.",
+  },
 ]
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
-  })),
-}
 
 export default function TireChange() {
   return (
     <main className="flex-1">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
-        }}
-      />
-
       {/* ===== INTRO ===== */}
       <section className="px-6 py-12 text-center">
         <h1 className="text-4xl font-bold md:text-5xl">Tire Change and Tire Rotation in Edmonton</h1>
@@ -58,6 +53,7 @@ export default function TireChange() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book a Tire Change
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -96,13 +92,6 @@ export default function TireChange() {
             all-season tires go hard in the cold. A winter tire change before the first snow keeps you safer on
             Edmonton roads and can lower your insurance with some providers.
           </p>
-
-          <h2 className="mt-10 text-3xl font-bold">When to Switch to Winter Tires</h2>
-          <p className="mt-4 text-lg">
-            A common rule is to switch to winter tires once daytime temperatures stay around 7°C or colder. In
-            Edmonton, that's usually by mid-October, before the first snow. Book early, since fall is one of the
-            busiest times of year for tire changes.
-          </p>
         </div>
       </section>
 
@@ -139,56 +128,29 @@ export default function TireChange() {
             we move each tire to a different position following the right pattern for your vehicle, set the tire
             pressure, torque the wheel nuts to spec, and check the tread. Signs you need a tire rotation include
             front tires that are more worn than the back, uneven wear across the tread, and more vibration at
-            highway speeds.
+            highway speeds. If a tire is wearing down on one edge, you may need a{" "}
+            <Link href="/services/maintenance/wheel-alignment" className="text-[#2D3047] underline">wheel alignment</Link> as well.
           </p>
-
-          <h2 className="mt-10 text-3xl font-bold">How Often to Rotate Tires</h2>
-          <p className="mt-4 text-lg">
-            Many manufacturers recommend a tire rotation about every 8,000 to 12,000 km. An easy way to stay on
-            schedule is to rotate your tires at each seasonal tire change, so each set wears evenly from year to year.
-            Check your owner's manual, or ask us what your vehicle needs.
-          </p>
-        </div>
-      </section>
-
-      {/* ===== COST ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Tire Change and Tire Rotation Cost</h2>
-          <p className="mt-4 text-lg">
-            The price depends on your vehicle and whether your tires are already on rims or need to be mounted and
-            balanced. Adding a tire rotation to your seasonal tire change is an easy way to get both done in one
-            visit.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Book Your Winter Tire Change
-          </Link>
         </div>
       </section>
 
       {/* ===== FAQ ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Tire Change FAQ</h2>
-          {faqs.map((faq) => (
-            <div key={faq.question} className="mt-8">
-              <h3 className="text-2xl font-bold">{faq.question}</h3>
-              <p className="mt-2 text-lg">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Faq title="Tire Change FAQ" faqs={faqs} />
 
-      {/* ===== RELATED PAGES ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-2xl font-bold">Related Services</h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-6">
-          <Link href="/services/maintenance" className="text-[#2D3047] underline">Car Maintenance</Link>
-          <Link href="/services/maintenance/wheel-alignment" className="text-[#2D3047] underline">Wheel Alignment</Link>
-          <Link href="/services/maintenance/oil-change-services" className="text-[#2D3047] underline">Oil Change Services</Link>
-          <Link href="/services/brakes" className="text-[#2D3047] underline">Brake Inspection</Link>
-        </div>
-      </section>
+      <BookingCta
+        heading="Book a Tire Change in West Edmonton"
+        text="Fall and spring book up fast. Reserve your seasonal tire change early."
+        label="Book Your Winter Tire Change"
+        gray
+      />
+
+      {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
+      <ClusterLinks
+        current="/services/maintenance/tire-change"
+        also={[
+          { title: "Brake Inspection", href: "/services/brakes" },
+        ]}
+      />
 
     </main>
   )

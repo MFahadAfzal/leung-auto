@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import { BadgeCheck, DollarSign, ShieldCheck, Star } from "lucide-react"
+import { BadgeCheck, DollarSign, ShieldCheck } from "lucide-react"
+import Reviews from "@/components/Reviews"
+import { reviewsBy } from "@/lib/reviews"
 import { business } from "@/lib/business"
 import { services } from "@/lib/services"
 
@@ -8,29 +10,18 @@ export const metadata = {
   title: "Affordable Car Repair Edmonton | Leung's Auto Service",
   description:
     "Affordable car repair in West Edmonton since 2002. Trusted mechanics and certified technicians for all automotive services. Call 780-452-0134 to book.",
+  alternates: {
+    canonical: "/",
+  },
 }
 
-const reviews = [
-  {
-    name: "Leni Nievera",
-    text: "Excellent service and very reasonable price. I finally found an honest and dependable repair shop. I will highly recommend this shop 👍",
-  },
-  {
-    name: "DL Duffy",
-    text: "Excellent experience with Leung’s Auto. They assessed my car quickly, explained the problem clearly, and had it repaired the next day. Cars are not my specialty, so I really appreciated that they took the time to show me the parts that were affected, explain what was wrong, and then show me the damaged parts again when the work was finished. Honest, reliable, efficient, and very easy to deal with. It’s reassuring to find a shop you feel you can trust. Highly recommend.",
-  },
-  {
-    name: "Mac Rey",
-    text: "Bought an old impala for work, wobbly and all that. Came out of his shop working and all that for just 600bucks.. Meanwhile I brought my Van in dealership and all they did was x-oil and I paid almost 600bucks.",
-  },
-]
 
 // Reasons to choose the shop, each built around one of the page's keywords
 const reasons = [
   {
     icon: ShieldCheck,
     title: "Trusted Mechanics",
-    text: "Independent and family-run since 2002. We show you what's wrong, explain the fix, and only recommend work your vehicle needs.",
+    text: "Independent and family-run since 2002. We show you what's wrong and only recommend work your vehicle needs.",
   },
   {
     icon: BadgeCheck,
@@ -101,8 +92,8 @@ export default function Home() {
         <h2 className="text-3xl font-bold md:text-4xl">Trusted Mechanics in West Edmonton</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
           Leung's Auto Service is an independent car repair shop in West Edmonton, owned by Allan Leung and serving
-          Edmonton drivers since 2002. We're known for trusted mechanics, certified technicians, and affordable car
-          repair in Edmonton. We explain the work before we do it, so you only pay for what your vehicle needs.{" "}
+          Edmonton drivers since 2002. Our certified technicians explain the work before they start, and our prices
+          keep car repair in Edmonton affordable.{" "}
           <Link href="/about" className="text-[#2D3047] underline">Learn more about our shop</Link>.
         </p>
 
@@ -122,8 +113,7 @@ export default function Home() {
       <section className="bg-gray-100 px-6 py-12 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Our Automotive Services</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          From routine maintenance to major repairs, we offer complete automotive services for domestic and import
-          vehicles.
+          Our automotive services cover routine maintenance and major repairs on domestic and import vehicles.
         </p>
 
         <div className="mx-auto mt-8 grid max-w-5xl gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
@@ -157,30 +147,12 @@ export default function Home() {
 
       {/* ===== TESTIMONIALS: real Google reviews ===== */}
       <section className="px-6 py-12 text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">What Our Customers Say</h2>
+        <h2 className="text-3xl font-bold md:text-4xl">Car Repair Reviews from Edmonton Customers</h2>
         <p className="mt-4 text-lg md:text-xl">
           Here's what customers have said about their experience with Leung's Auto Service.
         </p>
 
-        {/* 1 column on phones, 3 side by side from lg up */}
-        <div className="mx-auto mt-8 grid max-w-6xl gap-6 lg:grid-cols-3">
-          {reviews.map((review) => (
-            <div key={review.name} className="flex flex-col rounded bg-gray-100 p-6 text-left shadow">
-
-              {/* Five filled stars */}
-              <div className="flex gap-1 text-yellow-500" aria-label="5 out of 5 stars">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <Star key={i} size={20} fill="currentColor" />
-                ))}
-              </div>
-
-              <p className="mt-4 flex-1 text-gray-700">“{review.text}”</p>
-
-              <p className="mt-4 font-bold">{review.name}</p>
-              <p className="text-sm text-gray-500">Google review</p>
-            </div>
-          ))}
-        </div>
+        <Reviews reviews={reviewsBy("Leni Nievera", "DL Duffy", "Mac Rey")} />
       </section>
 
       {/* ===== LOCATION: name, address, phone, and hours for local search ===== */}

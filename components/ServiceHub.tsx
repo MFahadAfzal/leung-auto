@@ -1,6 +1,7 @@
 // components/ServiceHub.tsx
 import Link from "next/link"
 import OtherServices from "@/components/OtherServices"
+import Reviews, { type Review } from "@/components/Reviews"
 import { services } from "@/lib/services"
 
 // Hub page for one main service: an intro, then a card for each specific repair
@@ -12,12 +13,15 @@ export default function ServiceHub({
   servicesHeading,
   ctaHeading,
   ctaLabel,
+  reviews,
 }: {
   href: string
   intro: string
   servicesHeading: string
   ctaHeading: string
   ctaLabel: string
+  // Optional customer reviews, shown the same way as on the home page
+  reviews?: { heading: string; text: string; items: Review[] }
 }) {
   const service = services.find((s) => s.href === href)!
 
@@ -48,8 +52,16 @@ export default function ServiceHub({
         </div>
       </section>
 
-      {/* ===== CALL TO ACTION ===== */}
-      <section className="px-6 py-12 text-center">
+      {reviews && (
+        <section className="px-6 py-12 text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">{reviews.heading}</h2>
+          <p className="mt-4 text-lg md:text-xl">{reviews.text}</p>
+          <Reviews reviews={reviews.items} />
+        </section>
+      )}
+
+      {/* ===== CALL TO ACTION (grey when it follows the white reviews section) ===== */}
+      <section className={`${reviews ? "bg-gray-100 " : ""}px-6 py-12 text-center`}>
         <h2 className="text-3xl font-bold md:text-4xl">{ctaHeading}</h2>
         <p className="mt-4 text-lg md:text-xl">
           Tell us what your vehicle is doing and we&apos;ll point you in the right direction.

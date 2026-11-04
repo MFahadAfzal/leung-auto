@@ -1,12 +1,33 @@
 // app/services/suspension/steering-repair/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
+import ClusterLinks from "@/components/ClusterLinks"
+import BookingCta from "@/components/BookingCta"
+import Faq from "@/components/Faq"
 
 export const metadata = {
   title: "Power Steering Leak Repair Edmonton | Leung's Auto Service",
   description:
     "Power steering leak repair in West Edmonton. We fix leaking power steering, loose steering, clunking when turning, and a power steering warning light.",
+  alternates: {
+    canonical: "/services/suspension/steering-repair",
+  },
 }
+
+// Questions shown in the FAQ section
+const faqs = [
+  {
+    question: "What does the power steering warning light mean?",
+    answer:
+      "On cars with electric power steering, the power steering warning light means the system has found a fault, and the steering may suddenly feel heavy. We scan the system for fault codes and check the wiring, sensors, and steering motor to find the cause.",
+  },
+  {
+    question: "How much does power steering leak repair cost?",
+    answer:
+      "The price depends on what's causing the problem. Replacing a leaking hose or a tie rod end costs much less than replacing a power steering pump or steering rack. Fixing a small leak early can save the pump.",
+  },
+]
 
 export default function SteeringRepair() {
   return (
@@ -23,6 +44,7 @@ export default function SteeringRepair() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book Power Steering Leak Repair
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -76,21 +98,15 @@ export default function SteeringRepair() {
         </div>
       </section>
 
-      {/* ===== LOOSE STEERING / CLUNKING / WARNING LIGHT ===== */}
+      {/* ===== LOOSE STEERING / CLUNKING ===== */}
       <section className="bg-gray-100 px-6 py-12">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold">Loose Steering and Clunking When Turning</h2>
           <p className="mt-4 text-lg">
             Loose steering often comes from worn tie rod ends or a worn steering rack. Clunking when turning can come
-            from tie rods, ball joints, or worn suspension parts. We inspect the steering and front end to find which
+            from tie rods, ball joints, or{" "}
+            <Link href="/services/suspension/car-suspension-replacement" className="text-[#2D3047] underline">worn suspension parts</Link>. We inspect the steering and front end to find which
             part is worn before we replace anything.
-          </p>
-
-          <h2 className="mt-10 text-3xl font-bold">Power Steering Warning Light</h2>
-          <p className="mt-4 text-lg">
-            On cars with electric power steering, the power steering warning light means the system has found a
-            fault, and the steering may suddenly feel heavy. We scan the system for fault codes and check the
-            wiring, sensors, and steering motor to find the cause.
           </p>
         </div>
       </section>
@@ -107,30 +123,23 @@ export default function SteeringRepair() {
         </div>
       </section>
 
-      {/* ===== COST ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Power Steering Leak Repair Cost</h2>
-          <p className="mt-4 text-lg">
-            The price depends on what's causing the problem. Replacing a leaking hose or a tie rod end costs much
-            less than replacing a power steering pump or steering rack. Fixing a small leak early can save the pump.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Get a Steering Repair Quote
-          </Link>
-        </div>
-      </section>
+      {/* ===== FAQ ===== */}
+      <Faq title="Steering Repair FAQ" faqs={faqs} gray />
 
-      {/* ===== RELATED PAGES ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-2xl font-bold">Related Services</h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-6">
-          <Link href="/services/suspension" className="text-[#2D3047] underline">Steering and Suspension Repair</Link>
-          <Link href="/services/suspension/car-suspension-replacement" className="text-[#2D3047] underline">Suspension Repair</Link>
-          <Link href="/services/maintenance/wheel-alignment" className="text-[#2D3047] underline">Wheel Alignment</Link>
-          <Link href="/services/diagnostics" className="text-[#2D3047] underline">Car Diagnostics</Link>
-        </div>
-      </section>
+      <BookingCta
+        heading="Book Power Steering Leak Repair in West Edmonton"
+        text="Tell us what your steering is doing and we'll give you a price before any work starts."
+        label="Get a Steering Repair Quote"
+      />
+
+      {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
+      <ClusterLinks
+        current="/services/suspension/steering-repair"
+        also={[
+          { title: "Wheel Alignment", href: "/services/maintenance/wheel-alignment" },
+          { title: "Car Diagnostics", href: "/services/diagnostics" },
+        ]}
+      />
 
     </main>
   )

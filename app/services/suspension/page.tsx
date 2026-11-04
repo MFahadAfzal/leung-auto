@@ -5,6 +5,9 @@ export const metadata = {
   title: "Steering & Suspension Repair Edmonton | Leung's Auto Service",
   description:
     "Steering and suspension repair in West Edmonton: car suspension replacement, shocks and struts, ball joint replacement, and power steering leak repair.",
+  alternates: {
+    canonical: "/services/suspension",
+  },
 }
 
 export default function SteeringSuspensionRepair() {

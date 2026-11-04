@@ -6,6 +6,9 @@ export const metadata = {
   title: "Book an Appointment | Leung's Auto Service Edmonton",
   description:
     "Book car repair at Leung's Auto Service in West Edmonton. Call 780-452-0134 or visit us at 12025 149 St NW. Open Monday to Friday, 8:30 AM to 6 PM.",
+  alternates: {
+    canonical: "/contact",
+  },
 }
 
 const mapsQuery = encodeURIComponent(business.mapsQuery)
@@ -36,7 +39,7 @@ export default function Contact() {
 
           <div className="rounded bg-white p-6 shadow">
             <Phone className="text-[#2D3047]" />
-            <h2 className="mt-2 text-xl font-bold">Phone</h2>
+            <h2 className="mt-2 text-xl font-bold">Call to Book</h2>
             <a href={business.phoneHref} className="mt-2 block text-lg text-[#2D3047] underline">
               {business.phone}
             </a>
@@ -44,7 +47,7 @@ export default function Contact() {
 
           <div className="rounded bg-white p-6 shadow">
             <MapPin className="text-[#2D3047]" />
-            <h2 className="mt-2 text-xl font-bold">Address</h2>
+            <h2 className="mt-2 text-xl font-bold">Shop Address</h2>
             <p className="mt-2 text-lg">{business.street}</p>
             <p className="text-lg">{business.city}, {business.province} {business.postalCode}</p>
             <a
@@ -59,7 +62,7 @@ export default function Contact() {
 
           <div className="rounded bg-white p-6 shadow">
             <Clock className="text-[#2D3047]" />
-            <h2 className="mt-2 text-xl font-bold">Hours</h2>
+            <h2 className="mt-2 text-xl font-bold">Hours of Operation</h2>
             <p className="mt-2 text-lg">{business.hoursDays}</p>
             <p className="text-lg">{business.hoursTime}</p>
             <p className="text-lg text-gray-600">Closed weekends</p>

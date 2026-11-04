@@ -1,52 +1,42 @@
 // app/services/flushes/transmission-service/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
+import ClusterLinks from "@/components/ClusterLinks"
+import BookingCta from "@/components/BookingCta"
+import Faq from "@/components/Faq"
 
 export const metadata = {
   title: "Transmission Service Edmonton | Fluid Change & Flush",
   description:
     "Transmission service in West Edmonton: transmission fluid change service and automatic transmission fluid flush. Learn how often to change transmission fluid.",
+  alternates: {
+    canonical: "/services/flushes/transmission-service",
+  },
 }
 
-// Questions shown in the FAQ section, also sent to Google as FAQ structured data
+// Questions shown in the FAQ section
 const faqs = [
   {
     question: "Is a transmission flush necessary?",
     answer:
-      "Not always. Many vehicles only need a transmission fluid change service, which drains and replaces part of the old fluid. A transmission flush replaces almost all of it and suits some vehicles better. We check your vehicle's service schedule and the condition of the fluid, then recommend the one that fits.",
+      "Only for some vehicles. Many only need a regular transmission fluid change, and some manufacturers recommend against a flush. We check your vehicle's service schedule and the condition of the fluid, then recommend the fluid change or transmission flush your vehicle actually needs.",
   },
   {
     question: "How often should you change transmission fluid?",
     answer:
-      "It depends on your vehicle. Many automatic transmissions call for new fluid somewhere between about 50,000 and 100,000 km, and some manufacturers list longer intervals. Towing, heavy loads, and short trips in cold weather all count as severe driving and shorten the interval.",
+      "Every 50,000 to 100,000 km for most automatic transmissions, though some manufacturers list longer intervals. How often to change transmission fluid depends on your vehicle and transmission type. Towing, heavy loads, and short trips in Edmonton's cold winters count as severe driving and shorten the interval. Check your owner's manual, or ask us what your vehicle needs.",
   },
   {
-    question: "What are the signs you need a transmission fluid change?",
+    question: "How much does a transmission service cost?",
     answer:
-      "Dark or burnt-smelling fluid, rough or delayed shifts, slipping, hesitation when you put the car in gear, or a transmission warning light. If you notice any of these, book a transmission service soon.",
+      "The price depends on your vehicle, how much fluid it takes, the type of fluid it needs, and whether it needs a fluid change or a flush. A transmission service costs far less than a transmission rebuild.",
   },
 ]
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
-  })),
-}
 
 export default function TransmissionService() {
   return (
     <main className="flex-1">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
-        }}
-      />
-
       {/* ===== INTRO ===== */}
       <section className="px-6 py-12 text-center">
         <h1 className="text-4xl font-bold md:text-5xl">Transmission Service in Edmonton</h1>
@@ -58,6 +48,7 @@ export default function TransmissionService() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book a Transmission Service
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -103,20 +94,8 @@ export default function TransmissionService() {
         </div>
       </section>
 
-      {/* ===== IS A FLUSH NECESSARY ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Is a Transmission Flush Necessary?</h2>
-          <p className="mt-4 text-lg">
-            Not always. Some vehicles only need a regular transmission fluid change, and some manufacturers
-            recommend against a flush. We check your vehicle's service schedule and the condition of the fluid, then
-            recommend a fluid change or a transmission flush based on what your vehicle needs, not what costs more.
-          </p>
-        </div>
-      </section>
-
       {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="px-6 py-12">
+      <section className="bg-gray-100 px-6 py-12">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold">What Our Transmission Service Includes</h2>
           <p className="mt-4 text-lg">
@@ -127,56 +106,24 @@ export default function TransmissionService() {
         </div>
       </section>
 
-      {/* ===== HOW OFTEN ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">How Often to Change Transmission Fluid</h2>
-          <p className="mt-4 text-lg">
-            How often to change transmission fluid depends on your vehicle and transmission type. Many automatic
-            transmissions call for new fluid somewhere between about 50,000 and 100,000 km, and some manufacturers
-            list longer intervals. Towing, heavy loads, and short trips in Edmonton's cold winters count as severe
-            driving and shorten the interval. Check your owner's manual, or ask us what your vehicle needs.
-          </p>
-        </div>
-      </section>
-
-      {/* ===== COST ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Transmission Service Cost</h2>
-          <p className="mt-4 text-lg">
-            The price depends on your vehicle, how much fluid it takes, the type of fluid it needs, and whether it
-            needs a fluid change or a flush. A transmission service costs far less than a transmission rebuild.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Get a Transmission Fluid Change Quote
-          </Link>
-        </div>
-      </section>
-
       {/* ===== FAQ ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Transmission Service FAQ</h2>
-          {faqs.map((faq) => (
-            <div key={faq.question} className="mt-8">
-              <h3 className="text-2xl font-bold">{faq.question}</h3>
-              <p className="mt-2 text-lg">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Faq title="Transmission Service FAQ" faqs={faqs} />
 
-      {/* ===== RELATED PAGES ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-2xl font-bold">Related Services</h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-6">
-          <Link href="/services/flushes" className="text-[#2D3047] underline">System Flushes</Link>
-          <Link href="/services/flushes/antifreeze-coolant-flush" className="text-[#2D3047] underline">Antifreeze Coolant Flush</Link>
-          <Link href="/services/diagnostics#transmission-diagnostics" className="text-[#2D3047] underline">Transmission Diagnostic</Link>
-          <Link href="/services/maintenance/oil-change-services" className="text-[#2D3047] underline">Oil Change Services</Link>
-        </div>
-      </section>
+      <BookingCta
+        heading="Book a Transmission Service in West Edmonton"
+        text="We'll check your transmission fluid and give you a price before any work starts."
+        label="Get a Transmission Fluid Change Quote"
+        gray
+      />
+
+      {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
+      <ClusterLinks
+        current="/services/flushes/transmission-service"
+        also={[
+          { title: "Transmission Diagnostic", href: "/services/diagnostics#transmission-diagnostics" },
+          { title: "Oil Change Services", href: "/services/maintenance/oil-change-services" },
+        ]}
+      />
 
     </main>
   )

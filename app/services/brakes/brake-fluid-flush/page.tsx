@@ -1,12 +1,38 @@
 // app/services/brakes/brake-fluid-flush/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
+import ClusterLinks from "@/components/ClusterLinks"
+import BookingCta from "@/components/BookingCta"
+import Faq from "@/components/Faq"
 
 export const metadata = {
   title: "Brake Fluid Flush Edmonton | Leung's Auto Service",
   description:
     "Brake fluid flush in West Edmonton. Learn the signs you need a brake fluid flush, how often to change brake fluid, and brake fluid flush cost. Book today.",
+  alternates: {
+    canonical: "/services/brakes/brake-fluid-flush",
+  },
 }
+
+// Questions shown in the FAQ section
+const faqs = [
+  {
+    question: "Why change brake fluid?",
+    answer:
+      "Old brake fluid absorbs moisture, which makes the pedal feel soft and corrodes brake parts from the inside. Brake fluid passes the force from your foot on the pedal to the brakes at each wheel. As it absorbs moisture, its boiling point drops, which can make the pedal feel soft under hard braking. The moisture can also cause corrosion inside the brake lines, calipers, and ABS unit. Changing brake fluid on schedule helps your brakes work as they should and protects those parts.",
+  },
+  {
+    question: "How often should you change brake fluid?",
+    answer:
+      "Every two to three years for most vehicles. How often to change brake fluid varies by manufacturer, so check your owner's manual too. Ask us if you're not sure. We can also test your brake fluid to see whether it is due.",
+  },
+  {
+    question: "How much does a brake fluid flush cost?",
+    answer:
+      "Brake fluid flush cost depends on your vehicle and the type of brake fluid it uses. A flush usually costs much less than repairing brake parts damaged by old, corroded fluid.",
+  },
+]
 
 export default function BrakeFluidFlush() {
   return (
@@ -23,6 +49,7 @@ export default function BrakeFluidFlush() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book a Brake Fluid Flush
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -58,21 +85,8 @@ export default function BrakeFluidFlush() {
         </div>
       </section>
 
-      {/* ===== WHY CHANGE BRAKE FLUID ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Why Change Brake Fluid?</h2>
-          <p className="mt-4 text-lg">
-            Brake fluid passes the force from your foot on the pedal to the brakes at each wheel. As it absorbs
-            moisture, its boiling point drops, which can make the pedal feel soft under hard braking. The moisture
-            can also cause corrosion inside the brake lines, calipers, and ABS unit. Changing brake fluid on schedule
-            helps your brakes work as they should and protects those parts.
-          </p>
-        </div>
-      </section>
-
       {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="bg-gray-100 px-6 py-12">
+      <section className="px-6 py-12">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold">What a Brake Fluid Flush Involves</h2>
           <p className="mt-4 text-lg">
@@ -83,42 +97,22 @@ export default function BrakeFluidFlush() {
         </div>
       </section>
 
-      {/* ===== HOW OFTEN ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">How Often to Change Brake Fluid</h2>
-          <p className="mt-4 text-lg">
-            Many manufacturers recommend fresh brake fluid every two to three years, but how often to change brake
-            fluid varies by vehicle. Check your owner's manual, or ask us what your vehicle needs. We can also test
-            your brake fluid to see whether it is due.
-          </p>
-        </div>
-      </section>
+      {/* ===== FAQ ===== */}
+      <Faq title="Brake Fluid Flush FAQ" faqs={faqs} gray />
 
-      {/* ===== COST ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Brake Fluid Flush Cost</h2>
-          <p className="mt-4 text-lg">
-            Brake fluid flush cost depends on your vehicle and the type of brake fluid it uses. A flush
-            usually costs much less than repairing brake parts damaged by old, corroded fluid.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Get a Brake Fluid Flush Cost Quote
-          </Link>
-        </div>
-      </section>
+      <BookingCta
+        heading="Book a Brake Fluid Flush in West Edmonton"
+        text="Not sure if your brake fluid is due? We can test it and give you a price before any work starts."
+        label="Get a Brake Fluid Flush Cost Quote"
+      />
 
-      {/* ===== RELATED PAGES ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-2xl font-bold">Related Services</h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-6">
-          <Link href="/services/brakes" className="text-[#2D3047] underline">Brake Repair</Link>
-          <Link href="/services/brakes/brake-pad-replacement" className="text-[#2D3047] underline">Brake Pad Replacement</Link>
-          <Link href="/services/brakes/abs-brake-repair" className="text-[#2D3047] underline">ABS Brake Repair</Link>
-          <Link href="/services/flushes/antifreeze-coolant-flush" className="text-[#2D3047] underline">Antifreeze Coolant Flush</Link>
-        </div>
-      </section>
+      {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
+      <ClusterLinks
+        current="/services/brakes/brake-fluid-flush"
+        also={[
+          { title: "Antifreeze Coolant Flush", href: "/services/flushes/antifreeze-coolant-flush" },
+        ]}
+      />
 
     </main>
   )

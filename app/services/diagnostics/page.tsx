@@ -1,13 +1,19 @@
 // app/services/diagnostics/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
 import OtherServices from "@/components/OtherServices"
+import Reviews from "@/components/Reviews"
+import { reviewsBy } from "@/lib/reviews"
 import { services } from "@/lib/services"
 
 export const metadata = {
   title: "Car Diagnostic Edmonton | Check Engine Light Diagnosis",
   description:
     "Car diagnostic in West Edmonton: check engine light diagnosis, transmission diagnostic, and car electrical diagnostic for domestic and import vehicles.",
+  alternates: {
+    canonical: "/services/diagnostics",
+  },
 }
 
 const diagnostics = services.find((s) => s.href === "/services/diagnostics")!
@@ -22,7 +28,7 @@ const faqs = [
   {
     question: "Can I drive with the check engine light on?",
     answer:
-      "If the check engine light is on and steady, the car is usually safe to drive for a short time, but book a check engine light diagnosis soon. If the light is flashing, the engine may be misfiring badly. Reduce your speed and have it checked right away to avoid damaging the engine or catalytic converter.",
+      "Usually yes if the light is steady, but not if it's flashing. If the check engine light is on and steady, the car is usually safe to drive for a short time, but book a check engine light diagnosis soon. If the light is flashing, the engine may be misfiring badly. Reduce your speed and have it checked right away to avoid damaging the engine or catalytic converter.",
   },
   {
     question: "Can an auto parts store code reader replace a car diagnostic?",
@@ -62,6 +68,7 @@ export default function CarDiagnostics() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book a Car Diagnostic
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -226,8 +233,17 @@ export default function CarDiagnostics() {
         </div>
       </section>
 
-      {/* ===== CALL TO ACTION ===== */}
+      {/* ===== TESTIMONIALS: real Google reviews, laid out like the home page ===== */}
       <section className="px-6 py-12 text-center">
+        <h2 className="text-3xl font-bold md:text-4xl">Car Diagnostic Reviews from Our Customers</h2>
+        <p className="mt-4 text-lg md:text-xl">
+          Here&apos;s what customers have said about car diagnostics at Leung&apos;s Auto Service.
+        </p>
+        <Reviews reviews={reviewsBy("J P")} />
+      </section>
+
+      {/* ===== CALL TO ACTION ===== */}
+      <section className="bg-gray-100 px-6 py-12 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Not Sure Which Car Diagnostic You Need?</h2>
         <p className="mt-4 text-lg md:text-xl">
           Tell us what your vehicle is doing and we&apos;ll run the right car diagnostic to find the cause.

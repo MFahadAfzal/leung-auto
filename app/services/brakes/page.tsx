@@ -1,7 +1,10 @@
 // app/services/brakes/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
 import OtherServices from "@/components/OtherServices"
+import Reviews from "@/components/Reviews"
+import { reviewsBy } from "@/lib/reviews"
 import { business } from "@/lib/business"
 import { services } from "@/lib/services"
 
@@ -9,9 +12,13 @@ export const metadata = {
   title: "Brake Repair Edmonton | Brake Inspection & Brake Service",
   description:
     "Brake repair shop in West Edmonton. Brake inspection, brake service, and brake maintenance for domestic and import vehicles. Call 780-452-0134 to book.",
+  alternates: {
+    canonical: "/services/brakes",
+  },
 }
 
 const brakes = services.find((s) => s.href === "/services/brakes")!
+
 
 // Questions shown in the FAQ section, also sent to Google as FAQ structured data
 const faqs = [
@@ -38,7 +45,7 @@ const faqs = [
   {
     question: "How long does a brake repair take?",
     answer:
-      "It depends on the repair and the vehicle. Replacing brake pads and rotors on one axle is usually done the same day, often in a couple of hours. Jobs like replacing a seized caliper, a rusted brake line, or an ABS part can take longer, especially if parts need to be ordered. We give you a time estimate when you book.",
+      "Most brake pad and rotor jobs are done the same day, often in a couple of hours per axle. Jobs like replacing a seized caliper, a rusted brake line, or an ABS part can take longer, especially if parts need to be ordered. We give you a time estimate when you book.",
   },
   {
     question: "Is it safe to drive with grinding brakes?",
@@ -71,13 +78,13 @@ export default function BrakeRepair() {
       <section className="px-6 py-12 text-center">
         <h1 className="text-4xl font-bold md:text-5xl">Brake Repair in Edmonton</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Leung&apos;s Auto Service is an independent brake repair shop in West Edmonton. From a brake inspection to a
-          full brake service, we repair brakes on domestic and import vehicles and explain what your brakes need
-          before we start.
+          Leung&apos;s Auto Service is an independent brake repair shop in West Edmonton. We do brake inspections and
+          full brake service on domestic and import vehicles, and tell you what your brakes need before we start.
         </p>
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book Brake Repair
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -188,14 +195,24 @@ export default function BrakeRepair() {
           <h2 className="text-3xl font-bold md:text-4xl">Why Choose Our Brake Repair Shop</h2>
           <p className="mt-4 text-lg">
             Leung&apos;s Auto Service has served Edmonton drivers since 2002. We&apos;re an independent, AMVIC
-            certified brake repair shop at {business.street} in West Edmonton. We show you the worn parts, explain
-            the repair in plain language, and only recommend the brake service your vehicle needs.
+            certified brake repair shop at {business.street} in West Edmonton. We show you the worn parts and only
+            recommend the brake service your vehicle needs.
           </p>
         </div>
       </section>
 
+      {/* ===== TESTIMONIALS: real Google reviews, laid out like the home page ===== */}
+      <section className="px-6 py-12 text-center">
+        <h2 className="text-3xl font-bold md:text-4xl">Brake Repair Reviews from Our Customers</h2>
+        <p className="mt-4 text-lg md:text-xl">
+          Here's what customers have said about their brake repair at Leung's Auto Service.
+        </p>
+
+        <Reviews reviews={reviewsBy("Ace")} />
+      </section>
+
       {/* ===== FAQ ===== */}
-      <section className="px-6 py-12">
+      <section className="bg-gray-100 px-6 py-12">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold">Brake Repair FAQ</h2>
           {faqs.map((faq) => (
@@ -208,7 +225,7 @@ export default function BrakeRepair() {
       </section>
 
       {/* ===== CALL TO ACTION ===== */}
-      <section className="bg-gray-100 px-6 py-12 text-center">
+      <section className="px-6 py-12 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Book Brake Service in West Edmonton</h2>
         <p className="mt-4 text-lg md:text-xl">
           Tell us what your brakes are doing and we&apos;ll book a brake inspection to find the cause.
@@ -217,7 +234,7 @@ export default function BrakeRepair() {
           <Link href="/contact" className="rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
             Book a Brake Inspection
           </Link>
-          <a href={business.phoneHref} className="rounded border border-[#2D3047] px-6 py-3 font-bold text-[#2D3047] hover:bg-white">
+          <a href={business.phoneHref} className="rounded border border-[#2D3047] px-6 py-3 font-bold text-[#2D3047] hover:bg-gray-100">
             Call {business.phone}
           </a>
         </div>

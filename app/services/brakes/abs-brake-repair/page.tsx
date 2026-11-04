@@ -1,12 +1,38 @@
 // app/services/brakes/abs-brake-repair/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import LastUpdated from "@/components/LastUpdated"
+import ClusterLinks from "@/components/ClusterLinks"
+import BookingCta from "@/components/BookingCta"
+import Faq from "@/components/Faq"
 
 export const metadata = {
   title: "ABS Brake Repair Edmonton | Leung's Auto Service",
   description:
     "ABS brake repair in West Edmonton. ABS light on? Learn what causes the ABS light to turn on, and book ABS sensor replacement and diagnostics with us.",
+  alternates: {
+    canonical: "/services/brakes/abs-brake-repair",
+  },
 }
+
+// Questions shown in the FAQ section
+const faqs = [
+  {
+    question: "Is it safe to drive with the ABS light on?",
+    answer:
+      "Usually, for a short drive. Your regular brakes still work with the ABS light on, but the anti-lock feature may not. That means the wheels can lock up if you brake hard on a slippery road. Have it checked soon, especially before winter driving. If the red brake warning light is on as well, stop driving and have the car checked right away.",
+  },
+  {
+    question: "What causes the ABS light to turn on?",
+    answer:
+      "The most common cause is a faulty or dirty wheel speed sensor. Other causes include damaged or corroded wiring to an ABS sensor, a damaged tone ring on the wheel hub or axle, low brake fluid, and a failed ABS module or pump. We scan the system for the fault code to find which one it is.",
+  },
+  {
+    question: "How much does ABS brake repair cost?",
+    answer:
+      "The price depends on what's causing the fault. ABS sensor replacement costs much less than replacing a failed ABS module. We find the cause first and give you a price before any work starts.",
+  },
+]
 
 export default function AbsBrakeRepair() {
   return (
@@ -23,6 +49,7 @@ export default function AbsBrakeRepair() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book ABS Brake Repair
         </Link>
+        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}
@@ -49,33 +76,10 @@ export default function AbsBrakeRepair() {
             <li>The traction control light comes on along with the ABS light</li>
             <li>Longer stopping distances than usual</li>
           </ul>
-        </div>
-      </section>
-
-      {/* ===== ABS LIGHT ON ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">ABS Light On? Is It Safe to Drive?</h2>
           <p className="mt-4 text-lg">
-            If the ABS light is on, your regular brakes usually still work, but the anti-lock feature may not. That
-            means the wheels can lock up if you brake hard on a slippery road. Have it checked soon, especially
-            before winter driving. If the red brake warning light is on as well, stop driving and have the car
-            checked right away.
+            Longer stopping distances can also mean worn pads, so we check the whole brake system. See{" "}
+            <Link href="/services/brakes/brake-pad-replacement" className="text-[#2D3047] underline">brake pad replacement</Link> for more on worn pads.
           </p>
-        </div>
-      </section>
-
-      {/* ===== WHAT CAUSES THE ABS LIGHT ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What Causes the ABS Light to Turn On?</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>A faulty or dirty wheel speed sensor, the most common cause</li>
-            <li>Damaged or corroded wiring to an ABS sensor</li>
-            <li>A damaged tone ring on the wheel hub or axle</li>
-            <li>Low brake fluid</li>
-            <li>A failed ABS module or pump</li>
-          </ul>
         </div>
       </section>
 
@@ -104,31 +108,23 @@ export default function AbsBrakeRepair() {
         </div>
       </section>
 
-      {/* ===== COST ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">ABS Brake Repair Cost</h2>
-          <p className="mt-4 text-lg">
-            The price depends on what's causing the fault. ABS sensor replacement costs much less than replacing a
-            failed ABS module.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Get Your ABS Light Checked
-          </Link>
-        </div>
-      </section>
+      {/* ===== FAQ ===== */}
+      <Faq title="ABS Brake Repair FAQ" faqs={faqs} />
 
-      {/* ===== RELATED PAGES ===== */}
-      <section className="bg-gray-100 px-6 py-12 text-center">
-        <h2 className="text-2xl font-bold">Related Services</h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-6">
-          <Link href="/services/brakes" className="text-[#2D3047] underline">Brake Repair</Link>
-          <Link href="/services/brakes/brake-pad-replacement" className="text-[#2D3047] underline">Brake Pad Replacement</Link>
-          <Link href="/services/brakes/brake-fluid-flush" className="text-[#2D3047] underline">Brake Fluid Flush</Link>
-          <Link href="/services/diagnostics" className="text-[#2D3047] underline">Car Diagnostics</Link>
-          <Link href="/services/maintenance/wheel-alignment" className="text-[#2D3047] underline">Wheel Alignment</Link>
-        </div>
-      </section>
+      <BookingCta
+        heading="Book ABS Brake Repair in West Edmonton"
+        text="ABS light on? We'll find the cause and give you a price before any work starts."
+        label="Get Your ABS Light Checked"
+        gray
+      />
+
+      {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
+      <ClusterLinks
+        current="/services/brakes/abs-brake-repair"
+        also={[
+          { title: "Car Diagnostics", href: "/services/diagnostics" },
+        ]}
+      />
 
     </main>
   )

@@ -6,6 +6,9 @@ export const metadata = {
   title: "About Leung's Auto Service | Auto Repair Shop in Edmonton",
   description:
     "Leung's Auto Service is an independent, AMVIC certified auto repair shop in West Edmonton, serving domestic and import vehicles since 2002.",
+  alternates: {
+    canonical: "/about",
+  },
 }
 
 export default function About() {
@@ -46,10 +49,10 @@ export default function About() {
               The shop is AMVIC certified, and most of our customers come back or send their friends and family.
             </p>
             <p className="mt-4 text-lg">
-              We handle everything from{" "}
-              <Link href="/services/brakes" className="text-[#2D3047] underline">brake repair</Link> and{" "}
-              <Link href="/services/diagnostics" className="text-[#2D3047] underline">car diagnostics</Link> to{" "}
-              <Link href="/services/maintenance/oil-change-services" className="text-[#2D3047] underline">oil changes</Link>{" "}
+              Most of our work is{" "}
+              <Link href="/services/brakes" className="text-[#2D3047] underline">brake repair</Link>,{" "}
+              <Link href="/services/diagnostics" className="text-[#2D3047] underline">car diagnostics</Link>,{" "}
+              <Link href="/services/maintenance/oil-change-services" className="text-[#2D3047] underline">oil changes</Link>,{" "}
               and{" "}
               <Link href="/services/inspection/out-of-province-inspection" className="text-[#2D3047] underline">out of province inspections</Link>.{" "}
               <Link href="/services" className="text-[#2D3047] underline">See all our automotive services</Link>.
