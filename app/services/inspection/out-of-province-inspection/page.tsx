@@ -1,7 +1,6 @@
 // app/services/inspection/out-of-province-inspection/page.tsx
 import Image from "next/image"
 import Link from "next/link"
-import LastUpdated from "@/components/LastUpdated"
 import ClusterLinks from "@/components/ClusterLinks"
 import Faq from "@/components/Faq"
 
@@ -56,7 +55,6 @@ export default function OutOfProvinceInspection() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book an Out of Province Inspection
         </Link>
-        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}

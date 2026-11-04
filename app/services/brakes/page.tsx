@@ -1,7 +1,6 @@
 // app/services/brakes/page.tsx
 import Image from "next/image"
 import Link from "next/link"
-import LastUpdated from "@/components/LastUpdated"
 import OtherServices from "@/components/OtherServices"
 import Reviews from "@/components/Reviews"
 import { reviewsBy } from "@/lib/reviews"
@@ -84,7 +83,6 @@ export default function BrakeRepair() {
         <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
           Book Brake Repair
         </Link>
-        <LastUpdated date="2026-11-03" />
       </section>
 
       {/* ===== PHOTO (file lives in public/images) ===== */}

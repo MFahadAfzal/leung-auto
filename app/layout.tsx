@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import { business } from "@/lib/business"
+import { business, businessId } from "@/lib/business"
 import { Montserrat } from "next/font/google"
 
 const montserrat = Montserrat({
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "AutoRepair",
+  "@id": businessId,
   name: business.name,
   url: business.siteUrl,
   telephone: "+1-780-452-0134",

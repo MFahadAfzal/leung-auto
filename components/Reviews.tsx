@@ -1,5 +1,6 @@
 // components/Reviews.tsx
 import { Star } from "lucide-react"
+import { businessId } from "@/lib/business"
 
 // rating is optional: only show stars when we know what the customer gave.
 // key tells apart two excerpts of the same customer's review; it defaults to the name.
@@ -7,29 +8,54 @@ export type Review = { name: string; text: string; rating?: number; key?: string
 
 // Grid of customer review cards. onGray gives the cards a white background
 // so they stand out when the section behind them is grey.
+// Also sends each review to Google as Review structured data, using exactly the text shown on the page.
 export default function Reviews({ reviews, onGray = false }: { reviews: Review[]; onGray?: boolean }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": reviews.map((review) => ({
+      "@type": "Review",
+      // Points to the AutoRepair business in the layout's structured data
+      itemReviewed: { "@id": businessId },
+      author: { "@type": "Person", name: review.name },
+      ...(review.rating && {
+        reviewRating: { "@type": "Rating", ratingValue: review.rating, bestRating: 5, worstRating: 1 },
+      }),
+      reviewBody: review.text,
+      // The reviews were first posted on Google
+      publisher: { "@type": "Organization", name: "Google" },
+    })),
+  }
+
   return (
-    <div
-      className={`mx-auto mt-8 grid gap-6 ${
-        reviews.length >= 3 ? "max-w-6xl lg:grid-cols-3" : reviews.length === 2 ? "max-w-6xl md:grid-cols-2" : "max-w-2xl"
-      }`}
-    >
-      {reviews.map((review) => (
-        <div key={review.key ?? review.name} className={`flex flex-col rounded p-6 text-left shadow ${onGray ? "bg-white" : "bg-gray-100"}`}>
-          {review.rating && (
-            <div className="mb-4 flex gap-1 text-yellow-500" aria-label={`${review.rating} out of 5 stars`}>
-              {Array.from({ length: review.rating }, (_, i) => (
-                <Star key={i} size={20} fill="currentColor" />
-              ))}
-            </div>
-          )}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div
+        className={`mx-auto mt-8 grid gap-6 ${
+          reviews.length >= 3 ? "max-w-6xl lg:grid-cols-3" : reviews.length === 2 ? "max-w-6xl md:grid-cols-2" : "max-w-2xl"
+        }`}
+      >
+        {reviews.map((review) => (
+          <div key={review.key ?? review.name} className={`flex flex-col rounded p-6 text-left shadow ${onGray ? "bg-white" : "bg-gray-100"}`}>
+            {review.rating && (
+              <div className="mb-4 flex gap-1 text-yellow-500" aria-label={`${review.rating} out of 5 stars`}>
+                {Array.from({ length: review.rating }, (_, i) => (
+                  <Star key={i} size={20} fill="currentColor" />
+                ))}
+              </div>
+            )}
 
-          <p className="flex-1 text-gray-700">“{review.text}”</p>
+            <p className="flex-1 text-gray-700">“{review.text}”</p>
 
-          <p className="mt-4 font-bold">{review.name}</p>
-          <p className="text-sm text-gray-500">Google review</p>
-        </div>
-      ))}
-    </div>
+            <p className="mt-4 font-bold">{review.name}</p>
+            <p className="text-sm text-gray-500">Google review</p>
+          </div>
+        ))}
+      </div>
+    </>
   )
 }

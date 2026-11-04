@@ -16,3 +16,7 @@ export const business = {
   hoursTime: "8:30 AM - 6 PM",
   mapsQuery: "Leung's Auto Service, 12025 149 St NW, Edmonton, AB T5L 2J2",
 }
+
+// The shop's ID in Google structured data. Reviews on any page point to this,
+// so Google knows they are all about the same business described in the layout.
+export const businessId = `${business.siteUrl}/#business`
