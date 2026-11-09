@@ -1,5 +1,5 @@
 // components/Reviews.tsx
-import { Star } from "lucide-react"
+import { Quote, Star } from "lucide-react"
 import { businessId } from "@/lib/business"
 
 // rating is optional: only show stars when we know what the customer gave.
@@ -36,23 +36,39 @@ export default function Reviews({ reviews, onGray = false }: { reviews: Review[]
       />
       <div
         className={`mx-auto mt-8 grid gap-6 ${
-          reviews.length >= 3 ? "max-w-6xl lg:grid-cols-3" : reviews.length === 2 ? "max-w-6xl md:grid-cols-2" : "max-w-2xl"
+          reviews.length >= 3 ? "max-w-5xl lg:grid-cols-3" : reviews.length === 2 ? "max-w-5xl md:grid-cols-2" : "max-w-2xl"
         }`}
       >
         {reviews.map((review) => (
-          <div key={review.key ?? review.name} className={`flex flex-col rounded p-6 text-left shadow ${onGray ? "bg-white" : "bg-gray-100"}`}>
-            {review.rating && (
-              <div className="mb-4 flex gap-1 text-yellow-500" aria-label={`${review.rating} out of 5 stars`}>
-                {Array.from({ length: review.rating }, (_, i) => (
-                  <Star key={i} size={20} fill="currentColor" />
-                ))}
-              </div>
-            )}
+          <div
+            key={review.key ?? review.name}
+            className={`flex flex-col rounded-lg p-6 text-left ${onGray ? "bg-white shadow" : "border border-[#BDDDFC] bg-[#BDDDFC]/20"}`}
+          >
+            <div className="mb-4 flex items-center justify-between">
+              {review.rating ? (
+                <div className="flex gap-1 text-yellow-500" aria-label={`${review.rating} out of 5 stars`}>
+                  {Array.from({ length: review.rating }, (_, i) => (
+                    <Star key={i} size={20} fill="currentColor" />
+                  ))}
+                </div>
+              ) : (
+                <span />
+              )}
+              <Quote className="text-gray-300" size={28} aria-hidden="true" />
+            </div>
 
             <p className="flex-1 text-gray-700">“{review.text}”</p>
 
-            <p className="mt-4 font-bold">{review.name}</p>
-            <p className="text-sm text-gray-500">Google review</p>
+            {/* Initial in a navy circle, then the name */}
+            <div className="mt-6 flex items-center gap-3 border-t border-[#BDDDFC] pt-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#384959] font-bold uppercase text-white">
+                {review.name.charAt(0)}
+              </div>
+              <div>
+                <p className="font-bold">{review.name}</p>
+                <p className="text-sm text-gray-500">Google review</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>

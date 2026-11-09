@@ -1,8 +1,12 @@
 // components/ServiceHub.tsx
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import BookingCta from "@/components/BookingCta"
 import OtherServices from "@/components/OtherServices"
+import PageHero from "@/components/PageHero"
 import Reviews, { type Review } from "@/components/Reviews"
 import { services } from "@/lib/services"
+import { spokeIcon } from "@/lib/spokeIcons"
 
 // Hub page for one main service: an intro, then a card for each specific repair
 // so visitors can pick the one that matches what their vehicle is doing.
@@ -14,6 +18,7 @@ export default function ServiceHub({
   ctaHeading,
   ctaLabel,
   reviews,
+  image,
 }: {
   href: string
   intro: string
@@ -22,6 +27,8 @@ export default function ServiceHub({
   ctaLabel: string
   // Optional customer reviews, shown the same way as on the home page
   reviews?: { heading: string; text: string; items: Review[] }
+  // Background photo for the intro, with keyword alt text
+  image?: { src: string; alt: string }
 }) {
   const service = services.find((s) => s.href === href)!
 
@@ -29,50 +36,50 @@ export default function ServiceHub({
     <main className="flex-1">
 
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">{service.title} in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">{intro}</p>
-      </section>
+      <PageHero heading={`${service.title} in Edmonton`} cta={ctaLabel} image={image}>
+        {intro}
+      </PageHero>
 
       {/* ===== SPECIFIC SERVICES: one card per repair, with the symptoms it fixes ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <h2 className="text-center text-3xl font-bold">{servicesHeading}</h2>
-        <div className="mx-auto mt-8 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {service.spokes.map((spoke) => (
-            <Link
-              key={spoke.href}
-              href={spoke.href}
-              className="flex flex-col rounded bg-white p-6 shadow hover:shadow-md"
-            >
-              <h3 className="text-xl font-bold text-[#2D3047]">{spoke.title}</h3>
-              <p className="mt-2 flex-1 text-gray-600">{spoke.blurb}</p>
-              <span className="mt-4 font-bold text-[#2D3047] underline">Learn more</span>
-            </Link>
-          ))}
+      <section className="px-6 py-16">
+        <h2 className="text-center text-3xl font-bold md:text-4xl">{servicesHeading}</h2>
+        <div className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {service.spokes.map((spoke) => {
+            const Icon = spokeIcon(spoke.href)
+            return (
+              <Link
+                key={spoke.href}
+                href={spoke.href}
+                className="group flex flex-col rounded-xl border border-[#BDDDFC] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#6A89A7] hover:shadow-lg"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#384959] text-[#BDDDFC] transition group-hover:bg-[#6A89A7] group-hover:text-white">
+                  <Icon size={28} />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-[#384959]">{spoke.title}</h3>
+                <p className="mt-2 flex-1 text-gray-600">{spoke.blurb}</p>
+                <ArrowRight className="mt-4 text-[#6A89A7] transition group-hover:translate-x-1" size={20} aria-hidden="true" />
+              </Link>
+            )
+          })}
         </div>
       </section>
 
       {reviews && (
-        <section className="px-6 py-12 text-center">
+        <section className="bg-[#BDDDFC]/40 px-6 py-16 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">{reviews.heading}</h2>
-          <p className="mt-4 text-lg md:text-xl">{reviews.text}</p>
-          <Reviews reviews={reviews.items} />
+          <p className="mt-4 text-lg text-gray-700 md:text-xl">{reviews.text}</p>
+          <Reviews reviews={reviews.items} onGray />
         </section>
       )}
 
-      {/* ===== CALL TO ACTION (grey when it follows the white reviews section) ===== */}
-      <section className={`${reviews ? "bg-gray-100 " : ""}px-6 py-12 text-center`}>
-        <h2 className="text-3xl font-bold md:text-4xl">{ctaHeading}</h2>
-        <p className="mt-4 text-lg md:text-xl">
-          Tell us what your vehicle is doing and we&apos;ll point you in the right direction.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          {ctaLabel}
-        </Link>
-        <p className="mt-6">
-          <Link href="/services" className="text-[#2D3047] underline">See all automotive services</Link>
-        </p>
-      </section>
+      {/* ===== CALL TO ACTION ===== */}
+      <BookingCta
+        heading={ctaHeading}
+        text="Tell us what your vehicle is doing and we'll point you in the right direction."
+        label={ctaLabel}
+      >
+        <Link href="/services" className="underline hover:text-white">See all automotive services</Link>
+      </BookingCta>
 
       <OtherServices current={href} />
 

@@ -1,8 +1,9 @@
-import Image from "next/image"
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import { business } from "@/lib/business"
 
 export const metadata = {
   title: "Brake Pad Replacement Edmonton | Leung's Auto Service",
@@ -42,83 +43,125 @@ const faqs = [
   },
 ]
 
+// Warning signs for each part, shown side by side
+const padSigns = [
+  "Brakes squealing: a high-pitched squeal when you brake, often from the pad wear indicator",
+  "Brakes grinding: a grinding or scraping sound, which can mean the pads are worn down to metal",
+  "A soft brake pedal, or the car takes longer to stop",
+  "The car pulls to one side when braking",
+  "A brake warning light on the dashboard",
+]
+
+const rotorSigns = [
+  "The steering wheel or brake pedal shakes or pulses when you brake",
+  "Grooves, scoring, or a blue tint on the rotor surface",
+  "Brakes grinding even after new pads",
+  "Longer stopping distances",
+  "Rotors worn below the minimum thickness",
+]
+
+// The job in three steps, from the "What Brake Pad Replacement Involves" text
+const steps = [
+  { title: "Inspect and measure", text: "Pads, rotors, calipers, and brake fluid" },
+  { title: "Explain what we find", text: "What's worn and what it will take to fix" },
+  { title: "You approve, we start", text: "The work and the price, before we begin" },
+]
+
 export default function BrakePadReplacement() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Brake Pad Replacement in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Brakes squealing, brakes grinding, or a soft brake pedal are signs your brake pads are wearing out.
-          Leung's Auto Service does brake pad replacement and brake rotor replacement on domestic and import
-          vehicles at our shop in West Edmonton.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book Brake Pad Replacement
-        </Link>
-      </section>
+      <PageHero
+        heading="Brake Pad Replacement in Edmonton"
+        cta="Book Brake Pad Replacement"
+        image={{ src: "/images/brake-pad-replacement.jpg", alt: "Mechanic doing a brake pad replacement and brake rotor replacement in Edmonton" }}
+      >
+        Brakes squealing, brakes grinding, or a soft brake pedal are signs your brake pads are wearing out.
+        Leung&apos;s Auto Service does brake pad replacement and brake rotor replacement on domestic and import
+        vehicles at our shop in West Edmonton.
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/brake-pad-replacement.jpg"
-            alt="Mechanic doing a brake pad replacement and brake rotor replacement in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
+      {/* ===== PADS vs ROTORS: the two sets of warning signs side by side ===== */}
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
+
+          {/* Pads: light panel */}
+          <div className="rounded-2xl border border-[#BDDDFC] bg-white p-8 shadow-sm">
+            <p className="text-sm font-bold uppercase tracking-widest text-[#6A89A7]">Brake pads</p>
+            <h2 className="accent-heading mt-2 text-2xl font-bold md:text-3xl">Signs You Need Brake Pad Replacement</h2>
+            <ul className="checks mt-6 text-lg text-[#384959]">
+              {padSigns.map((sign) => (
+                <li key={sign}>{sign}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Rotors: dark panel */}
+          <div className="rounded-2xl bg-[#384959] p-8 text-white shadow-xl">
+            <p className="text-sm font-bold uppercase tracking-widest text-[#BDDDFC]">Brake rotors</p>
+            <h2 className="accent-heading mt-2 text-2xl font-bold md:text-3xl">Signs You Need Brake Rotor Replacement</h2>
+            <ul className="mt-6 divide-y divide-white/15 border-y border-white/15 text-lg">
+              {rotorSigns.map((sign, i) => (
+                <li key={sign} className="flex items-baseline gap-5 py-4">
+                  <span className="w-6 shrink-0 text-sm font-bold text-[#BDDDFC]">{String(i + 1).padStart(2, "0")}</span>
+                  <span>{sign}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </section>
 
-      {/* ===== SIGNS YOU NEED NEW PADS ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Signs You Need Brake Pad Replacement</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>Brakes squealing: a high-pitched squeal when you brake, often from the pad wear indicator</li>
-            <li>Brakes grinding: a grinding or scraping sound, which can mean the pads are worn down to metal</li>
-            <li>A soft brake pedal, or the car takes longer to stop</li>
-            <li>The car pulls to one side when braking</li>
-            <li>A brake warning light on the dashboard</li>
-          </ul>
-          <p className="mt-4 text-lg">
+        {/* Tip strip: a soft pedal isn't always the pads */}
+        <div className="mx-auto mt-8 max-w-5xl rounded-2xl bg-[#BDDDFC] px-8 py-6">
+          <p className="text-lg text-[#384959]">
+            <span className="font-bold">Good to know: </span>
             A soft brake pedal can also come from air in the brake lines or old brake fluid, so we check the pads,
             lines, and fluid to find the cause. If the fluid is the problem, a{" "}
-            <Link href="/services/brakes/brake-fluid-flush" className="text-[#2D3047] underline">brake fluid flush</Link>{" "}
+            <Link href="/services/brakes/brake-fluid-flush" className="font-bold underline">brake fluid flush</Link>{" "}
             may be what your car needs.
           </p>
         </div>
       </section>
 
-      {/* ===== SIGNS YOU NEED NEW ROTORS ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Signs You Need Brake Rotor Replacement</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>The steering wheel or brake pedal shakes or pulses when you brake</li>
-            <li>Grooves, scoring, or a blue tint on the rotor surface</li>
-            <li>Brakes grinding even after new pads</li>
-            <li>Longer stopping distances</li>
-            <li>Rotors worn below the minimum thickness</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What Brake Pad Replacement Involves</h2>
-          <p className="mt-4 text-lg">
+      {/* ===== WHAT'S INVOLVED: centred text, then the three steps in a row ===== */}
+      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+        <div className="mx-auto max-w-5xl text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">What Brake Pad Replacement Involves</h2>
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
             We inspect the brake pads, measure the rotors, and check the calipers and brake fluid, then explain what
             we find. If you need brake pad replacement or brake rotor replacement, you approve the work and the price
             before we start.
           </p>
+
+          <div className="relative mt-12">
+            {/* Line joining the three numbers on desktop */}
+            <div className="absolute left-[16.5%] right-[16.5%] top-7 hidden h-0.5 bg-[#6A89A7]/40 md:block" aria-hidden="true" />
+            <ol className="relative grid gap-10 md:grid-cols-3 md:gap-6">
+              {steps.map((step, i) => (
+                <li key={step.title} className="relative flex flex-col items-center">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#384959] text-xl font-bold text-[#BDDDFC] ring-8 ring-[#E5F1FE]">
+                    {i + 1}
+                  </span>
+                  <p className="mt-4 text-xl font-bold text-[#384959]">{step.title}</p>
+                  <p className="mt-1 text-gray-600">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Brake Pad Replacement FAQ" faqs={faqs} />
+      {/* ===== FAQ: heading on the left, questions on the right ===== */}
+      <Faq
+        title="Brake Pad Replacement FAQ"
+        faqs={faqs}
+        aside={
+          <p>
+            Have a question about your brakes that isn&apos;t answered here? Call us at{" "}
+            <a href={business.phoneHref} className="font-bold text-[#384959] underline">{business.phone}</a>.
+          </p>
+        }
+      />
 
       <BookingCta
         heading="Book Brake Pad Replacement in West Edmonton"

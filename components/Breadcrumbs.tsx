@@ -17,6 +17,8 @@ for (const service of services) {
 
 // Home > Services > Brake Repair > Brake Pad Replacement, linking each step back up the site.
 // Also sent to Google as breadcrumb structured data.
+// Shown at the top of the page intro (components/PageHero.tsx), over the photo, so it uses light text.
+// Pages outside /services (like About) have no trail, so nothing is shown there.
 export default function Breadcrumbs() {
   const pathname = usePathname()
 
@@ -27,6 +29,8 @@ export default function Breadcrumbs() {
     const href = "/" + parts.slice(0, i + 1).join("/")
     if (names[href]) crumbs.push({ name: names[href], href })
   })
+
+  if (crumbs.length < 2) return null
 
   const schema = {
     "@context": "https://schema.org",
@@ -40,22 +44,22 @@ export default function Breadcrumbs() {
   }
 
   return (
-    <nav aria-label="Breadcrumb" className="px-6 pt-6 text-sm text-gray-600">
+    <nav aria-label="Breadcrumb" className="mx-auto max-w-5xl text-left text-sm text-white/70">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
         }}
       />
-      <ol className="mx-auto flex max-w-5xl flex-wrap gap-2">
+      <ol className="flex flex-wrap gap-2">
         {crumbs.map((crumb, i) => (
           <li key={crumb.href} className="flex gap-2">
             {i > 0 && <span aria-hidden="true">/</span>}
             {/* The last step is the current page, so it isn't a link */}
             {i === crumbs.length - 1 ? (
-              <span aria-current="page" className="text-gray-900">{crumb.name}</span>
+              <span aria-current="page" className="font-bold text-white">{crumb.name}</span>
             ) : (
-              <Link href={crumb.href} className="text-[#2D3047] underline">{crumb.name}</Link>
+              <Link href={crumb.href} className="text-[#BDDDFC] underline hover:text-white">{crumb.name}</Link>
             )}
           </li>
         ))}

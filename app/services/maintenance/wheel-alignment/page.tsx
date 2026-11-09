@@ -1,9 +1,11 @@
 // app/services/maintenance/wheel-alignment/page.tsx
-import Image from "next/image"
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import StepsSection from "@/components/StepsSection"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Wheel Alignment Edmonton | Tire Alignment | Leung's Auto",
@@ -42,68 +44,58 @@ export default function WheelAlignment() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Wheel Alignment in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Potholes and curbs can knock your wheels out of alignment, which wears your tires faster and makes the car
+      <PageHero
+        heading="Wheel Alignment in Edmonton"
+        cta="Book a Wheel Alignment"
+        image={{ src: "/images/wheel-alignment.jpg", alt: "Mechanic doing a wheel alignment and tire alignment at Leung's Auto Service in Edmonton" }}
+      >
+        Potholes and curbs can knock your wheels out of alignment, which wears your tires faster and makes the car
           pull. Leung's Auto Service does wheel alignments, also called tire alignments, on domestic and import
           vehicles at our shop in West Edmonton.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book a Wheel Alignment
-        </Link>
-      </section>
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/wheel-alignment.jpg"
-            alt="Mechanic doing a wheel alignment and tire alignment at Leung's Auto Service in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
-        </div>
-      </section>
-
-      {/* ===== SIGNS YOU NEED AN ALIGNMENT ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Signs You Need a Wheel Alignment</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
+      <PanelSection aside>
+        <Panel>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need a Wheel Alignment</h2>
+          <ul className="checks mt-6 text-lg text-[#384959]">
             <li>The car pulls or drifts to one side</li>
             <li>The steering wheel is off-centre when driving straight</li>
             <li>Uneven or fast tire wear</li>
             <li>The steering feels loose or wanders</li>
             <li>You recently hit a big pothole or curb</li>
           </ul>
-          <p className="mt-4 text-lg">
+        </Panel>
+        <Panel label="Good to know" dark>
+          <p className="mt-4 text-lg text-white/90">
             Uneven tire wear can also mean your tires are due for a rotation, which we can do at your{" "}
-            <Link href="/services/maintenance/tire-change" className="text-[#2D3047] underline">seasonal tire change</Link>.
+            <Link href="/services/maintenance/tire-change" className="text-[#BDDDFC] underline">seasonal tire change</Link>.
           </p>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What a Wheel Alignment Involves</h2>
-          <p className="mt-4 text-lg">
-            We check the angles of your wheels and adjust them back to your vehicle's specification. If we find worn
-            steering or suspension parts that would stop the alignment from holding, we explain what we find and you
-            approve any extra work and the price before we start.
-          </p>
-        </div>
-      </section>
+      <StepsSection
+        heading="What a Wheel Alignment Involves"
+        gray
+        steps={[
+          { title: "Check the angles", text: "Measure how your wheels are aligned" },
+          { title: "Adjust to spec", text: "Back to your vehicle's specification" },
+          { title: "Flag worn parts", text: "Anything that would stop the alignment holding" },
+        ]}
+      >
+        <p className="mt-4 text-lg text-gray-700">
+          We check the angles of your wheels and adjust them back to your vehicle's specification. If we find worn
+          steering or suspension parts that would stop the alignment from holding, we explain what we find and you
+          approve any extra work and the price before we start.
+        </p>
+      </StepsSection>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Wheel Alignment FAQ" faqs={faqs} gray />
+      <Faq title="Wheel Alignment FAQ" faqs={faqs} split />
 
       <BookingCta
         heading="Book a Wheel Alignment in West Edmonton"
         text="Car pulling or tires wearing unevenly? We'll check your alignment and give you a price first."
         label="Get a Wheel Alignment Quote"
+        gray
       />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}

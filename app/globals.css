@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #384959;
 }
 
 @theme inline {
@@ -23,4 +23,75 @@
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Smooth scrolling for the in-page jump links (diagnostics sections, tire rotation, etc.) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Lists on service pages (.checks and .steps): numbered rows with thin dividers between them,
+   the number small and steel blue on the left */
+.checks,
+.steps {
+  counter-reset: item;
+  border-top: 1px solid rgb(106 137 167 / 0.3);
+  border-bottom: 1px solid rgb(106 137 167 / 0.3);
+}
+.checks > li,
+.steps > li {
+  position: relative;
+  counter-increment: item;
+  padding: 1rem 0 1rem 2.75rem;
+}
+.checks > li + li,
+.steps > li + li {
+  border-top: 1px solid rgb(106 137 167 / 0.3);
+}
+.checks > li::before,
+.steps > li::before {
+  content: counter(item, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1.35rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #6a89a7;
+}
+
+/* Section headings in the text-heavy parts of service pages get a short navy line under them */
+.accent-heading::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 0.25rem;
+  margin-top: 0.75rem;
+  border-radius: 0.25rem;
+  background: #6a89a7;
+}
+
+/* Text inside dark slate panels (components/Panels.tsx): light headings, text, links, and list numbers */
+.on-dark h2,
+.on-dark h3 {
+  color: white;
+}
+.on-dark p,
+.on-dark li {
+  color: rgb(255 255 255 / 0.9);
+}
+.on-dark a {
+  color: #bdddfc;
+}
+.on-dark .panel-label {
+  color: #bdddfc;
+}
+.on-dark .checks,
+.on-dark .steps,
+.on-dark .checks > li + li,
+.on-dark .steps > li + li {
+  border-color: rgb(255 255 255 / 0.15);
+}
+.on-dark .checks > li::before,
+.on-dark .steps > li::before {
+  color: #bdddfc;
 }

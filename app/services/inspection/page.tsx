@@ -14,6 +14,7 @@ export const metadata = {
 export default function CarInspections() {
   return (
     <ServiceHub
+      image={{ src: "/images/car-inspection.jpg", alt: "Technician doing a car inspection at Leung's Auto Service in Edmonton" }}
       href="/services/inspection"
       intro="An inspection tells you the real condition of a vehicle. Pick the type of inspection below that fits your situation."
       servicesHeading="Our Car Inspection Services"

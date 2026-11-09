@@ -1,8 +1,10 @@
 // app/services/inspection/pre-purchase-inspection/page.tsx
-import Image from "next/image"
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import BookingCta from "@/components/BookingCta"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Pre-Purchase Inspection Edmonton | Used Car Inspection",
@@ -46,37 +48,24 @@ export default function PrePurchaseInspection() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Pre-Purchase Inspection in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Buying a used car? A pre-purchase used car inspection tells you what condition it's really in before you
+      <PageHero
+        heading="Pre-Purchase Inspection in Edmonton"
+        cta="Book a Pre-Purchase Inspection"
+        image={{ src: "/images/pre-purchase-inspection.jpg", alt: "Mechanic doing a pre-purchase used car inspection at Leung's Auto Service in Edmonton" }}
+      >
+        Buying a used car? A pre-purchase used car inspection tells you what condition it's really in before you
           hand over your money. Leung's Auto Service does pre-purchase inspections on domestic and import vehicles
           at our shop in West Edmonton, for cars from dealers and private sellers.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book a Pre-Purchase Inspection
-        </Link>
-      </section>
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/pre-purchase-inspection.jpg"
-            alt="Mechanic doing a pre-purchase used car inspection at Leung's Auto Service in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
-        </div>
-      </section>
-
-      {/* ===== WHAT IT CHECKS ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What a Pre-Purchase Inspection Checks</h2>
-          <p className="mt-4 text-lg">Our pre-purchase used car inspection covers:</p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
+      <PanelSection>
+        <Panel>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">What a Pre-Purchase Inspection Checks</h2>
+          <p className="mt-4 text-lg text-gray-700">Our pre-purchase used car inspection covers:</p>
+          <p className="mt-4 text-lg text-gray-700">
+            Afterward, we walk you through what we found so you can decide whether the car is worth buying.
+          </p>
+          <ul className="checks mt-6 text-lg text-[#384959]">
             <li>Engine and transmission, including leaks and how the car runs and shifts</li>
             <li>Brakes, including pads, rotors, lines, and brake fluid</li>
             <li>Steering and suspension</li>
@@ -85,52 +74,41 @@ export default function PrePurchaseInspection() {
             <li>Underbody and frame for rust and signs of past accident damage</li>
             <li>A computer scan for stored fault codes</li>
           </ul>
-          <p className="mt-4 text-lg">
-            Afterward, we walk you through what we found so you can decide whether the car is worth buying.
-          </p>
-        </div>
-      </section>
-
-      {/* ===== EDMONTON CONDITIONS ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Edmonton Conditions and Used Vehicle Risk</h2>
-          <p className="mt-4 text-lg">
+        </Panel>
+        <Panel dark>
+          <h2 className="accent-heading text-2xl font-bold text-white md:text-3xl">Edmonton Conditions and Used Vehicle Risk</h2>
+          <p className="mt-4 text-lg text-white/90">
             Edmonton conditions are hard on vehicles, which adds to the risk of buying a used vehicle here. A
             pre-purchase inspection in Edmonton looks for the damage our climate and roads cause:
           </p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
+          <p className="mt-4 text-lg text-white/90">
+            A car that looks clean on top can hide rust and worn parts underneath. Lifting it up is the only way to
+            know.
+          </p>
+          <ul className="checks mt-6 text-lg text-white/90">
             <li>Road salt causes rust on the frame, brake lines, and underbody</li>
             <li>Cold winters wear out batteries and strain starters and engines</li>
             <li>Potholes damage suspension parts and throw off wheel alignment</li>
             <li>Gravel roads chip paint and crack windshields</li>
           </ul>
-          <p className="mt-4 text-lg">
-            A car that looks clean on top can hide rust and worn parts underneath. Lifting it up is the only way to
-            know.
-          </p>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Pre-Purchase Inspection FAQ" faqs={faqs} gray />
+      <Faq title="Pre-Purchase Inspection FAQ" faqs={faqs} split gray />
 
-      {/* ===== HOW TO BOOK ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">How to Book a Pre-Purchase Inspection in Edmonton</h2>
-          <p className="mt-4 text-lg">
+      <BookingCta
+        heading="How to Book a Pre-Purchase Inspection in Edmonton"
+        text={
+          <>
             Arrange with the seller to bring the car to our shop at 12025 149 St NW, then contact us to book a time.
-            Do the inspection before you pay or sign anything. If the car is registered outside Alberta, it will
-            also need an{" "}
-            <Link href="/services/inspection/out-of-province-inspection" className="text-[#2D3047] underline">out of province inspection</Link>{" "}
-            before you can register it.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Book Your Used Car Inspection
-          </Link>
-        </div>
-      </section>
+              Do the inspection before you pay or sign anything. If the car is registered outside Alberta, it will
+              also need an{" "}
+              <Link href="/services/inspection/out-of-province-inspection" className="text-[#384959] underline">out of province inspection</Link>{" "}
+              before you can register it.
+          </>
+        }
+        label="Book Your Used Car Inspection"
+      />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks

@@ -1,9 +1,10 @@
 // app/services/flushes/transmission-service/page.tsx
-import Image from "next/image"
-import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import StepsSection from "@/components/StepsSection"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Transmission Service Edmonton | Fluid Change & Flush",
@@ -37,81 +38,70 @@ export default function TransmissionService() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Transmission Service in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Transmission fluid cools and protects the parts inside your transmission, and it wears out with heat and
+      <PageHero
+        heading="Transmission Service in Edmonton"
+        cta="Book a Transmission Service"
+        image={{ src: "/images/transmission-service.jpg", alt: "Mechanic doing a transmission service and transmission fluid change in Edmonton" }}
+      >
+        Transmission fluid cools and protects the parts inside your transmission, and it wears out with heat and
           time. Leung's Auto Service does transmission service, including transmission fluid change service and
           transmission flushes, on domestic and import vehicles at our shop in West Edmonton.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book a Transmission Service
-        </Link>
-      </section>
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/transmission-service.jpg"
-            alt="Mechanic doing a transmission service and transmission fluid change in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-5 lg:gap-10">
+          <div className="lg:col-span-2">
+            <h2 className="accent-heading text-3xl font-bold">Signs You Need a Transmission Fluid Change</h2>
+          </div>
+          <div className="lg:col-span-3">
+            <ul className="checks text-lg text-[#384959]">
+              <li>Transmission fluid that looks dark or smells burnt</li>
+              <li>Rough, delayed, or slipping shifts</li>
+              <li>The car hesitates before moving in drive or reverse</li>
+              <li>A transmission warning light on the dashboard</li>
+              <li>You tow, haul heavy loads, or do a lot of stop-and-go driving</li>
+              <li>It has been a long time since your last transmission service</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* ===== SIGNS ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Signs You Need a Transmission Fluid Change</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>Transmission fluid that looks dark or smells burnt</li>
-            <li>Rough, delayed, or slipping shifts</li>
-            <li>The car hesitates before moving in drive or reverse</li>
-            <li>A transmission warning light on the dashboard</li>
-            <li>You tow, haul heavy loads, or do a lot of stop-and-go driving</li>
-            <li>It has been a long time since your last transmission service</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* ===== FLUID CHANGE VS FLUSH ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Transmission Fluid Change Service vs. Transmission Flush</h2>
-          <p className="mt-4 text-lg">
+      <PanelSection gray heading="Transmission Fluid Change Service vs. Transmission Flush">
+        <Panel label="Fluid change service">
+          <p className="mt-4 text-lg text-gray-700">
             A transmission fluid change service drains the old fluid from the pan and refills it with fresh fluid.
             It replaces part of the fluid each time, so regular changes keep it in good shape.
           </p>
-          <p className="mt-4 text-lg">
+        </Panel>
+        <Panel label="Transmission flush" dark>
+          <p className="mt-4 text-lg text-white/90">
             A transmission service flush, also called an automatic transmission fluid flush, pushes out nearly all
             of the old fluid and replaces it with new fluid. It's a more complete change in one visit.
           </p>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What Our Transmission Service Includes</h2>
-          <p className="mt-4 text-lg">
-            We check the condition of the old fluid, replace it with fluid that meets your vehicle's specification,
-            and check for leaks. If the fluid points to a deeper problem, we explain what we find before going any
-            further. You approve the work and the price before we start.
-          </p>
-        </div>
-      </section>
+      <StepsSection
+        heading="What Our Transmission Service Includes"
+        steps={[
+          { title: "Check the old fluid", text: "Its condition tells us how the transmission is doing" },
+          { title: "Replace the fluid", text: "Fluid that meets your vehicle's specification" },
+          { title: "Check for leaks", text: "And explain anything we find before going further" },
+        ]}
+      >
+        <p className="mt-4 text-lg text-gray-700">
+          We check the condition of the old fluid, replace it with fluid that meets your vehicle's specification,
+          and check for leaks. If the fluid points to a deeper problem, we explain what we find before going any
+          further. You approve the work and the price before we start.
+        </p>
+      </StepsSection>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Transmission Service FAQ" faqs={faqs} />
+      <Faq title="Transmission Service FAQ" faqs={faqs} split gray />
 
       <BookingCta
         heading="Book a Transmission Service in West Edmonton"
         text="We'll check your transmission fluid and give you a price before any work starts."
         label="Get a Transmission Fluid Change Quote"
-        gray
       />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}

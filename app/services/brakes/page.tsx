@@ -1,11 +1,17 @@
 // app/services/brakes/page.tsx
-import Image from "next/image"
 import Link from "next/link"
+import {
+  ArrowRight,
+  ChevronDown,
+} from "lucide-react"
+import BookingCta from "@/components/BookingCta"
 import OtherServices from "@/components/OtherServices"
 import Reviews from "@/components/Reviews"
 import { reviewsBy } from "@/lib/reviews"
 import { business } from "@/lib/business"
 import { services } from "@/lib/services"
+import PageHero from "@/components/PageHero"
+import { spokeIcon } from "@/lib/spokeIcons"
 
 export const metadata = {
   title: "Brake Repair Edmonton | Brake Inspection & Brake Service",
@@ -63,6 +69,33 @@ const faqSchema = {
   })),
 }
 
+// Warning signs, shown as a numbered list
+const signs = [
+  "Squealing, squeaking, or grinding when you brake",
+  "A soft or spongy brake pedal, or one that sinks toward the floor",
+  "The car pulls to one side when braking",
+  "Shaking in the steering wheel or brake pedal when you stop",
+  "A brake or ABS warning light on the dashboard",
+  "A burning smell or fluid leaking near a wheel",
+]
+
+// What the brake inspection covers
+const inspectionChecks = [
+  "Brake pad thickness and wear on every wheel",
+  "Rotors for grooves, warping, and rust",
+  "Calipers and caliper slides for sticking or leaks",
+  "Brake lines and hoses for rust, cracks, and leaks",
+  "Brake fluid level and condition",
+  "The parking brake and any dashboard warning lights",
+]
+
+// Quick facts beside the "why choose us" text
+const shopFacts = [
+  { value: "Since 2002", label: "Serving Edmonton drivers" },
+  { value: "AMVIC Certified", label: "Independent brake repair shop" },
+  { value: "See the Worn Parts", label: "Only the brake service you need" },
+]
+
 export default function BrakeRepair() {
   return (
     <main className="flex-1">
@@ -73,173 +106,200 @@ export default function BrakeRepair() {
         }}
       />
 
-      {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Brake Repair in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Leung&apos;s Auto Service is an independent brake repair shop in West Edmonton. We do brake inspections and
-          full brake service on domestic and import vehicles, and tell you what your brakes need before we start.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book Brake Repair
-        </Link>
-      </section>
-
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/brake-repair.jpg"
-            alt="Mechanic doing a brake inspection and brake repair at an Edmonton brake repair shop"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
-        </div>
-      </section>
+      {/* ===== INTRO: text on the left, photo on the right (stacked on phones) ===== */}
+      <PageHero
+        heading="Brake Repair in Edmonton"
+        cta="Book Brake Repair"
+        eyebrow="West Edmonton Brake Shop"
+        image={{ src: "/images/brake-repair.jpg", alt: "Mechanic doing a brake inspection and brake repair at an Edmonton brake repair shop" }}
+      >
+        Leung&apos;s Auto Service is an independent brake repair shop in West Edmonton. We do brake inspections and
+        full brake service on domestic and import vehicles, and tell you what your brakes need before we start.
+      </PageHero>
 
       {/* ===== SPECIFIC SERVICES: one card per brake repair page ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <h2 className="text-center text-3xl font-bold">Choose the Brake Service You Need</h2>
-        <div className="mx-auto mt-8 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {brakes.spokes.map((spoke) => (
-            <Link
-              key={spoke.href}
-              href={spoke.href}
-              className="flex flex-col rounded bg-white p-6 shadow hover:shadow-md"
-            >
-              <h3 className="text-xl font-bold text-[#2D3047]">{spoke.title}</h3>
-              <p className="mt-2 flex-1 text-gray-600">{spoke.blurb}</p>
-              <span className="mt-4 font-bold text-[#2D3047] underline">Learn more</span>
-            </Link>
-          ))}
+      <section className="px-6 py-16">
+        <h2 className="text-center text-3xl font-bold md:text-4xl">Choose the Brake Service You Need</h2>
+        <div className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {brakes.spokes.map((spoke) => {
+            const Icon = spokeIcon(spoke.href)
+            return (
+              <Link
+                key={spoke.href}
+                href={spoke.href}
+                className="group flex flex-col rounded-xl border border-[#BDDDFC] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#6A89A7] hover:shadow-lg"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#384959] text-[#BDDDFC] transition group-hover:bg-[#6A89A7] group-hover:text-white">
+                  <Icon size={28} />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-[#384959]">{spoke.title}</h3>
+                <p className="mt-2 flex-1 text-gray-600">{spoke.blurb}</p>
+                <ArrowRight className="mt-4 text-[#6A89A7] transition group-hover:translate-x-1" size={20} aria-hidden="true" />
+              </Link>
+            )
+          })}
         </div>
       </section>
 
-      {/* ===== SIGNS ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold md:text-4xl">Signs You Need Brake Repair</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>Squealing, squeaking, or grinding when you brake</li>
-            <li>A soft or spongy brake pedal, or one that sinks toward the floor</li>
-            <li>The car pulls to one side when braking</li>
-            <li>Shaking in the steering wheel or brake pedal when you stop</li>
-            <li>A brake or ABS warning light on the dashboard</li>
-            <li>A burning smell or fluid leaking near a wheel</li>
-          </ul>
-          <p className="mt-4 text-lg">
-            Hearing a squeal or grind? See our{" "}
-            <Link href="/services/brakes/brake-pad-replacement" className="text-[#2D3047] underline">Brake Pad Replacement</Link>{" "}
-            page. ABS light on? See{" "}
-            <Link href="/services/brakes/abs-brake-repair" className="text-[#2D3047] underline">ABS Brake Repair</Link>.
-          </p>
-        </div>
-      </section>
+      {/* ===== SIGNS: heading and shortcuts on the left, the signs as a divided list on the right ===== */}
+      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-5 lg:gap-10">
+          <div className="lg:col-span-2">
+            <h2 className="accent-heading text-3xl font-bold md:text-4xl">Signs You Need Brake Repair</h2>
+            {/* Shortcut to the two pages people with these symptoms usually need */}
+            <p className="mt-6 text-lg text-gray-700">
+              Hearing a squeal or grind? See our{" "}
+              <Link href="/services/brakes/brake-pad-replacement" className="font-bold text-[#384959] underline">Brake Pad Replacement</Link>{" "}
+              page. ABS light on? See{" "}
+              <Link href="/services/brakes/abs-brake-repair" className="font-bold text-[#384959] underline">ABS Brake Repair</Link>.
+            </p>
+          </div>
 
-      {/* ===== BRAKE INSPECTION ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold md:text-4xl">Brake Inspection</h2>
-          <p className="mt-4 text-lg">
-            Every brake repair starts with a brake inspection, so you only pay for the parts that actually need
-            replacing. We check:
-          </p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>Brake pad thickness and wear on every wheel</li>
-            <li>Rotors for grooves, warping, and rust</li>
-            <li>Calipers and caliper slides for sticking or leaks</li>
-            <li>Brake lines and hoses for rust, cracks, and leaks</li>
-            <li>Brake fluid level and condition</li>
-            <li>The parking brake and any dashboard warning lights</li>
-          </ul>
-          <p className="mt-4 text-lg">
-            We show you what we find and explain what&apos;s urgent and what can wait. You approve the work and the
-            price before we start.
-          </p>
-        </div>
-      </section>
-
-      {/* ===== BRAKE SERVICE & MAINTENANCE ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold md:text-4xl">Brake Service and Brake Maintenance</h2>
-          <p className="mt-4 text-lg">
-            Regular brake maintenance keeps small problems from turning into expensive repairs. Edmonton winters are
-            hard on brakes: road salt and moisture rust rotors, brake lines, and caliper slides, and stop-and-go city
-            driving wears pads faster.
-          </p>
-
-          <h3 className="mt-8 text-2xl font-bold">Brake Maintenance Tips</h3>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>
-              Have a brake inspection at least once a year, or at your{" "}
-              <Link href="/services/maintenance/tire-change" className="text-[#2D3047] underline">seasonal tire change</Link>
-            </li>
-            <li>Replace brake pads before they wear down to the metal, to save your rotors</li>
-            <li>
-              Change the brake fluid on schedule. See our{" "}
-              <Link href="/services/brakes/brake-fluid-flush" className="text-[#2D3047] underline">Brake Fluid Flush</Link>{" "}
-              page
-            </li>
-            <li>Get any new noise, vibration, or warning light checked early</li>
+          <ul className="divide-y divide-[#6A89A7]/30 border-y border-[#6A89A7]/30 lg:col-span-3">
+            {signs.map((sign, i) => (
+              <li key={sign} className="flex items-baseline gap-5 py-4">
+                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-lg text-[#384959]">{sign}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
 
-      {/* ===== WHY US ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold md:text-4xl">Why Choose Our Brake Repair Shop</h2>
-          <p className="mt-4 text-lg">
-            Leung&apos;s Auto Service has served Edmonton drivers since 2002. We&apos;re an independent, AMVIC
-            certified brake repair shop at {business.street} in West Edmonton. We show you the worn parts and only
-            recommend the brake service your vehicle needs.
-          </p>
+      {/* ===== BRAKE INSPECTION: explanation beside a checklist card ===== */}
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2">
+          <div>
+            <h2 className="accent-heading text-3xl font-bold md:text-4xl">Brake Inspection</h2>
+            <p className="mt-6 text-lg text-gray-700">
+              Every brake repair starts with a brake inspection, so you only pay for the parts that actually need
+              replacing. We check:
+            </p>
+            <p className="mt-4 text-lg text-gray-700">
+              We show you what we find and explain what&apos;s urgent and what can wait. You approve the work and the
+              price before we start.
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-[#384959] p-8 text-white shadow-xl">
+            <p className="text-xl font-bold">What we check</p>
+            <div className="mt-3 h-1 w-12 rounded bg-[#BDDDFC]" />
+            <ul className="mt-6 space-y-4">
+              {inspectionChecks.map((check) => (
+                <li key={check} className="flex items-start gap-3 text-lg">
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#BDDDFC] text-[#384959]">
+                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                  </span>
+                  {check}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS: real Google reviews, laid out like the home page ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">Brake Repair Reviews from Our Customers</h2>
-        <p className="mt-4 text-lg md:text-xl">
-          Here's what customers have said about their brake repair at Leung's Auto Service.
-        </p>
+      {/* ===== BRAKE SERVICE & MAINTENANCE: same layout as the signs section, text left and tips as a divided list ===== */}
+      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-5 lg:gap-10">
+          <div className="lg:col-span-2">
+            <h2 className="accent-heading text-3xl font-bold md:text-4xl">Brake Service and Brake Maintenance</h2>
+            <p className="mt-6 text-lg text-gray-700">
+              Regular brake maintenance keeps small problems from turning into expensive repairs. Edmonton winters are
+              hard on brakes: road salt and moisture rust rotors, brake lines, and caliper slides, and stop-and-go city
+              driving wears pads faster.
+            </p>
+          </div>
 
-        <Reviews reviews={reviewsBy("Ace")} />
+          <div className="lg:col-span-3">
+            <h3 className="text-2xl font-bold text-[#384959]">Brake Maintenance Tips</h3>
+            <ol className="mt-4 divide-y divide-[#6A89A7]/30 border-y border-[#6A89A7]/30">
+              <li className="flex items-baseline gap-5 py-4">
+                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">01</span>
+                <span className="text-lg text-[#384959]">
+                  Have a brake inspection at least once a year, or at your{" "}
+                  <Link href="/services/maintenance/tire-change" className="font-bold underline">seasonal tire change</Link>
+                </span>
+              </li>
+              <li className="flex items-baseline gap-5 py-4">
+                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">02</span>
+                <span className="text-lg text-[#384959]">Replace brake pads before they wear down to the metal, to save your rotors</span>
+              </li>
+              <li className="flex items-baseline gap-5 py-4">
+                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">03</span>
+                <span className="text-lg text-[#384959]">
+                  Change the brake fluid on schedule. See our{" "}
+                  <Link href="/services/brakes/brake-fluid-flush" className="font-bold underline">Brake Fluid Flush</Link>{" "}
+                  page
+                </span>
+              </li>
+              <li className="flex items-baseline gap-5 py-4">
+                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">04</span>
+                <span className="text-lg text-[#384959]">Get any new noise, vibration, or warning light checked early</span>
+              </li>
+            </ol>
+          </div>
+        </div>
       </section>
 
-      {/* ===== FAQ ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Brake Repair FAQ</h2>
-          {faqs.map((faq) => (
-            <div key={faq.question} className="mt-8">
-              <h3 className="text-2xl font-bold">{faq.question}</h3>
-              <p className="mt-2 text-lg">{faq.answer}</p>
+      {/* ===== WHY US + REVIEW: shop facts on the left, customer review on the right ===== */}
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
+          <div>
+            <h2 className="accent-heading text-3xl font-bold md:text-4xl">Why Choose Our Brake Repair Shop</h2>
+            <p className="mt-6 text-lg text-gray-700">
+              Leung&apos;s Auto Service has served Edmonton drivers since 2002. We&apos;re an independent, AMVIC
+              certified brake repair shop at {business.street} in West Edmonton. We show you the worn parts and only
+              recommend the brake service your vehicle needs.
+            </p>
+            <div className="mt-8 grid gap-6 border-t border-[#BDDDFC] pt-6 sm:grid-cols-3">
+              {shopFacts.map((fact) => (
+                <div key={fact.value}>
+                  <p className="text-lg font-bold text-[#384959]">{fact.value}</p>
+                  <p className="mt-1 text-sm text-gray-600">{fact.label}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* TESTIMONIALS: real Google review */}
+          <div className="rounded-2xl bg-[#BDDDFC]/40 p-8 text-center">
+            <h2 className="text-2xl font-bold md:text-3xl">Brake Repair Reviews from Our Customers</h2>
+            <p className="mt-4 text-lg text-gray-700">
+              Here&apos;s what customers have said about their brake repair at Leung&apos;s Auto Service.
+            </p>
+            <Reviews reviews={reviewsBy("Ace")} onGray />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ: click a question to open its answer (answers stay in the page for Google) ===== */}
+      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-3xl font-bold md:text-4xl">Brake Repair FAQ</h2>
+          <div className="mt-10 space-y-3">
+            {faqs.map((faq) => (
+              <details key={faq.question} className="group rounded-xl bg-white shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 [&::-webkit-details-marker]:hidden">
+                  <h3 className="text-lg font-bold text-[#384959] md:text-xl">{faq.question}</h3>
+                  <ChevronDown className="shrink-0 text-[#6A89A7] transition group-open:rotate-180" size={22} />
+                </summary>
+                <p className="px-5 pb-5 text-lg text-gray-700">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ===== CALL TO ACTION ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">Book Brake Service in West Edmonton</h2>
-        <p className="mt-4 text-lg md:text-xl">
-          Tell us what your brakes are doing and we&apos;ll book a brake inspection to find the cause.
-        </p>
-        <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link href="/contact" className="rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Book a Brake Inspection
-          </Link>
-          <a href={business.phoneHref} className="rounded border border-[#2D3047] px-6 py-3 font-bold text-[#2D3047] hover:bg-gray-100">
-            Call {business.phone}
-          </a>
-        </div>
-        <p className="mt-6">
-          <Link href="/services" className="text-[#2D3047] underline">See all automotive services</Link>
-        </p>
-      </section>
+      <BookingCta
+        heading="Book Brake Service in West Edmonton"
+        text="Tell us what your brakes are doing and we'll book a brake inspection to find the cause."
+        label="Book a Brake Inspection"
+      >
+        <Link href="/services" className="underline hover:text-white">See all automotive services</Link>
+      </BookingCta>
 
       <OtherServices current="/services/brakes" />
 

@@ -1,6 +1,24 @@
 // app/about/page.tsx
 import Image from "next/image"
 import Link from "next/link"
+import {
+  ArrowRight,
+  BadgeCheck,
+  CalendarCheck,
+  Car,
+  ClipboardCheck,
+  Clock,
+  Disc,
+  Droplet,
+  Gauge,
+  Handshake,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Users,
+} from "lucide-react"
+import { business } from "@/lib/business"
+import PageHero from "@/components/PageHero"
 
 export const metadata = {
   title: "About Leung's Auto Service | Auto Repair Shop in Edmonton",
@@ -11,63 +29,176 @@ export const metadata = {
   },
 }
 
+// Quick facts shown in the strip under the intro
+const facts = [
+  { icon: CalendarCheck, label: "Serving Edmonton", value: "Since 2002" },
+  { icon: BadgeCheck, label: "Licensed shop", value: "AMVIC Certified" },
+  { icon: Car, label: "We work on", value: "Domestic & Import" },
+  { icon: Users, label: "Run by", value: "Owner Allan Leung" },
+]
+
+// How the shop works with customers
+const values = [
+  {
+    icon: MessageSquare,
+    title: "We Explain First",
+    text: "Before any repair starts, we tell you what is wrong and what it will take to fix it.",
+  },
+  {
+    icon: Handshake,
+    title: "Fair, Honest Pricing",
+    text: "You know what you are paying for before we pick up a wrench. No surprises on the bill.",
+  },
+  {
+    icon: Users,
+    title: "Customers Who Come Back",
+    text: "Most of our customers return, and many send their friends and family our way.",
+  },
+]
+
+// The work the shop does most, each linked with keyword anchor text
+const mainServices = [
+  { icon: Disc, title: "Brake repair", href: "/services/brakes" },
+  { icon: Gauge, title: "Car diagnostics", href: "/services/diagnostics" },
+  { icon: Droplet, title: "Oil changes", href: "/services/maintenance/oil-change-services" },
+  { icon: ClipboardCheck, title: "Out of province inspections", href: "/services/inspection/out-of-province-inspection" },
+]
+
+const mapsQuery = encodeURIComponent(business.mapsQuery)
+
 export default function About() {
   return (
     <main className="flex-1">
 
-      {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">About Leung's Auto Service</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Leung's Auto Service is an independent auto repair shop in West Edmonton, run by owner Allan Leung
-          and serving local drivers since 2002.
-        </p>
+      {/* Trial colour palette on this page only: #384959 slate, #6A89A7 steel blue, #BDDDFC light blue */}
+
+      {/* ===== INTRO: shop photo behind the headline ===== */}
+      <PageHero
+        heading="About Leung's Auto Service"
+        eyebrow="West Edmonton · Since 2002"
+        image={{ src: "/images/about-leungs-auto.jpg", alt: "Inside Leung's Auto Service, an independent auto repair shop in West Edmonton" }}
+      >
+        Leung&apos;s Auto Service is an independent auto repair shop in West Edmonton, run by owner Allan Leung
+        and serving local drivers since 2002.
+      </PageHero>
+
+      {/* ===== FACTS: 2 columns on phones, 4 across from md up ===== */}
+      <section className="px-6">
+        <div className="relative z-10 mx-auto -mt-8 grid max-w-5xl grid-cols-2 gap-4 rounded-lg bg-white p-6 shadow-lg md:grid-cols-4">
+          {facts.map((fact) => (
+            <div key={fact.value} className="flex flex-col items-center text-center">
+              <fact.icon className="text-[#6A89A7]" size={28} />
+              <p className="mt-2 font-bold text-[#384959]">{fact.value}</p>
+              <p className="text-sm text-gray-600">{fact.label}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* ===== STORY: photo beside text on desktop, stacked on phones ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 md:flex-row">
+      <section className="px-6 py-16">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 md:flex-row">
 
           {/* Shop photo */}
-          <div className="relative h-72 w-full md:h-96 md:w-1/2">
+          <div className="relative h-72 w-full overflow-hidden rounded-lg shadow-lg ring-4 ring-[#BDDDFC] md:h-[28rem] md:w-1/2">
             <Image
               src="/images/front.jpeg"
               alt="Front of Leung's Auto Service, an independent auto repair shop on 149 Street in West Edmonton"
               fill
-              className="rounded object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
 
           {/* Story text */}
           <div className="md:w-1/2">
-            <h2 className="text-3xl font-bold">Honest Auto Repair at Fair Prices</h2>
-            <p className="mt-4 text-lg">
+            <h2 className="text-3xl font-bold text-[#384959] md:text-4xl">Honest Auto Repair at Fair Prices</h2>
+            <div className="mt-3 h-1 w-16 rounded bg-[#6A89A7]" />
+            <p className="mt-6 text-lg text-gray-700">
               We work on both domestic and import vehicles. Before any repair starts, we explain what is wrong
               and what it will take to fix, so you know what you are paying for.
             </p>
-            <p className="mt-4 text-lg">
+            <p className="mt-4 text-lg text-gray-700">
               The shop is AMVIC certified, and most of our customers come back or send their friends and family.
-            </p>
-            <p className="mt-4 text-lg">
-              Most of our work is{" "}
-              <Link href="/services/brakes" className="text-[#2D3047] underline">brake repair</Link>,{" "}
-              <Link href="/services/diagnostics" className="text-[#2D3047] underline">car diagnostics</Link>,{" "}
-              <Link href="/services/maintenance/oil-change-services" className="text-[#2D3047] underline">oil changes</Link>,{" "}
-              and{" "}
-              <Link href="/services/inspection/out-of-province-inspection" className="text-[#2D3047] underline">out of province inspections</Link>.{" "}
-              <Link href="/services" className="text-[#2D3047] underline">See all our automotive services</Link>.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ===== CALL TO ACTION ===== */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-3xl font-bold md:text-4xl">Visit Our Auto Repair Shop in West Edmonton</h2>
-        <p className="mt-4 text-lg md:text-xl">12025 149 St NW, Edmonton, AB T5L 2J2</p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book an Appointment
+      {/* ===== VALUES: how we treat every customer ===== */}
+      <section className="bg-[#BDDDFC]/40 px-6 py-16 text-center">
+        <h2 className="text-3xl font-bold text-[#384959] md:text-4xl">Why Edmonton Drivers Trust Our Shop</h2>
+        <div className="mx-auto mt-10 grid max-w-5xl gap-6 text-left md:grid-cols-3">
+          {values.map((value) => (
+            <div key={value.title} className="rounded-lg border-t-4 border-[#6A89A7] bg-white p-6 shadow">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+                <value.icon size={24} />
+              </div>
+              <h3 className="mt-4 text-xl font-bold text-[#384959]">{value.title}</h3>
+              <p className="mt-2 text-gray-700">{value.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== SERVICES: the work we do most ===== */}
+      <section className="px-6 py-16 text-center">
+        <h2 className="text-3xl font-bold text-[#384959] md:text-4xl">Our Most Requested Auto Repairs</h2>
+        <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-700">
+          Most of our work is brakes, diagnostics, oil changes, and inspections.
+        </p>
+        <div className="mx-auto mt-10 grid max-w-5xl gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+          {mainServices.map((service) => (
+            <Link
+              key={service.href}
+              href={service.href}
+              className="group flex items-center gap-3 rounded-lg border border-[#BDDDFC] p-5 transition hover:border-[#6A89A7] hover:bg-[#BDDDFC]/30 hover:shadow-md"
+            >
+              <service.icon className="shrink-0 text-[#6A89A7]" size={26} />
+              <span className="flex-1 font-bold text-[#384959]">{service.title}</span>
+              <ArrowRight className="shrink-0 text-[#6A89A7] transition group-hover:translate-x-1" size={18} />
+            </Link>
+          ))}
+        </div>
+        <Link href="/services" className="mt-8 inline-block font-bold text-[#384959] underline">
+          See all our automotive services
         </Link>
+      </section>
+
+      {/* ===== CALL TO ACTION: address, hours, and booking ===== */}
+      <section className="px-6 pb-16">
+        <div className="mx-auto max-w-5xl rounded-2xl bg-[#384959] px-6 py-12 text-center text-white shadow-lg md:px-12">
+          <h2 className="text-3xl font-bold md:text-4xl">Visit Our Auto Repair Shop in West Edmonton</h2>
+
+          <div className="mx-auto mt-6 flex max-w-3xl flex-col items-center justify-center gap-4 text-lg text-white/90 md:flex-row md:gap-10">
+            <a
+              href={`https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:underline"
+            >
+              <MapPin size={20} />
+              {business.street}, {business.city}, {business.province} {business.postalCode}
+            </a>
+            <p className="flex items-center gap-2">
+              <Clock size={20} />
+              {business.hoursDays}, {business.hoursTime}
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/contact" className="rounded bg-[#BDDDFC] px-6 py-3 font-bold text-[#384959] hover:bg-white">
+              Book Auto Repair
+            </Link>
+            <a
+              href={business.phoneHref}
+              className="inline-flex items-center gap-2 rounded border border-[#BDDDFC] px-6 py-3 font-bold text-[#BDDDFC] hover:bg-white/10"
+            >
+              <Phone size={18} />
+              Call {business.phone}
+            </a>
+          </div>
+        </div>
       </section>
 
     </main>

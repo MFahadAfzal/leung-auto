@@ -1,9 +1,11 @@
 // app/services/maintenance/oil-change-services/page.tsx
-import Image from "next/image"
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import StepsSection from "@/components/StepsSection"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Quick Oil Change Services Edmonton | Leung's Auto Service",
@@ -42,74 +44,58 @@ export default function OilChangeServices() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Oil Change Services in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Fresh oil protects your engine's moving parts from wear. Leung's Auto Service
+      <PageHero
+        heading="Oil Change Services in Edmonton"
+        cta="Book a Quick Oil Change"
+        image={{ src: "/images/oil-change-services.jpg", alt: "Mechanic doing a quick oil change at Leung's Auto Service, offering oil change services in Edmonton" }}
+      >
+        Fresh oil protects your engine's moving parts from wear. Leung's Auto Service
           offers quick oil change services for domestic and import vehicles at our shop in West Edmonton, with
           synthetic or conventional oil to match your engine.
+      </PageHero>
+
+      <StepsSection
+        heading="Quick Oil Change in West Edmonton"
+        steps={[
+          { text: "Draining the old oil and replacing the oil filter" },
+          { text: "Refilling with synthetic or conventional oil that meets your vehicle's specification" },
+          { text: "A quick check for leaks and anything else that needs attention" },
+          { text: "Resetting your oil change reminder, and telling you when your next one is due" },
+        ]}
+      >
+        <p className="mt-4 text-lg text-gray-700">
+          An oil change shouldn't take your whole day. Book ahead and we'll have your car in and out quickly, with
+          the same care we give every job. Our oil changing services include:
         </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book a Quick Oil Change
-        </Link>
-      </section>
+      </StepsSection>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/oil-change-services.jpg"
-            alt="Mechanic doing a quick oil change at Leung's Auto Service, offering oil change services in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
-        </div>
-      </section>
-
-      {/* ===== QUICK OIL CHANGE ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Quick Oil Change in West Edmonton</h2>
-          <p className="mt-4 text-lg">
-            An oil change shouldn't take your whole day. Book ahead and we'll have your car in and out quickly, with
-            the same care we give every job. Our oil changing services include:
-          </p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>Draining the old oil and replacing the oil filter</li>
-            <li>Refilling with synthetic or conventional oil that meets your vehicle's specification</li>
-            <li>A quick check for leaks and anything else that needs attention</li>
-            <li>Resetting your oil change reminder, and telling you when your next one is due</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* ===== SIGNS YOU NEED AN OIL CHANGE ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Signs You Need an Oil Change</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
+      <PanelSection gray aside>
+        <Panel>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need an Oil Change</h2>
+          <ul className="checks mt-6 text-lg text-[#384959]">
             <li>The oil change or maintenance reminder light is on</li>
             <li>The oil on the dipstick looks dark, gritty, or low</li>
             <li>The engine sounds louder or makes a ticking noise</li>
             <li>A burning oil smell inside or around the car</li>
             <li>You've driven past the kilometres on your last oil change sticker</li>
           </ul>
-          <p className="mt-4 text-lg">
+        </Panel>
+        <Panel label="Good to know" dark>
+          <p className="mt-4 text-lg text-white/90">
             Due for a{" "}
-            <Link href="/services/maintenance/tire-change" className="text-[#2D3047] underline">seasonal tire change</Link> too? Book both and we&apos;ll do them in
+            <Link href="/services/maintenance/tire-change" className="text-[#BDDDFC] underline">seasonal tire change</Link> too? Book both and we&apos;ll do them in
             one visit.
           </p>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Oil Change FAQ" faqs={faqs} gray />
+      <Faq title="Oil Change FAQ" faqs={faqs} split />
 
       <BookingCta
         heading="Book a Quick Oil Change in West Edmonton"
         text="Book ahead and we'll have you in and out quickly, with the price up front."
         label="Get an Oil Change Quote"
+        gray
       />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}

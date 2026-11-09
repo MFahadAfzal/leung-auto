@@ -1,8 +1,10 @@
 // app/services/inspection/out-of-province-inspection/page.tsx
-import Image from "next/image"
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import BookingCta from "@/components/BookingCta"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Out of Province Inspection Edmonton | Leung's Auto Service",
@@ -45,42 +47,19 @@ export default function OutOfProvinceInspection() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Out of Province Inspection in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Moving to Alberta or buying a vehicle from another province? You need an out of province inspection before
+      <PageHero
+        heading="Out of Province Inspection in Edmonton"
+        cta="Book an Out of Province Inspection"
+        image={{ src: "/images/out-of-province-inspection.jpg", alt: "Technician doing an Alberta out of province inspection at Leung's Auto Service in Edmonton" }}
+      >
+        Moving to Alberta or buying a vehicle from another province? You need an out of province inspection before
           you can register it here. Leung's Auto Service does out of province inspections on domestic and import
           vehicles at our shop in West Edmonton.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book an Out of Province Inspection
-        </Link>
-      </section>
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/out-of-province-inspection.jpg"
-            alt="Technician doing an Alberta out of province inspection at Leung's Auto Service in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
-        </div>
-      </section>
-
-      {/* ===== HOW IT WORKS ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">How the Alberta Out of Province Inspection Works</h2>
-          <ol className="mt-4 list-decimal space-y-2 pl-6 text-lg">
-            <li>Buy a Request for Vehicle Inspection form from any Alberta registry agent.</li>
-            <li>Book your inspection with us and bring the vehicle and the form to our shop.</li>
-            <li>We inspect the vehicle against Alberta's safety and equipment standards. Most inspections take about two hours.</li>
-            <li>If the vehicle passes, we give you an out of province inspection certificate.</li>
-            <li>Take the certificate to a registry agent within 14 days to register the vehicle and get your plates.</li>
-          </ol>
+      <PanelSection>
+        <Panel>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">How the Alberta Out of Province Inspection Works</h2>
           <p className="mt-4 text-sm text-gray-600">
             Source:{" "}
             <a
@@ -92,23 +71,26 @@ export default function OutOfProvinceInspection() {
               Government of Alberta, Out-of-province vehicle inspections
             </a>
           </p>
-          <p className="mt-4 text-lg">
+          <p className="mt-4 text-lg text-gray-700">
             Buying a used vehicle from out of province? Get a{" "}
-            <Link href="/services/inspection/pre-purchase-inspection" className="text-[#2D3047] underline">pre-purchase inspection</Link> before you pay, so you
+            <Link href="/services/inspection/pre-purchase-inspection" className="text-[#384959] underline">pre-purchase inspection</Link> before you pay, so you
             know what you&apos;re buying.
           </p>
-        </div>
-      </section>
-
-      {/* ===== WHAT'S CHECKED ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What an Out of Province Inspection Checks</h2>
-          <p className="mt-4 text-lg">
+          <ol className="steps mt-6 text-lg text-[#384959]">
+            <li>Buy a Request for Vehicle Inspection form from any Alberta registry agent.</li>
+            <li>Book your inspection with us and bring the vehicle and the form to our shop.</li>
+            <li>We inspect the vehicle against Alberta's safety and equipment standards. Most inspections take about two hours.</li>
+            <li>If the vehicle passes, we give you an out of province inspection certificate.</li>
+            <li>Take the certificate to a registry agent within 14 days to register the vehicle and get your plates.</li>
+          </ol>
+        </Panel>
+        <Panel dark>
+          <h2 className="accent-heading text-2xl font-bold text-white md:text-3xl">What an Out of Province Inspection Checks</h2>
+          <p className="mt-4 text-lg text-white/90">
             The inspection follows the province's inspection manual and checks that the
             vehicle meets Alberta safety standards. This includes:
           </p>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
+          <ul className="checks mt-6 text-lg text-white/90">
             <li>Brakes, including pads, rotors, lines, and the parking brake</li>
             <li>Steering and suspension</li>
             <li>Tires and wheels</li>
@@ -116,26 +98,22 @@ export default function OutOfProvinceInspection() {
             <li>Windshield, mirrors, and seatbelts</li>
             <li>Exhaust, fuel system, and frame</li>
           </ul>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Out of Province Inspection FAQ" faqs={faqs} gray />
+      <Faq title="Out of Province Inspection FAQ" faqs={faqs} split gray />
 
-      {/* ===== NEAR ME / LOCATION ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Out of Province Inspection Near Me in Edmonton</h2>
-          <p className="mt-4 text-lg">
+      <BookingCta
+        heading="Out of Province Inspection Near Me in Edmonton"
+        text={
+          <>
             Looking for an out of province inspection near you? Leung's Auto Service is at 12025 149 St NW in West
-            Edmonton, and has served Edmonton drivers since 2002. Call us at 780-452-0134 to set up
-            your inspection.
-          </p>
-          <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-            Book Your Out of Province Inspection
-          </Link>
-        </div>
-      </section>
+              Edmonton, and has served Edmonton drivers since 2002. Call us at 780-452-0134 to set up
+              your inspection.
+          </>
+        }
+        label="Book Your Out of Province Inspection"
+      />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks

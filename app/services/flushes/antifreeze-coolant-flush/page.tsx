@@ -1,9 +1,10 @@
 // app/services/flushes/antifreeze-coolant-flush/page.tsx
-import Image from "next/image"
-import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import StepsSection from "@/components/StepsSection"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Antifreeze Coolant Flush Edmonton | Leung's Auto Service",
@@ -42,73 +43,56 @@ export default function AntifreezeCoolantFlush() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Antifreeze Coolant Flush in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Antifreeze keeps your engine from overheating in summer and freezing in an Edmonton winter. Over time it
+      <PageHero
+        heading="Antifreeze Coolant Flush in Edmonton"
+        cta="Book an Antifreeze Flush"
+        image={{ src: "/images/antifreeze-coolant-flush.jpg", alt: "Mechanic doing an antifreeze coolant flush and radiator flush at Leung's Auto Service in Edmonton" }}
+      >
+        Antifreeze keeps your engine from overheating in summer and freezing in an Edmonton winter. Over time it
           breaks down and stops protecting the cooling system. Leung's Auto Service does antifreeze flushes and
           radiator flushes on domestic and import vehicles at our shop in West Edmonton.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book an Antifreeze Flush
-        </Link>
-      </section>
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/antifreeze-coolant-flush.jpg"
-            alt="Mechanic doing an antifreeze coolant flush and radiator flush at Leung's Auto Service in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
-        </div>
-      </section>
-
-      {/* ===== SIGNS YOU NEED A FLUSH ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Signs You Need an Antifreeze Flush</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
+      <PanelSection>
+        <Panel>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need an Antifreeze Flush</h2>
+          <ul className="checks mt-6 text-lg text-[#384959]">
             <li>The temperature gauge runs higher than normal</li>
             <li>Antifreeze that looks rusty, cloudy, or has bits floating in it</li>
             <li>A sweet smell from the engine bay</li>
             <li>The heater doesn't blow as hot as it used to</li>
             <li>It has been several years since the coolant was last changed</li>
           </ul>
-        </div>
-      </section>
-
-      {/* ===== WHY IT MATTERS IN EDMONTON ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Why an Antifreeze Flush Matters in Edmonton</h2>
-          <p className="mt-4 text-lg">
+        </Panel>
+        <Panel dark>
+          <h2 className="accent-heading text-2xl font-bold text-white md:text-3xl">Why an Antifreeze Flush Matters in Edmonton</h2>
+          <p className="mt-4 text-lg text-white/90">
             Old antifreeze loses its freeze protection and its ability to stop rust and corrosion. In an Edmonton
             winter, weak antifreeze can freeze and crack the engine block or radiator. Rust and scale build up in the
             radiator and heater core, which leads to overheating in summer and a weak heater in winter. An antifreeze
             coolant flush clears out that buildup and restores full protection.
           </p>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What an Antifreeze Coolant Flush Involves</h2>
-          <p className="mt-4 text-lg">
-            We drain the old antifreeze, do a radiator flush to clear out rust and buildup, and refill the system
-            with coolant that meets your vehicle's specification. We also check the hoses, radiator, and cap for
-            leaks or wear, and test that the new coolant protects against Edmonton's coldest days. You approve the
-            work and the price before we start.
-          </p>
-        </div>
-      </section>
+      <StepsSection
+        heading="What an Antifreeze Coolant Flush Involves"
+        gray
+        steps={[
+          { title: "Drain and flush", text: "Old antifreeze out, rust and buildup cleared" },
+          { title: "Refill with coolant", text: "Coolant that meets your vehicle's specification" },
+          { title: "Check and test", text: "Hoses, radiator, cap, and cold protection" },
+        ]}
+      >
+        <p className="mt-4 text-lg text-gray-700">
+          We drain the old antifreeze, do a radiator flush to clear out rust and buildup, and refill the system
+          with coolant that meets your vehicle's specification. We also check the hoses, radiator, and cap for
+          leaks or wear, and test that the new coolant protects against Edmonton's coldest days. You approve the
+          work and the price before we start.
+        </p>
+      </StepsSection>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Antifreeze Flush FAQ" faqs={faqs} />
+      <Faq title="Antifreeze Flush FAQ" faqs={faqs} split />
 
       <BookingCta
         heading="Book an Antifreeze Coolant Flush in West Edmonton"

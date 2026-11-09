@@ -1,9 +1,12 @@
 // app/services/maintenance/tire-change/page.tsx
-import Image from "next/image"
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import FeatureBand from "@/components/FeatureBand"
+import StepsSection from "@/components/StepsSection"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Tire Change & Tire Rotation Edmonton | Leung's Auto Service",
@@ -42,98 +45,80 @@ export default function TireChange() {
   return (
     <main className="flex-1">
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Tire Change and Tire Rotation in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Edmonton winters call for winter tires, and summer driving calls for something else. Leung's Auto Service
+      <PageHero
+        heading="Tire Change and Tire Rotation in Edmonton"
+        cta="Book a Tire Change"
+        image={{ src: "/images/tire-change.jpg", alt: "Mechanic doing a winter tire change and tire rotation at Leung's Auto Service in Edmonton" }}
+      >
+        Edmonton winters call for winter tires, and summer driving calls for something else. Leung's Auto Service
           does winter tire changes, summer tire changes, and tire rotations on domestic and import vehicles at our
           shop in West Edmonton.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book a Tire Change
-        </Link>
-      </section>
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/tire-change.jpg"
-            alt="Mechanic doing a winter tire change and tire rotation at Leung's Auto Service in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
+      <section className="px-6 py-16">
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-5 lg:gap-10">
+          <div className="lg:col-span-2">
+            <h2 className="accent-heading text-3xl font-bold">When You Need a Tire Change</h2>
+          </div>
+          <div className="lg:col-span-3">
+            <ul className="checks text-lg text-[#384959]">
+              <li>The season is changing and it's time for a winter tire change or summer tire change</li>
+              <li>The tread is worn down low</li>
+              <li>Cracks, bulges, or cuts in the sidewall</li>
+              <li>A tire keeps losing air</li>
+              <li>More vibration or road noise than usual</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* ===== WHEN YOU NEED A TIRE CHANGE ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">When You Need a Tire Change</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
-            <li>The season is changing and it's time for a winter tire change or summer tire change</li>
-            <li>The tread is worn down low</li>
-            <li>Cracks, bulges, or cuts in the sidewall</li>
-            <li>A tire keeps losing air</li>
-            <li>More vibration or road noise than usual</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* ===== WINTER TIRE CHANGE ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Winter Tire Change</h2>
-          <p className="mt-4 text-lg">
+      <PanelSection gray>
+        <Panel>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">Winter Tire Change</h2>
+          <p className="mt-4 text-lg text-gray-700">
             Winter tires use a softer rubber and deeper tread that grip on snow and ice, and stay flexible when
             all-season tires go hard in the cold. A winter tire change before the first snow keeps you safer on
             Edmonton roads and can lower your insurance with some providers.
           </p>
-        </div>
-      </section>
-
-      {/* ===== SUMMER TIRE CHANGE ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Summer Tire Change</h2>
-          <p className="mt-4 text-lg">
+        </Panel>
+        <Panel dark>
+          <h2 className="accent-heading text-2xl font-bold text-white md:text-3xl">Summer Tire Change</h2>
+          <p className="mt-4 text-lg text-white/90">
             Once it stays above 7°C in spring, it's time for a summer tire change. Winter tires wear out quickly on
             warm, dry pavement, so switching back to summer or all-season tires saves your winter set for next year
             and gives you better handling and braking in the warm months.
           </p>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What a Tire Change Involves</h2>
-          <p className="mt-4 text-lg">
-            We remove your current tires, install your seasonal or new tires, set the tire pressure, and torque the
-            wheel nuts to spec. While the wheels are off, we can take a look at your brakes and let you know what we
-            find.
-          </p>
-        </div>
-      </section>
+      <StepsSection
+        heading="What a Tire Change Involves"
+        steps={[
+          { title: "Swap the tires", text: "Your seasonal or new tires go on" },
+          { title: "Set the pressure", text: "Every tire to the right pressure" },
+          { title: "Torque to spec", text: "Wheel nuts tightened to spec" },
+          { title: "Look at your brakes", text: "While the wheels are off" },
+        ]}
+      >
+        <p className="mt-4 text-lg text-gray-700">
+          We remove your current tires, install your seasonal or new tires, set the tire pressure, and torque the
+          wheel nuts to spec. While the wheels are off, we can take a look at your brakes and let you know what we
+          find.
+        </p>
+      </StepsSection>
 
-      {/* ===== TIRE ROTATION ===== */}
-      <section id="tire-rotation" className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Tire Rotation</h2>
-          <p className="mt-4 text-lg">
-            Rotating your tires helps them wear evenly, so they last longer and grip better. During a tire rotation,
-            we move each tire to a different position following the right pattern for your vehicle, set the tire
-            pressure, torque the wheel nuts to spec, and check the tread. Signs you need a tire rotation include
-            front tires that are more worn than the back, uneven wear across the tread, and more vibration at
-            highway speeds. If a tire is wearing down on one edge, you may need a{" "}
-            <Link href="/services/maintenance/wheel-alignment" className="text-[#2D3047] underline">wheel alignment</Link> as well.
-          </p>
-        </div>
-      </section>
+      <FeatureBand heading="Tire Rotation" id="tire-rotation" gray>
+        <p className="mt-4 text-lg text-gray-700">
+          Rotating your tires helps them wear evenly, so they last longer and grip better. During a tire rotation,
+          we move each tire to a different position following the right pattern for your vehicle, set the tire
+          pressure, torque the wheel nuts to spec, and check the tread. Signs you need a tire rotation include
+          front tires that are more worn than the back, uneven wear across the tread, and more vibration at
+          highway speeds. If a tire is wearing down on one edge, you may need a{" "}
+          <Link href="/services/maintenance/wheel-alignment" className="text-[#384959] underline">wheel alignment</Link> as well.
+        </p>
+      </FeatureBand>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Tire Change FAQ" faqs={faqs} />
+      <Faq title="Tire Change FAQ" faqs={faqs} split />
 
       <BookingCta
         heading="Book a Tire Change in West Edmonton"

@@ -1,5 +1,6 @@
 // components/ClusterLinks.tsx
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import { services } from "@/lib/services"
 
 type LinkItem = { title: string; href: string }
@@ -12,12 +13,12 @@ export default function ClusterLinks({ current, also = [] }: { current: string; 
   const siblings = hub.spokes.filter((spoke) => spoke.href !== current)
 
   return (
-    <section className="border-t border-gray-200 px-6 py-12">
+    <section className="border-t border-[#BDDDFC] bg-[#BDDDFC]/20 px-6 py-12">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-center text-2xl font-bold">Related Services</h2>
         <p className="mt-2 text-center text-lg">
           Part of our{" "}
-          <Link href={hub.href} className="text-[#2D3047] underline">{hub.title}</Link>{" "}
+          <Link href={hub.href} className="text-[#384959] underline">{hub.title}</Link>{" "}
           services.
         </p>
 
@@ -27,10 +28,13 @@ export default function ClusterLinks({ current, also = [] }: { current: string; 
             <Link
               key={spoke.href}
               href={spoke.href}
-              className="flex flex-col rounded bg-gray-100 p-6 hover:shadow-md"
+              className="group flex items-start gap-4 rounded-lg border border-[#BDDDFC] bg-white p-6 transition hover:border-[#384959] hover:shadow-md"
             >
-              <h3 className="text-xl font-bold text-[#2D3047]">{spoke.title}</h3>
-              <p className="mt-2 text-gray-600">{spoke.blurb}</p>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-[#384959]">{spoke.title}</h3>
+                <p className="mt-2 text-gray-600">{spoke.blurb}</p>
+              </div>
+              <ArrowRight className="mt-1 shrink-0 text-[#384959] transition group-hover:translate-x-1" size={20} />
             </Link>
           ))}
         </div>
@@ -41,7 +45,7 @@ export default function ClusterLinks({ current, also = [] }: { current: string; 
             {also.map((item, i) => (
               <span key={item.href}>
                 {i > 0 && " · "}
-                <Link href={item.href} className="text-[#2D3047] underline">{item.title}</Link>
+                <Link href={item.href} className="text-[#384959] underline">{item.title}</Link>
               </span>
             ))}
           </p>

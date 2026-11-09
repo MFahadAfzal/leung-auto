@@ -1,9 +1,11 @@
 // app/services/brakes/brake-fluid-flush/page.tsx
-import Image from "next/image"
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
 import Faq from "@/components/Faq"
+import PageHero from "@/components/PageHero"
+import StepsSection from "@/components/StepsSection"
+import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
   title: "Brake Fluid Flush Edmonton | Leung's Auto Service",
@@ -38,70 +40,60 @@ export default function BrakeFluidFlush() {
     <main className="flex-1">
 
       {/* ===== INTRO ===== */}
-      <section className="px-6 py-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">Brake Fluid Flush in Edmonton</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Brake fluid absorbs moisture over time, which lowers its performance and can damage brake parts from the
+      <PageHero
+        heading="Brake Fluid Flush in Edmonton"
+        cta="Book a Brake Fluid Flush"
+        image={{ src: "/images/brake-fluid-flush.jpg", alt: "Mechanic doing a brake fluid flush to change brake fluid at Leung's Auto Service in Edmonton" }}
+      >
+        Brake fluid absorbs moisture over time, which lowers its performance and can damage brake parts from the
           inside. A brake fluid flush replaces the old fluid with fresh fluid. Leung's Auto Service changes brake
           fluid on domestic and import vehicles at our shop in West Edmonton.
-        </p>
-        <Link href="/contact" className="mt-6 inline-block rounded bg-[#2D3047] px-6 py-3 font-bold text-white hover:opacity-90">
-          Book a Brake Fluid Flush
-        </Link>
-      </section>
+      </PageHero>
 
-      {/* ===== PHOTO (file lives in public/images) ===== */}
-      <section className="px-6 pb-12">
-        <div className="mx-auto max-w-3xl">
-          <Image
-            src="/images/brake-fluid-flush.jpg"
-            alt="Mechanic doing a brake fluid flush to change brake fluid at Leung's Auto Service in Edmonton"
-            width={1200}
-            height={800}
-            className="h-auto w-full rounded"
-          />
-        </div>
-      </section>
-
-      {/* ===== SIGNS YOU NEED A FLUSH ===== */}
-      <section className="bg-gray-100 px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">Signs You Need a Brake Fluid Flush</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-6 text-lg">
+      <PanelSection aside>
+        <Panel>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need a Brake Fluid Flush</h2>
+          <ul className="checks mt-6 text-lg text-[#384959]">
             <li>A soft or spongy brake pedal</li>
             <li>Brake fluid that looks dark or dirty instead of clear or light amber</li>
             <li>The brakes feel less responsive than they used to</li>
             <li>A brake warning light on the dashboard</li>
             <li>It has been two to three years or more since you last had the brake fluid changed</li>
           </ul>
-          <p className="mt-4 text-lg">
+        </Panel>
+        <Panel label="Good to know" dark>
+          <p className="mt-4 text-lg text-white/90">
             Some of these signs can also come from worn brake pads. When we check your brakes, we look at both, so
             you only pay for what your car needs. See{" "}
-            <Link href="/services/brakes/brake-pad-replacement" className="text-[#2D3047] underline">brake pad replacement</Link>{" "}
+            <Link href="/services/brakes/brake-pad-replacement" className="text-[#BDDDFC] underline">brake pad replacement</Link>{" "}
             for more on worn pads.
           </p>
-        </div>
-      </section>
+        </Panel>
+      </PanelSection>
 
-      {/* ===== WHAT'S INVOLVED ===== */}
-      <section className="px-6 py-12">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-3xl font-bold">What a Brake Fluid Flush Involves</h2>
-          <p className="mt-4 text-lg">
-            During the service, we remove the old brake fluid from the system, refill it with fresh fluid that
-            meets your vehicle's specification, and check the brakes for leaks. You approve the work and the price
-            before we start.
-          </p>
-        </div>
-      </section>
+      <StepsSection
+        heading="What a Brake Fluid Flush Involves"
+        gray
+        steps={[
+          { title: "Remove the old fluid", text: "Drain the old brake fluid from the system" },
+          { title: "Refill with fresh fluid", text: "Fluid that meets your vehicle's specification" },
+          { title: "Check for leaks", text: "Before your car goes back to you" },
+        ]}
+      >
+        <p className="mt-4 text-lg text-gray-700">
+          During the service, we remove the old brake fluid from the system, refill it with fresh fluid that
+          meets your vehicle's specification, and check the brakes for leaks. You approve the work and the price
+          before we start.
+        </p>
+      </StepsSection>
 
-      {/* ===== FAQ ===== */}
-      <Faq title="Brake Fluid Flush FAQ" faqs={faqs} gray />
+      <Faq title="Brake Fluid Flush FAQ" faqs={faqs} split />
 
       <BookingCta
         heading="Book a Brake Fluid Flush in West Edmonton"
         text="Not sure if your brake fluid is due? We can test it and give you a price before any work starts."
         label="Get a Brake Fluid Flush Cost Quote"
+        gray
       />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
