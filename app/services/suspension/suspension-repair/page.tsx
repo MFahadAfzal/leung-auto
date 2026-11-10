@@ -10,7 +10,7 @@ import { Panel, PanelSection } from "@/components/Panels"
 export const metadata = {
   title: "Suspension Repair Edmonton | Shocks, Struts & Ball Joints",
   description:
-    "Suspension repair in West Edmonton: suspension inspection, shock and strut replacement, ball joint replacement, and car suspension replacement when parts wear out.",
+    "Suspension repair in West Edmonton: suspension inspection, shock and strut replacement, ball joint replacement, and car suspension replacement.",
   alternates: {
     canonical: "/services/suspension/suspension-repair",
   },
