@@ -1,4 +1,4 @@
-// app/services/suspension/car-suspension-replacement/page.tsx
+// app/services/suspension/suspension-repair/page.tsx
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
@@ -8,20 +8,20 @@ import StepsSection from "@/components/StepsSection"
 import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
-  title: "Car Suspension Replacement Edmonton | Leung's Auto Service",
+  title: "Suspension Repair Edmonton | Shocks, Struts & Ball Joints",
   description:
-    "Car suspension replacement and suspension auto repair in West Edmonton: suspension inspection, shock and strut replacement, and ball joint replacement.",
+    "Suspension repair in West Edmonton: suspension inspection, shock and strut replacement, ball joint replacement, and car suspension replacement when parts wear out.",
   alternates: {
-    canonical: "/services/suspension/car-suspension-replacement",
+    canonical: "/services/suspension/suspension-repair",
   },
 }
 
 // Questions shown in the FAQ section
 const faqs = [
   {
-    question: "How much does car suspension replacement cost?",
+    question: "How much does suspension repair cost?",
     answer:
-      "The price of car suspension replacement depends on your vehicle, the type of parts, and whether they are replaced in pairs. We inspect the suspension first and give you a price before any work starts.",
+      "It depends on what needs fixing, your vehicle, and the type of parts. A single ball joint costs far less than a full car suspension replacement, and shocks and struts are usually replaced in pairs. We inspect the suspension first and give you a price before any work starts.",
   },
   {
     question: "How much does ball joint replacement cost?",
@@ -30,24 +30,24 @@ const faqs = [
   },
 ]
 
-export default function CarSuspensionReplacement() {
+export default function SuspensionRepair() {
   return (
     <main className="flex-1">
 
       {/* ===== INTRO ===== */}
       <PageHero
-        heading="Car Suspension Replacement in Edmonton"
+        heading="Suspension Repair in Edmonton"
         cta="Book a Suspension Inspection"
-        image={{ src: "/images/car-suspension-replacement.jpg", alt: "Mechanic working under a car with old shock absorbers on the floor during a shock and strut replacement in Edmonton" }}
+        image={{ src: "/images/suspension-repair.jpg", alt: "Mechanic under a car with old shock absorbers on the floor during suspension repair, including shock and strut replacement, in Edmonton" }}
       >
-        Your suspension keeps your tires on the road and your ride smooth and controlled. Leung's Auto Service does
-          car suspension replacement and suspension auto repair on domestic and import vehicles at our shop in West
-          Edmonton, including shocks, struts, ball joints, and control arms.
+        Your suspension keeps your tires on the road and your ride smooth and controlled. Leung&apos;s Auto Service does
+          suspension repair on domestic and import vehicles at our shop in West Edmonton, from finding the cause of a
+          clunk or bouncy ride to replacing shocks, struts, ball joints, and control arms.
       </PageHero>
 
       <PanelSection aside>
         <Panel>
-          <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need Car Suspension Replacement</h2>
+          <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need Suspension Repair</h2>
           <ul className="checks mt-6 text-lg text-brand-dark">
             <li>The car bounces or keeps moving after going over bumps</li>
             <li>A clunking or knocking noise from the front end, especially over bumps</li>
@@ -106,17 +106,17 @@ export default function CarSuspensionReplacement() {
         </Panel>
       </PanelSection>
 
-      <Faq title="Suspension Repair FAQ" faqs={faqs} split gray />
+      <Faq title="Common Questions" faqs={faqs} split gray />
 
       <BookingCta
-        heading="Book Car Suspension Replacement in West Edmonton"
+        heading="Book Suspension Repair in West Edmonton"
         text="Start with a suspension inspection, and we'll give you a price before any work starts."
-        label="Get a Suspension Repair Quote"
+        label="Get a Price Quote"
       />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks
-        current="/services/suspension/car-suspension-replacement"
+        current="/services/suspension/suspension-repair"
         also={[
           { title: "Wheel Alignment", href: "/services/maintenance/wheel-alignment" },
           { title: "Tire Change and Tire Rotation", href: "/services/maintenance/tire-change" },

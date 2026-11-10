@@ -22,22 +22,22 @@ const faqs = [
   {
     question: "When should I switch to winter tires in Edmonton?",
     answer:
-      "Once temperatures stay at 7°C or colder, which is when the Tire and Rubber Association of Canada recommends switching. Below 7°C, all-season tires stiffen and lose grip. In Edmonton, that's usually by mid-October, before the first snow. Book early, since fall is one of the busiest times of year for tire changes. Switch back to summer or all-season tires once it stays above 7°C in spring.",
+      "Once temperatures stay at 7°C or colder, which is when the Tire and Rubber Association of Canada recommends switching. Below 7°C, all-season tires stiffen and lose grip. In Edmonton, that's usually by mid-October, before the first snow. Book early, since fall is one of the busiest times of year at the shop. Switch back to summer or all-season tires once it stays above 7°C in spring.",
   },
   {
     question: "How often should you rotate tires?",
     answer:
-      "Every 8,000 to 12,000 km, which is what many manufacturers recommend. An easy way to stay on schedule is to rotate your tires at each seasonal tire change, so each set wears evenly from year to year. Check your owner's manual, or ask us what your vehicle needs.",
+      "Every 8,000 to 12,000 km, which is what many manufacturers recommend. An easy way to stay on schedule is to rotate your tires at each seasonal swap, so each set wears evenly from year to year. Check your owner's manual, or ask us what your vehicle needs.",
   },
   {
     question: "Can you rotate my tires during a tire change?",
     answer:
-      "Yes. When we do your winter or summer tire change, we can put each tire in a new position so they wear evenly from season to season.",
+      "Yes. When we swap your winter or summer tires, we can put each tire in a new position so they wear evenly from season to season.",
   },
   {
     question: "How much does a tire change cost?",
     answer:
-      "The price depends on your vehicle and whether your tires are already on rims or need to be mounted and balanced. Adding a tire rotation to your seasonal tire change is an easy way to get both done in one visit.",
+      "The price depends on your vehicle and whether your tires are already on rims or need to be mounted and balanced. Adding a tire rotation when we swap your tires is an easy way to get both done in one visit.",
   },
 ]
 
@@ -47,10 +47,10 @@ export default function TireChange() {
       {/* ===== INTRO ===== */}
       <PageHero
         heading="Tire Change and Tire Rotation in Edmonton"
-        cta="Book a Tire Change"
+        cta="Book an Appointment"
         image={{ src: "/images/tire-change.jpg", alt: "Mechanic in work gloves removing a car tire during a tire change and tire rotation in Edmonton" }}
       >
-        Edmonton winters call for winter tires, and summer driving calls for something else. Leung's Auto Service
+        Edmonton winters call for winter tires, and summer driving calls for something else. Leung&apos;s Auto Service
           does winter tire changes, summer tire changes, and tire rotations on domestic and import vehicles at our
           shop in West Edmonton.
       </PageHero>
@@ -62,7 +62,7 @@ export default function TireChange() {
           </div>
           <div className="lg:col-span-3">
             <ul className="checks text-lg text-brand-dark">
-              <li>The season is changing and it's time for a winter tire change or summer tire change</li>
+              <li>The season is changing and it&apos;s time to swap to winter or summer tires</li>
               <li>The tread is worn down low</li>
               <li>Cracks, bulges, or cuts in the sidewall</li>
               <li>A tire keeps losing air</li>
@@ -77,14 +77,14 @@ export default function TireChange() {
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Winter Tire Change</h2>
           <p className="mt-4 text-lg text-gray-700">
             Winter tires use a softer rubber and deeper tread that grip on snow and ice, and stay flexible when
-            all-season tires go hard in the cold. A winter tire change before the first snow keeps you safer on
+            all-season tires go hard in the cold. Switching before the first snow keeps you safer on
             Edmonton roads and can lower your insurance with some providers.
           </p>
         </Panel>
         <Panel dark>
           <h2 className="accent-heading text-2xl font-bold text-white md:text-3xl">Summer Tire Change</h2>
           <p className="mt-4 text-lg text-white/90">
-            Once it stays above 7°C in spring, it's time for a summer tire change. Winter tires wear out quickly on
+            Once it stays above 7°C in spring, it&apos;s time to take them off. Winter tires wear out quickly on
             warm, dry pavement, so switching back to summer or all-season tires saves your winter set for next year
             and gives you better handling and braking in the warm months.
           </p>
@@ -92,7 +92,7 @@ export default function TireChange() {
       </PanelSection>
 
       <StepsSection
-        heading="What a Tire Change Involves"
+        heading="What's Involved"
         steps={[
           { title: "Swap the tires", text: "Your seasonal or new tires go on" },
           { title: "Set the pressure", text: "Every tire to the right pressure" },
@@ -118,11 +118,11 @@ export default function TireChange() {
         </p>
       </FeatureBand>
 
-      <Faq title="Tire Change FAQ" faqs={faqs} split />
+      <Faq title="Common Questions" faqs={faqs} split />
 
       <BookingCta
         heading="Book a Tire Change in West Edmonton"
-        text="Fall and spring book up fast. Reserve your seasonal tire change early."
+        text="Fall and spring book up fast, so reserve your spot early."
         label="Book Your Winter Tire Change"
         gray
       />

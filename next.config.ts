@@ -29,12 +29,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/services/suspension/shock-strut-replacement",
-        destination: "/services/suspension/car-suspension-replacement#shock-strut-replacement",
+        destination: "/services/suspension/suspension-repair#shock-strut-replacement",
         permanent: true,
       },
       {
         source: "/services/suspension/ball-joint-control-arm",
-        destination: "/services/suspension/car-suspension-replacement#ball-joint-replacement",
+        destination: "/services/suspension/suspension-repair#ball-joint-replacement",
+        permanent: true,
+      },
+      {
+        source: "/services/suspension/car-suspension-replacement",
+        destination: "/services/suspension/suspension-repair",
         permanent: true,
       },
       // Inspections

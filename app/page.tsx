@@ -10,7 +10,7 @@ import { services } from "@/lib/services"
 export const metadata = {
   title: "Affordable Car Repair Edmonton | Leung's Auto Service",
   description:
-    "Affordable car repair in West Edmonton since 2002. Trusted mechanics and certified technicians for all automotive services. Call 780-452-0134 to book.",
+    `Affordable car repair in West Edmonton since 2002. Trusted mechanics and certified technicians for all automotive services. Call ${business.phone} to book.`,
   alternates: {
     canonical: "/",
   },
@@ -92,7 +92,7 @@ export default function Home() {
       <section className="px-6 py-14 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Trusted Mechanics in West Edmonton</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Leung's Auto Service is an independent car repair shop in West Edmonton, owned by Allan Leung and serving
+          Leung&apos;s Auto Service is an independent auto repair shop in West Edmonton, owned by Allan Leung and serving
           Edmonton drivers since 2002. Our certified technicians explain the work before they start, and our prices
           keep car repair in Edmonton affordable.{" "}
           <Link href="/about" className="text-brand-accent underline hover:text-brand-tint">Learn more about our shop</Link>.
@@ -156,7 +156,7 @@ export default function Home() {
       <section className="px-6 py-14 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Car Repair Reviews from Edmonton Customers</h2>
         <p className="mt-4 text-lg md:text-xl">
-          Here's what customers have said about their experience with Leung's Auto Service.
+          Here&apos;s what customers have said about their experience with Leung&apos;s Auto Service.
         </p>
 
         <Reviews reviews={reviewsBy("Leni Nievera", "DL Duffy", "Mac Rey")} />
@@ -166,7 +166,7 @@ export default function Home() {
       <section className="bg-brand-light/40 px-6 py-14 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Affordable Auto Repair in West Edmonton</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Visit our shop at {business.street}, {business.city}, {business.province} {business.postalCode}. We're
+          Visit our shop at {business.street}, {business.city}, {business.province} {business.postalCode}. We&apos;re
           open {business.hours}.
         </p>
         <div className="mx-auto mt-8 grid max-w-3xl gap-4 text-left sm:grid-cols-2">

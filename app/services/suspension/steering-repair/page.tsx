@@ -9,9 +9,9 @@ import StepsSection from "@/components/StepsSection"
 import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
-  title: "Power Steering Leak Repair Edmonton | Leung's Auto Service",
+  title: "Power Steering Leak Repair & Steering Repair Edmonton",
   description:
-    "Power steering leak repair in West Edmonton. We fix leaking power steering, loose steering, clunking when turning, and a power steering warning light.",
+    "Power steering leak repair in West Edmonton. We fix leaking power steering and power steering fluid leaks, plus loose steering and clunking when turning.",
   alternates: {
     canonical: "/services/suspension/steering-repair",
   },
@@ -19,6 +19,11 @@ export const metadata = {
 
 // Questions shown in the FAQ section
 const faqs = [
+  {
+    question: "Does power steering leak repair fluid work?",
+    answer:
+      "Sometimes, for a while. Power steering leak repair fluid, often called stop-leak, can swell a dried-out seal and slow a small leak. It won't fix a cracked hose, a loose fitting, or a failing pump or rack, and the leak usually comes back. For a lasting power steering fluid fix, we find the source and replace the part that's leaking.",
+  },
   {
     question: "What does the power steering warning light mean?",
     answer:
@@ -38,12 +43,12 @@ export default function SteeringRepair() {
       {/* ===== INTRO ===== */}
       <PageHero
         heading="Power Steering Leak Repair and Steering Repair in Edmonton"
-        cta="Book Power Steering Leak Repair"
+        cta="Book Steering Repair"
         image={{ src: "/images/power-steering.jpg", alt: "Driver's hands on the steering wheel of a car that needs power steering repair or power steering leak repair in Edmonton" }}
       >
-        Your steering keeps the car tracking straight and responding when you turn the wheel. Leung's Auto Service
-          does power steering leak repair and fixes steering problems on domestic and import vehicles at our shop in
-          West Edmonton.
+        Your steering keeps the car tracking straight and responding when you turn the wheel. Leung&apos;s Auto Service
+          does power steering fluid leak repair and fixes other steering problems on domestic and import vehicles at
+          our shop in West Edmonton.
       </PageHero>
 
       <section className="px-6 py-16">
@@ -80,9 +85,9 @@ export default function SteeringRepair() {
             Old power steering fluid can make steering stiff and wear out the pump and rack, even without a leak.
             Signs you need a power steering flush include heavy steering, especially in the cold, a whining or
             groaning noise when you turn the wheel, jerky steering, and fluid that looks dark or dirty. We remove the
-            old fluid, refill the system with fluid that meets your vehicle's specification, and check the hoses,
-            pump, and rack for leaks. Some newer vehicles use electric steering and don't have steering
-            fluid, so ask us if you're not sure which type your vehicle has.
+            old fluid, refill the system with fluid that meets your vehicle&apos;s specification, and check the hoses,
+            pump, and rack for leaks. Some newer vehicles use electric steering and don&apos;t have steering
+            fluid, so ask us if you&apos;re not sure which type your vehicle has.
           </p>
         </Panel>
       </PanelSection>
@@ -91,7 +96,7 @@ export default function SteeringRepair() {
         <p className="mt-4 text-lg text-gray-700">
           Loose steering often comes from worn tie rod ends or a worn steering rack. Clunking when turning can come
           from tie rods, ball joints, or{" "}
-          <Link href="/services/suspension/car-suspension-replacement" className="text-brand-accent underline hover:text-brand-tint">worn suspension parts</Link>. We inspect the steering and front end to find which
+          <Link href="/services/suspension/suspension-repair" className="text-brand-accent underline hover:text-brand-tint">worn suspension parts</Link>. We inspect the steering and front end to find which
           part is worn before we replace anything.
         </p>
       </FeatureBand>
@@ -115,9 +120,9 @@ export default function SteeringRepair() {
       <Faq title="Steering Repair FAQ" faqs={faqs} split />
 
       <BookingCta
-        heading="Book Power Steering Leak Repair in West Edmonton"
+        heading="Book Steering Repair in West Edmonton"
         text="Tell us what your steering is doing and we'll give you a price before any work starts."
-        label="Get a Steering Repair Quote"
+        label="Get a Price Quote"
         gray
       />
 

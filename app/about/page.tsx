@@ -21,9 +21,9 @@ import { business } from "@/lib/business"
 import PageHero from "@/components/PageHero"
 
 export const metadata = {
-  title: "About Leung's Auto Service | Auto Repair Shop in Edmonton",
+  title: "About Leung's Auto Service | West Edmonton Since 2002",
   description:
-    "Leung's Auto Service is an independent, AMVIC certified auto repair shop in West Edmonton, serving domestic and import vehicles since 2002.",
+    "Meet Leung's Auto Service: owner Allan Leung's independent, AMVIC certified shop in West Edmonton, working on domestic and import vehicles since 2002.",
   alternates: {
     canonical: "/about",
   },
@@ -73,9 +73,9 @@ export default function About() {
 
       {/* ===== INTRO: shop photo behind the headline ===== */}
       <PageHero
-        heading="About Leung's Auto Service, an Auto Repair Shop in Edmonton"
+        heading="About Leung's Auto Service"
         eyebrow="West Edmonton · Since 2002"
-        image={{ src: "/images/about-leungs-auto.jpg", alt: "Mechanic working on a car with its hood open in a bright auto repair shop with vehicle lifts, like an independent auto repair shop in West Edmonton" }}
+        image={{ src: "/images/about-leungs-auto.jpg", alt: "Mechanic working on a car with its hood open in a bright shop with vehicle lifts" }}
       >
         Leung&apos;s Auto Service is an independent auto repair shop in West Edmonton, run by owner Allan Leung
         and serving local drivers since 2002.
@@ -102,7 +102,7 @@ export default function About() {
           <div className="relative h-72 w-full overflow-hidden rounded-lg shadow-lg ring-4 ring-brand-light md:h-[28rem] md:w-1/2">
             <Image
               src="/images/front.jpeg"
-              alt="Mechanic leaning into a car's open engine bay at an independent auto repair shop in West Edmonton"
+              alt="Mechanic leaning into a car's open engine bay"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -111,7 +111,7 @@ export default function About() {
 
           {/* Story text */}
           <div className="md:w-1/2">
-            <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">Honest Auto Repair at Fair Prices</h2>
+            <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">Honest Work at Fair Prices</h2>
             <div className="mt-3 h-1 w-16 rounded bg-brand-accent" />
             <p className="mt-6 text-lg text-gray-700">
               We work on both domestic and import vehicles. Before any repair starts, we explain what is wrong
@@ -142,7 +142,7 @@ export default function About() {
 
       {/* ===== SERVICES: the work we do most ===== */}
       <section className="px-6 py-16 text-center">
-        <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">Our Most Requested Auto Repairs</h2>
+        <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">What We Do Most</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-700">
           Most of our work is brakes, diagnostics, oil changes, and inspections.
         </p>
@@ -167,7 +167,7 @@ export default function About() {
       {/* ===== CALL TO ACTION: address, hours, and booking ===== */}
       <section className="px-6 pb-16">
         <div className="mx-auto max-w-5xl rounded-2xl bg-brand-accent px-6 py-12 text-center text-white shadow-lg md:px-12">
-          <h2 className="text-3xl font-bold md:text-4xl">Visit Our Auto Repair Shop in West Edmonton</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Visit Us in West Edmonton</h2>
 
           <div className="mx-auto mt-6 flex max-w-3xl flex-col items-center justify-center gap-4 text-lg text-white/90 md:flex-row md:gap-10">
             <a
@@ -187,7 +187,7 @@ export default function About() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/contact" className="rounded bg-white px-6 py-3 font-bold text-brand-accent hover:bg-brand-dark hover:text-white">
-              Book Auto Repair
+              Book an Appointment
             </Link>
             <a
               href={business.phoneHref}

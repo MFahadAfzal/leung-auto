@@ -15,7 +15,7 @@ export const services = [
     href: "/services/suspension",
     blurb: "Fix steering problems, clunking, pulling, and bouncy rides.",
     spokes: [
-      { title: "Suspension Repair", href: "/services/suspension/car-suspension-replacement", blurb: "A bouncy ride, clunking over bumps, leaking shocks, or worn ball joints." },
+      { title: "Suspension Repair", href: "/services/suspension/suspension-repair", blurb: "A bouncy ride, clunking over bumps, leaking shocks, or worn ball joints." },
       { title: "Steering Repair", href: "/services/suspension/steering-repair", blurb: "Power steering fluid leaks, a power steering flush, loose steering, or clunking when turning." },
     ],
   },

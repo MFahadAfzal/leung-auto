@@ -19,6 +19,6 @@ export const business = {
   mapsQuery: "Leung's Auto Service, 12025 149 St NW, Edmonton, AB T5L 2J2",
 }
 
-// The shop's ID in Google structured data. Reviews on any page point to this,
+// The shop's ID in Google structured data. The Service markup on each service page points to this,
 // so Google knows they are all about the same business described in the layout.
 export const businessId = `${business.siteUrl}/#business`

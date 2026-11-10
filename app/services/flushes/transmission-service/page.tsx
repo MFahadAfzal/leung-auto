@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Is a transmission flush necessary?",
     answer:
-      "Only for some vehicles. Many only need a regular transmission fluid change, and some manufacturers recommend against a flush. We check your vehicle's service schedule and the condition of the fluid, then recommend the fluid change or transmission flush your vehicle actually needs.",
+      "Only for some vehicles. Many only need a regular fluid change, and some manufacturers recommend against a flush. We check your vehicle's service schedule and the condition of the fluid, then recommend the fluid change or transmission flush your vehicle actually needs.",
   },
   {
     question: "How often should you change transmission fluid?",
@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "How much does a transmission service cost?",
     answer:
-      "The price depends on your vehicle, how much fluid it takes, the type of fluid it needs, and whether it needs a fluid change or a flush. A transmission service costs far less than a transmission rebuild.",
+      "The price depends on your vehicle, how much fluid it takes, the type of fluid it needs, and whether it needs a fluid change or a flush. Either one costs far less than a transmission rebuild.",
   },
 ]
 
@@ -40,11 +40,11 @@ export default function TransmissionService() {
       {/* ===== INTRO ===== */}
       <PageHero
         heading="Transmission Service in Edmonton"
-        cta="Book a Transmission Service"
+        cta="Book an Appointment"
         image={{ src: "/images/transmission-service.jpg", alt: "Automatic transmission gear shifter in a car that is due for a transmission service in Edmonton" }}
       >
         Transmission fluid cools and protects the parts inside your transmission, and it wears out with heat and
-          time. Leung's Auto Service does transmission service, including transmission fluid change service and
+          time. Leung&apos;s Auto Service does transmission service, including transmission fluid change service and
           transmission flushes, on domestic and import vehicles at our shop in West Edmonton.
       </PageHero>
 
@@ -60,7 +60,7 @@ export default function TransmissionService() {
               <li>The car hesitates before moving in drive or reverse</li>
               <li>A transmission warning light on the dashboard</li>
               <li>You tow, haul heavy loads, or do a lot of stop-and-go driving</li>
-              <li>It has been a long time since your last transmission service</li>
+              <li>It has been a long time since the fluid was last changed</li>
             </ul>
           </div>
         </div>
@@ -69,20 +69,20 @@ export default function TransmissionService() {
       <PanelSection gray heading="Transmission Fluid Change Service vs. Transmission Flush">
         <Panel label="Fluid change service">
           <p className="mt-4 text-lg text-gray-700">
-            A transmission fluid change service drains the old fluid from the pan and refills it with fresh fluid.
+            A fluid change service drains the old fluid from the pan and refills it with fresh fluid.
             It replaces part of the fluid each time, so regular changes keep it in good shape.
           </p>
         </Panel>
         <Panel label="Transmission flush" dark>
           <p className="mt-4 text-lg text-white/90">
-            A transmission service flush, also called an automatic transmission fluid flush, pushes out nearly all
-            of the old fluid and replaces it with new fluid. It's a more complete change in one visit.
+            A transmission flush, also called an automatic transmission fluid flush, pushes out nearly all
+            of the old fluid and replaces it with new fluid. It&apos;s a more complete change in one visit.
           </p>
         </Panel>
       </PanelSection>
 
       <StepsSection
-        heading="What Our Transmission Service Includes"
+        heading="What's Included"
         steps={[
           { title: "Check the old fluid", text: "Its condition tells us how the transmission is doing" },
           { title: "Replace the fluid", text: "Fluid that meets your vehicle's specification" },
@@ -90,18 +90,18 @@ export default function TransmissionService() {
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We check the condition of the old fluid, replace it with fluid that meets your vehicle's specification,
+          We check the condition of the old fluid, replace it with fluid that meets your vehicle&apos;s specification,
           and check for leaks. If the fluid points to a deeper problem, we explain what we find before going any
           further. You approve the work and the price before we start.
         </p>
       </StepsSection>
 
-      <Faq title="Transmission Service FAQ" faqs={faqs} split gray />
+      <Faq title="Common Questions" faqs={faqs} split gray />
 
       <BookingCta
         heading="Book a Transmission Service in West Edmonton"
         text="We'll check your transmission fluid and give you a price before any work starts."
-        label="Get a Transmission Fluid Change Quote"
+        label="Get a Price Quote"
       />
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}

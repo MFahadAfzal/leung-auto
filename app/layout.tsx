@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   // Base for every page's canonical URL, so pages can use relative paths like "/services/brakes"
   metadataBase: new URL(business.siteUrl),
   title: "Leung's Auto Service | Auto Repair in Edmonton",
-  description: "Honest auto repair in Edmonton: brakes, oil changes, diagnostics and more. Call 780-452-0134 to book.",
+  description: `Honest auto repair in Edmonton: brakes, oil changes, diagnostics and more. Call ${business.phone} to book.`,
 }
 
 const schema = {
@@ -34,7 +34,7 @@ const schema = {
   "@id": businessId,
   name: business.name,
   url: business.siteUrl,
-  telephone: "+1-780-452-0134",
+  telephone: business.phoneHref.replace("tel:", ""),
   foundingDate: "2002",
   founder: { "@type": "Person", name: "Allan Leung" },
   description:
@@ -48,6 +48,8 @@ const schema = {
     postalCode: business.postalCode,
     addressCountry: "CA",
   },
+  areaServed: { "@type": "City", name: business.city },
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.mapsQuery)}`,
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

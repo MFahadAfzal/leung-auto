@@ -1,6 +1,5 @@
 // components/Reviews.tsx
 import { Quote, Star } from "lucide-react"
-import { businessId } from "@/lib/business"
 import ReviewCarousel from "@/components/ReviewCarousel"
 
 // rating is optional: only show stars when we know what the customer gave.
@@ -10,7 +9,9 @@ export type Review = { name: string; text: string; rating?: number; key?: string
 // Grid of customer review cards. onGray gives the cards a white background
 // so they stand out when the section behind them is grey. carousel shows one card at a time with
 // arrows and dots (used in the narrow review card of the "why choose us" section).
-// Also sends each review to Google as Review structured data, using exactly the text shown on the page.
+// No Review structured data: these are Google reviews, and Google's rules don't allow marking up reviews
+// copied from another site (or a business's own reviews on its own site). The star rating comes from the
+// Google Business Profile instead.
 export default function Reviews({
   reviews,
   onGray = false,
@@ -20,22 +21,6 @@ export default function Reviews({
   onGray?: boolean
   carousel?: boolean
 }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": reviews.map((review) => ({
-      "@type": "Review",
-      // Points to the AutoRepair business in the layout's structured data
-      itemReviewed: { "@id": businessId },
-      author: { "@type": "Person", name: review.name },
-      ...(review.rating && {
-        reviewRating: { "@type": "Rating", ratingValue: review.rating, bestRating: 5, worstRating: 1 },
-      }),
-      reviewBody: review.text,
-      // The reviews were first posted on Google
-      publisher: { "@type": "Organization", name: "Google" },
-    })),
-  }
-
   // One review card: stars, the review text, then the customer's initial and name
   const card = (review: Review) => (
     <div
@@ -72,12 +57,6 @@ export default function Reviews({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
-        }}
-      />
       {carousel && reviews.length > 1 ? (
         <ReviewCarousel>{reviews.map(card)}</ReviewCarousel>
       ) : (

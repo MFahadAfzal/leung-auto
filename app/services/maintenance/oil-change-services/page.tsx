@@ -10,7 +10,7 @@ import { Panel, PanelSection } from "@/components/Panels"
 export const metadata = {
   title: "Quick Oil Change Services Edmonton | Leung's Auto Service",
   description:
-    "Quick oil change services in West Edmonton with synthetic or conventional oil. Learn how often to get an oil change, and book your oil change today.",
+    "Quick oil change services in West Edmonton with synthetic or conventional oil. Learn how often your engine needs fresh oil, and book today.",
   alternates: {
     canonical: "/services/maintenance/oil-change-services",
   },
@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "How often should you get an oil change?",
     answer:
-      "About every 5,000 km with conventional oil, or every 8,000 to 16,000 km with full synthetic. How often to get an oil change depends on your vehicle and the oil it uses. Many newer cars have an oil life monitor that tells you when it's due. Short trips and cold Edmonton winters count as severe driving and can mean more frequent changes. Check your owner's manual, or ask us what your vehicle needs.",
+      "About every 5,000 km with conventional oil, or every 8,000 to 16,000 km with full synthetic. The right interval depends on your vehicle and the oil it uses. Many newer cars have an oil life monitor that tells you when it's due. Short trips and cold Edmonton winters count as severe driving and can mean more frequent changes. Check your owner's manual, or ask us what your vehicle needs.",
   },
   {
     question: "Synthetic vs. conventional oil: which is better?",
@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "Is the cheapest oil change the best deal?",
     answer:
-      "Not always. A low price can mean cheap filters, the wrong oil for your engine, or a long list of upsells once your car is on the hoist. If you're shopping for the cheapest oil change, compare what's included. We use oil and filters that meet your vehicle's specification and quote the price up front.",
+      "Not always. A low price can mean cheap filters, the wrong oil for your engine, or a long list of upsells once your car is on the hoist. If you're shopping on price, compare what's included. We use oil and filters that meet your vehicle's specification and quote the price up front.",
   },
 ]
 
@@ -46,26 +46,26 @@ export default function OilChangeServices() {
       {/* ===== INTRO ===== */}
       <PageHero
         heading="Oil Change Services in Edmonton"
-        cta="Book a Quick Oil Change"
-        image={{ src: "/images/oil-change-services.jpg", alt: "Fresh motor oil being poured into a car engine through a funnel during a quick oil change in Edmonton" }}
+        cta="Book an Appointment"
+        image={{ src: "/images/oil-change-services.jpg", alt: "Fresh motor oil being poured into a car engine through a funnel, part of oil change services in Edmonton" }}
       >
-        Fresh oil protects your engine's moving parts from wear. Leung's Auto Service
+        Fresh oil protects your engine&apos;s moving parts from wear. Leung&apos;s Auto Service
           offers quick oil change services for domestic and import vehicles at our shop in West Edmonton, with
           synthetic or conventional oil to match your engine.
       </PageHero>
 
       <StepsSection
-        heading="Quick Oil Change in West Edmonton"
+        heading="What Our Oil Change Services Include"
         steps={[
           { text: "Draining the old oil and replacing the oil filter" },
           { text: "Refilling with synthetic or conventional oil that meets your vehicle's specification" },
           { text: "A quick check for leaks and anything else that needs attention" },
-          { text: "Resetting your oil change reminder, and telling you when your next one is due" },
+          { text: "Resetting your service reminder, and telling you when your next one is due" },
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          An oil change shouldn't take your whole day. Book ahead and we'll have your car in and out quickly, with
-          the same care we give every job. Our oil changing services include:
+          It shouldn&apos;t take your whole day. Book ahead and we&apos;ll have your car in and out quickly, with the same
+          care we give every job. Each visit includes:
         </p>
       </StepsSection>
 
@@ -73,11 +73,11 @@ export default function OilChangeServices() {
         <Panel>
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need an Oil Change</h2>
           <ul className="checks mt-6 text-lg text-brand-dark">
-            <li>The oil change or maintenance reminder light is on</li>
+            <li>The maintenance reminder light is on</li>
             <li>The oil on the dipstick looks dark, gritty, or low</li>
             <li>The engine sounds louder or makes a ticking noise</li>
             <li>A burning oil smell inside or around the car</li>
-            <li>You've driven past the kilometres on your last oil change sticker</li>
+            <li>You&apos;ve driven past the kilometres on your windshield sticker</li>
           </ul>
         </Panel>
         <Panel label="Good to know" dark>
@@ -89,12 +89,12 @@ export default function OilChangeServices() {
         </Panel>
       </PanelSection>
 
-      <Faq title="Oil Change FAQ" faqs={faqs} split />
+      <Faq title="Common Questions" faqs={faqs} split />
 
       <BookingCta
         heading="Book a Quick Oil Change in West Edmonton"
         text="Book ahead and we'll have you in and out quickly, with the price up front."
-        label="Get an Oil Change Quote"
+        label="Get a Price Quote"
         gray
       />
 

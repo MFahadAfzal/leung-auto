@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "Why are my brakes squealing or grinding?",
     answer:
-      "Brakes squealing usually means the pads are getting thin, often because the wear indicator is touching the rotor. It's time to book a brake pad replacement. Brakes grinding is more serious: the pad material may be gone, and metal is rubbing on the rotor. Driving on grinding brakes damages the rotors quickly, which can turn a brake pad replacement into a brake rotor replacement as well.",
+      "Brakes squealing usually means the pads are getting thin, often because the wear indicator is touching the rotor. It's time for new pads. Brakes grinding is more serious: the pad material may be gone, and metal is rubbing on the rotor. Driving on grinding brakes damages the rotors quickly, which can turn a simple pad job into a brake rotor replacement as well.",
   },
   {
     question: "Do I need new rotors when I replace my brake pads?",
@@ -41,7 +41,7 @@ const faqs = [
   {
     question: "How much does brake pad replacement cost?",
     answer:
-      "Brake pad replacement cost depends on your vehicle, the type of brake pads and rotors, and whether you need brake rotor replacement along with the pads. Catching squealing brakes early, before they start grinding, often keeps the cost down because the rotors can be saved. Call us for a quote on your vehicle.",
+      "The price depends on your vehicle, the type of brake pads and rotors, and whether you need brake rotor replacement along with the pads. Catching squealing brakes early, before they start grinding, often keeps the cost down because the rotors can be saved. Call us for a quote on your vehicle.",
   },
 ]
 
@@ -62,7 +62,7 @@ const rotorSigns = [
   "Rotors worn below the minimum thickness",
 ]
 
-// The job in three steps, from the "What Brake Pad Replacement Involves" text
+// The job in three steps, from the "What's Involved" text
 const steps = [
   { title: "Inspect and measure", text: "Pads, rotors, calipers, and brake fluid" },
   { title: "Explain what we find", text: "What's worn and what it will take to fix" },
@@ -75,7 +75,7 @@ export default function BrakePadReplacement() {
       {/* ===== INTRO ===== */}
       <PageHero
         heading="Brake Pad Replacement in Edmonton"
-        cta="Book Brake Pad Replacement"
+        cta="Book an Appointment"
         image={{ src: "/images/brake-pad-replacement.jpg", alt: "Brake caliper and drilled brake rotor exposed with the wheel off for a brake pad replacement and brake rotor replacement in Edmonton" }}
       >
         Brakes squealing, brakes grinding, or a soft brake pedal are signs your brake pads are wearing out.
@@ -128,10 +128,10 @@ export default function BrakePadReplacement() {
       {/* ===== WHAT'S INVOLVED: centred text, then the three steps in a row ===== */}
       <section className="bg-brand-light/40 px-6 py-16">
         <div className="mx-auto max-w-5xl text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">What Brake Pad Replacement Involves</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">What&apos;s Involved</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
             We inspect the brake pads, measure the rotors, and check the calipers and brake fluid, then explain what
-            we find. If you need brake pad replacement or brake rotor replacement, you approve the work and the price
+            we find. If you need new pads or rotors, you approve the work and the price
             before we start.
           </p>
 
@@ -155,7 +155,7 @@ export default function BrakePadReplacement() {
 
       {/* ===== FAQ: heading on the left, questions on the right ===== */}
       <Faq
-        title="Brake Pad Replacement FAQ"
+        title="Common Questions"
         faqs={faqs}
         aside={
           <p>
@@ -168,7 +168,7 @@ export default function BrakePadReplacement() {
       <BookingCta
         heading="Book Brake Pad Replacement in West Edmonton"
         text="Tell us what your brakes are doing and we'll give you a price before any work starts."
-        label="Get a Brake Pad Replacement Cost Quote"
+        label="Get a Price Quote"
         gray
       />
 

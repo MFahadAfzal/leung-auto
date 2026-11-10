@@ -17,7 +17,7 @@ import { spokeIcon } from "@/lib/spokeIcons"
 export const metadata = {
   title: "Brake Repair Edmonton | Brake Inspection & Brake Service",
   description:
-    "Brake repair shop in West Edmonton. Brake inspection, brake service, and brake maintenance for domestic and import vehicles. Call 780-452-0134 to book.",
+    `Brake repair shop in West Edmonton. Brake inspection, brake service, and brake maintenance for domestic and import vehicles. Call ${business.phone} to book.`,
   alternates: {
     canonical: "/services/brakes",
   },

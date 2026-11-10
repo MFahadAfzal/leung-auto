@@ -49,7 +49,7 @@ export default function AntifreezeCoolantFlush() {
         image={{ src: "/images/antifreeze-coolant-flush.jpg", alt: "Open car engine bay with the cooling system hoses ready for an antifreeze coolant flush in Edmonton" }}
       >
         Antifreeze keeps your engine from overheating in summer and freezing in an Edmonton winter. Over time it
-          breaks down and stops protecting the cooling system. Leung's Auto Service does antifreeze flushes and
+          breaks down and stops protecting the cooling system. Leung&apos;s Auto Service does antifreeze flushes and
           radiator flushes on domestic and import vehicles at our shop in West Edmonton.
       </PageHero>
 
@@ -60,7 +60,7 @@ export default function AntifreezeCoolantFlush() {
             <li>The temperature gauge runs higher than normal</li>
             <li>Antifreeze that looks rusty, cloudy, or has bits floating in it</li>
             <li>A sweet smell from the engine bay</li>
-            <li>The heater doesn't blow as hot as it used to</li>
+            <li>The heater doesn&apos;t blow as hot as it used to</li>
             <li>It has been several years since the coolant was last changed</li>
           </ul>
         </Panel>
@@ -86,8 +86,8 @@ export default function AntifreezeCoolantFlush() {
       >
         <p className="mt-4 text-lg text-gray-700">
           We drain the old antifreeze, do a radiator flush to clear out rust and buildup, and refill the system
-          with coolant that meets your vehicle's specification. We also check the hoses, radiator, and cap for
-          leaks or wear, and test that the new coolant protects against Edmonton's coldest days. You approve the
+          with coolant that meets your vehicle&apos;s specification. We also check the hoses, radiator, and cap for
+          leaks or wear, and test that the new coolant protects against Edmonton&apos;s coldest days. You approve the
           work and the price before we start.
         </p>
       </StepsSection>

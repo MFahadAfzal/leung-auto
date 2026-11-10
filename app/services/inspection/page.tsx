@@ -16,14 +16,14 @@ export default function CarInspections() {
     <ServiceHub
       image={{ src: "/images/car-inspection.jpg", alt: "Mechanic checking under the open hood of an SUV during a car inspection in Edmonton" }}
       href="/services/inspection"
-      intro="An inspection tells you the real condition of a vehicle, whether you're registering it in Alberta or getting a used car inspection before you buy. Pick the type of inspection below that fits your situation."
-      servicesHeading="Our Car Inspection Services"
-      ctaHeading="Not Sure Which Car Inspection You Need?"
-      ctaLabel="Book a Car Inspection"
+      intro="A vehicle inspection tells you its real condition, whether you're registering it in Alberta or getting a used car checked before you buy. Pick the type of inspection below that fits your situation."
+      servicesHeading="Our Inspection Services"
+      ctaHeading="Not Sure Which Inspection You Need?"
+      ctaLabel="Book an Inspection"
       whyUs={{
         heading: "Why Choose Our Shop for Your Car Inspection",
-        text: "Leung's Auto Service has done car inspections for Edmonton drivers since 2002. We're an independent, AMVIC certified shop in West Edmonton, so you get a straight answer on the vehicle's condition. We walk you through what we find and what it means before you decide anything.",
-        alt: "Vehicle in the service bay for a car inspection at Leung's Auto Service in West Edmonton",
+        text: "Leung's Auto Service has inspected vehicles for Edmonton drivers since 2002. We're an independent, AMVIC certified shop in West Edmonton, so you get a straight answer on the vehicle's condition. We walk you through what we find and what it means before you decide anything.",
+        alt: "Mechanic and customer looking under the hood of a car together before an inspection in West Edmonton",
         facts: [
           { value: "Since 2002", label: "Serving Edmonton drivers" },
           { value: "AMVIC Certified", label: "Independent inspection shop" },
@@ -31,7 +31,7 @@ export default function CarInspections() {
         ],
       }}
       reviews={{
-        heading: "Car Inspection Reviews from Our Customers",
+        heading: "Inspection Reviews from Our Customers",
         text: "Here's what customers have said about inspections at Leung's Auto Service.",
         items: reviewsBy("Evan Traverse", "stephen fan"),
       }}

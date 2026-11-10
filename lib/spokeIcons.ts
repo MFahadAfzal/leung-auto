@@ -22,7 +22,7 @@ export const spokeIcons: Record<string, LucideIcon> = {
   "/services/brakes/brake-pad-replacement": Disc,
   "/services/brakes/brake-fluid-flush": Droplet,
   "/services/brakes/abs-brake-repair": TriangleAlert,
-  "/services/suspension/car-suspension-replacement": CarFront,
+  "/services/suspension/suspension-repair": CarFront,
   "/services/suspension/steering-repair": LifeBuoy,
   "/services/diagnostics#check-engine-light": Gauge,
   "/services/diagnostics#transmission-diagnostics": Cog,

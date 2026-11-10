@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero"
 export const metadata = {
   title: "Book an Appointment | Leung's Auto Service Edmonton",
   description:
-    "Book an appointment or book car repair in West Edmonton: call 780-452-0134 or visit 12025 149 St NW. 8:30 AM - 6 PM Monday-Friday, closed weekends.",
+    `Book an appointment or book car repair in West Edmonton: call ${business.phone} or visit ${business.street}. ${business.hours}.`,
   alternates: {
     canonical: "/contact",
   },
@@ -21,7 +21,7 @@ export default function Contact() {
       {/* ===== INTRO: call is the main action, since most visitors are on phones ===== */}
       <PageHero
         heading="Book an Appointment"
-        image={{ src: "/images/book-appointment.jpg", alt: "Mechanic working at a laptop on a workbench in an auto repair shop, where you can book car repair or book an appointment in West Edmonton" }}
+        image={{ src: "/images/book-appointment.jpg", alt: "Mechanic working at a laptop on a workbench in an auto repair shop" }}
         actions={
           <a
             href={business.phoneHref}
@@ -85,7 +85,7 @@ export default function Contact() {
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-3xl font-bold md:text-4xl">Find Our Shop in West Edmonton</h2>
           <iframe
-            title="Map to Leung's Auto Service at 12025 149 St NW, Edmonton"
+            title={`Map to ${business.name} at ${business.street}, ${business.city}`}
             src={`https://www.google.com/maps?q=${mapsQuery}&output=embed`}
             className="mt-8 h-96 w-full rounded-lg border-0 shadow-lg"
             loading="lazy"

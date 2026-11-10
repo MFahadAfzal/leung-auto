@@ -8,9 +8,9 @@ import StepsSection from "@/components/StepsSection"
 import { Panel, PanelSection } from "@/components/Panels"
 
 export const metadata = {
-  title: "Wheel Alignment Edmonton | Tire Alignment | Leung's Auto",
+  title: "Wheel Alignment Edmonton | Tire Alignment",
   description:
-    "Wheel alignment and tire alignment in West Edmonton. Fix pulling, an off-centre steering wheel, and uneven tire wear. Book your wheel alignment today.",
+    "Wheel alignment and tire alignment in West Edmonton. Fix pulling, an off-centre steering wheel, and uneven tire wear. Book today.",
   alternates: {
     canonical: "/services/maintenance/wheel-alignment",
   },
@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "Is a tire alignment the same as a wheel alignment?",
     answer:
-      "Yes. A wheel alignment and a tire alignment are the same thing. The adjustment is made to the steering and suspension that hold your wheels, not to the tires themselves, but the goal is to keep your tires pointing straight and wearing evenly. Getting a tire alignment when you need one helps your tires last longer and keeps the car driving straight.",
+      "Yes, they're the same thing. The adjustment is made to the steering and suspension that hold your wheels, not to the tires themselves, but the goal is to keep your tires pointing straight and wearing evenly. Getting one when you need it helps your tires last longer and keeps the car driving straight.",
   },
   {
     question: "How often do you need a wheel alignment?",
@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "Do potholes affect wheel alignment?",
     answer:
-      "Yes. A hard hit from a pothole or curb can knock your wheels out of alignment or damage suspension parts. Edmonton's spring pothole season is a common time to need a wheel alignment.",
+      "Yes. A hard hit from a pothole or curb can knock your wheels out of alignment or damage suspension parts. Edmonton's spring pothole season is a common time to need one.",
   },
   {
     question: "How much does a wheel alignment cost?",
@@ -46,11 +46,11 @@ export default function WheelAlignment() {
       {/* ===== INTRO ===== */}
       <PageHero
         heading="Wheel Alignment in Edmonton"
-        cta="Book a Wheel Alignment"
+        cta="Book an Appointment"
         image={{ src: "/images/wheel-alignment.jpg", alt: "Silver car raised on a lift, ready for a wheel alignment and tire alignment in Edmonton" }}
       >
         Potholes and curbs can knock your wheels out of alignment, which wears your tires faster and makes the car
-          pull. Leung's Auto Service does wheel alignments, also called tire alignments, on domestic and import
+          pull. Leung&apos;s Auto Service does wheel alignments, also called tire alignments, on domestic and import
           vehicles at our shop in West Edmonton.
       </PageHero>
 
@@ -74,7 +74,7 @@ export default function WheelAlignment() {
       </PanelSection>
 
       <StepsSection
-        heading="What a Wheel Alignment Involves"
+        heading="What's Involved"
         gray
         steps={[
           { title: "Check the angles", text: "Measure how your wheels are aligned" },
@@ -83,18 +83,18 @@ export default function WheelAlignment() {
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We check the angles of your wheels and adjust them back to your vehicle's specification. If we find worn
+          We check the angles of your wheels and adjust them back to your vehicle&apos;s specification. If we find worn
           steering or suspension parts that would stop the alignment from holding, we explain what we find and you
           approve any extra work and the price before we start.
         </p>
       </StepsSection>
 
-      <Faq title="Wheel Alignment FAQ" faqs={faqs} split />
+      <Faq title="Common Questions" faqs={faqs} split />
 
       <BookingCta
         heading="Book a Wheel Alignment in West Edmonton"
         text="Car pulling or tires wearing unevenly? We'll check your alignment and give you a price first."
-        label="Get a Wheel Alignment Quote"
+        label="Get a Price Quote"
         gray
       />
 
@@ -103,7 +103,7 @@ export default function WheelAlignment() {
         current="/services/maintenance/wheel-alignment"
         also={[
           { title: "Steering Repair", href: "/services/suspension/steering-repair" },
-          { title: "Suspension Repair", href: "/services/suspension/car-suspension-replacement" },
+          { title: "Suspension Repair", href: "/services/suspension/suspension-repair" },
         ]}
       />
 

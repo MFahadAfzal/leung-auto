@@ -16,23 +16,23 @@ export default function CarMaintenance() {
     <ServiceHub
       image={{ src: "/images/car-maintenance.jpg", alt: "Mechanic using a socket wrench on a car engine during routine car maintenance in Edmonton" }}
       href="/services/maintenance"
-      intro="Regular maintenance keeps your vehicle running well and helps avoid bigger repairs. Pick the service below that you need."
-      servicesHeading="Our Car Maintenance Services"
-      ctaHeading="Not Sure What Car Maintenance Is Due?"
-      ctaLabel="Book Car Maintenance"
+      intro="Regular vehicle maintenance keeps your car running well and helps avoid bigger repairs. Pick the service below that you need."
+      servicesHeading="Our Maintenance Services"
+      ctaHeading="Not Sure What's Due?"
+      ctaLabel="Book an Appointment"
       whyUs={{
         heading: "Why Choose Our Shop for Car Maintenance",
-        text: "Leung's Auto Service has kept Edmonton vehicles on schedule since 2002. We're an independent, AMVIC certified shop in West Edmonton doing car maintenance on domestic and import vehicles. We tell you what's due now and what can wait, so you only pay for the maintenance you need.",
-        alt: "Vehicle in the service bay for car maintenance at Leung's Auto Service in West Edmonton",
+        text: "Leung's Auto Service has kept Edmonton vehicles on schedule since 2002. We're an independent, AMVIC certified shop in West Edmonton working on domestic and import vehicles. We tell you what's due now and what can wait, so you only pay for the maintenance you need.",
+        alt: "Mechanic and customer looking under the hood of a car together to plan upcoming maintenance in West Edmonton",
         facts: [
           { value: "Since 2002", label: "Serving Edmonton drivers" },
           { value: "AMVIC Certified", label: "Independent auto repair shop" },
-          { value: "Domestic & Import", label: "Car maintenance for most vehicles" },
+          { value: "Domestic & Import", label: "Most makes and models" },
         ],
       }}
       reviews={{
-        heading: "Car Maintenance Reviews from Our Customers",
-        text: "Here's what customers have said about car maintenance at Leung's Auto Service.",
+        heading: "Maintenance Reviews from Our Customers",
+        text: "Here's what customers have said about maintenance at Leung's Auto Service.",
         items: reviewsBy("Ed", "Jiayi Yu"),
       }}
     />

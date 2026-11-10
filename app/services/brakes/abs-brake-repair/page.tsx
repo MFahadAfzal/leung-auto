@@ -46,7 +46,7 @@ export default function AbsBrakeRepair() {
         image={{ src: "/images/abs-brake-repair.jpg", alt: "Wheel and brake assembly with the brake line and sensor wiring visible, ready for ABS brake repair in Edmonton" }}
       >
         The anti-lock braking system (ABS) helps you keep control when you brake hard on wet, icy, or snowy
-          roads. If your ABS light is on, Leung's Auto Service can find the cause. We do ABS brake repair and ABS
+          roads. If your ABS light is on, Leung&apos;s Auto Service can find the cause. We do ABS brake repair and ABS
           sensor replacement on domestic and import vehicles at our shop in West Edmonton.
       </PageHero>
 

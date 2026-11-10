@@ -21,6 +21,7 @@ export default function ServiceHub({
   reviews,
   whyUs,
   image,
+  details,
 }: {
   href: string
   intro: string
@@ -33,6 +34,8 @@ export default function ServiceHub({
   whyUs?: { heading: string; text: React.ReactNode; alt: string; facts: ShopFact[] }
   // Background photo for the intro, with keyword alt text
   image?: { src: string; alt: string }
+  // Optional extra section under the service cards (short write-ups that link to the spoke pages)
+  details?: React.ReactNode
 }) {
   const service = services.find((s) => s.href === href)!
 
@@ -67,6 +70,8 @@ export default function ServiceHub({
           })}
         </div>
       </section>
+
+      {details}
 
       {/* With a "why choose us" section, the reviews sit in its white card (like the brakes page) */}
       {whyUs && (

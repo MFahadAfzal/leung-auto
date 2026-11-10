@@ -9,6 +9,7 @@ import { services } from "@/lib/services"
 import { spokeIcon } from "@/lib/spokeIcons"
 import PageHero from "@/components/PageHero"
 import WhyChooseUs from "@/components/WhyChooseUs"
+import { business } from "@/lib/business"
 
 export const metadata = {
   title: "Car Diagnostic Edmonton | Check Engine Light Diagnosis",
@@ -130,8 +131,8 @@ export default function CarDiagnostics() {
 
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">Check Engine Light Diagnostic Near Me</h3>
             <p className="mt-4 text-lg text-gray-700">
-              Looking for a check engine light diagnostic near you? Leung&apos;s Auto Service is at 12025 149 St NW in
-              West Edmonton. Call us at 780-452-0134, and we&apos;ll find out why your light is on.
+              Looking for a check engine light diagnostic near you? {business.name} is at {business.street} in
+              West Edmonton. Call us at {business.phone}, and we&apos;ll find out why your light is on.
             </p>
 
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">Check Engine Light Diagnosis Cost</h3>

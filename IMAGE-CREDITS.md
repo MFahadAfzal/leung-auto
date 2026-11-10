@@ -25,5 +25,5 @@ Every photo in `public/images/` is from [Unsplash](https://unsplash.com) and use
 | `pre-purchase-inspection.jpg` | https://unsplash.com/photos/6AbkEt7-lCA |
 | `out-of-province-inspection.jpg` | https://unsplash.com/photos/0DDwJidtiLA |
 | `steering-suspension-repair.jpg` | https://unsplash.com/photos/n99UTGfbvFQ |
-| `car-suspension-replacement.jpg` | https://unsplash.com/photos/K5624F8cipE |
+| `suspension-repair.jpg` | https://unsplash.com/photos/K5624F8cipE |
 | `power-steering.jpg` | https://unsplash.com/photos/dEj_L_FstrI |
