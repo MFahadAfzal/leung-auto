@@ -72,7 +72,7 @@ export default function OilChangeServices() {
       <PanelSection gray aside>
         <Panel>
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need an Oil Change</h2>
-          <ul className="checks mt-6 text-lg text-[#384959]">
+          <ul className="checks mt-6 text-lg text-brand-dark">
             <li>The oil change or maintenance reminder light is on</li>
             <li>The oil on the dipstick looks dark, gritty, or low</li>
             <li>The engine sounds louder or makes a ticking noise</li>
@@ -83,7 +83,7 @@ export default function OilChangeServices() {
         <Panel label="Good to know" dark>
           <p className="mt-4 text-lg text-white/90">
             Due for a{" "}
-            <Link href="/services/maintenance/tire-change" className="text-[#BDDDFC] underline">seasonal tire change</Link> too? Book both and we&apos;ll do them in
+            <Link href="/services/maintenance/tire-change" className="text-brand-light underline">seasonal tire change</Link> too? Book both and we&apos;ll do them in
             one visit.
           </p>
         </Panel>

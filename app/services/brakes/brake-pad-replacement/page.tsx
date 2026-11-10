@@ -7,13 +7,15 @@ import { business } from "@/lib/business"
 
 export const metadata = {
   title: "Brake Pad Replacement Edmonton | Leung's Auto Service",
-  description: "...",
+  description:
+    "Brake pad replacement in West Edmonton. We fix squealing or grinding brakes, do brake rotor replacement when needed, and give you the price before we start.",
   alternates: {
     canonical: "/services/brakes/brake-pad-replacement",
   },
   openGraph: {
     title: "Brake Pad Replacement in Edmonton",
-    description: "...",
+    description:
+    "Brake pad replacement in West Edmonton. We fix squealing or grinding brakes, do brake rotor replacement when needed, and give you the price before we start.",
     url: "/services/brakes/brake-pad-replacement",
     type: "website",
   },
@@ -86,10 +88,10 @@ export default function BrakePadReplacement() {
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
 
           {/* Pads: light panel */}
-          <div className="rounded-2xl border border-[#BDDDFC] bg-white p-8 shadow-sm">
-            <p className="text-sm font-bold uppercase tracking-widest text-[#6A89A7]">Brake pads</p>
+          <div className="rounded-2xl border border-brand-light bg-white p-8 shadow-sm">
+            <p className="text-sm font-bold uppercase tracking-widest text-brand-accent">Brake pads</p>
             <h2 className="accent-heading mt-2 text-2xl font-bold md:text-3xl">Signs You Need Brake Pad Replacement</h2>
-            <ul className="checks mt-6 text-lg text-[#384959]">
+            <ul className="checks mt-6 text-lg text-brand-dark">
               {padSigns.map((sign) => (
                 <li key={sign}>{sign}</li>
               ))}
@@ -97,13 +99,13 @@ export default function BrakePadReplacement() {
           </div>
 
           {/* Rotors: dark panel */}
-          <div className="rounded-2xl bg-[#384959] p-8 text-white shadow-xl">
-            <p className="text-sm font-bold uppercase tracking-widest text-[#BDDDFC]">Brake rotors</p>
+          <div className="rounded-2xl border-l-8 border-brand-accent bg-brand-dark p-8 text-white shadow-xl">
+            <p className="text-sm font-bold uppercase tracking-widest text-brand-support">Brake rotors</p>
             <h2 className="accent-heading mt-2 text-2xl font-bold md:text-3xl">Signs You Need Brake Rotor Replacement</h2>
             <ul className="mt-6 divide-y divide-white/15 border-y border-white/15 text-lg">
               {rotorSigns.map((sign, i) => (
                 <li key={sign} className="flex items-baseline gap-5 py-4">
-                  <span className="w-6 shrink-0 text-sm font-bold text-[#BDDDFC]">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="w-6 shrink-0 text-sm font-bold text-brand-support">{String(i + 1).padStart(2, "0")}</span>
                   <span>{sign}</span>
                 </li>
               ))}
@@ -112,19 +114,19 @@ export default function BrakePadReplacement() {
         </div>
 
         {/* Tip strip: a soft pedal isn't always the pads */}
-        <div className="mx-auto mt-8 max-w-5xl rounded-2xl bg-[#BDDDFC] px-8 py-6">
-          <p className="text-lg text-[#384959]">
+        <div className="mx-auto mt-8 max-w-5xl rounded-2xl bg-brand-support/15 px-8 py-6">
+          <p className="text-lg text-brand-dark">
             <span className="font-bold">Good to know: </span>
             A soft brake pedal can also come from air in the brake lines or old brake fluid, so we check the pads,
             lines, and fluid to find the cause. If the fluid is the problem, a{" "}
-            <Link href="/services/brakes/brake-fluid-flush" className="font-bold underline">brake fluid flush</Link>{" "}
+            <Link href="/services/brakes/brake-fluid-flush" className="font-bold text-brand-accent underline hover:text-brand-tint">brake fluid flush</Link>{" "}
             may be what your car needs.
           </p>
         </div>
       </section>
 
       {/* ===== WHAT'S INVOLVED: centred text, then the three steps in a row ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+      <section className="bg-brand-light/40 px-6 py-16">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">What Brake Pad Replacement Involves</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
@@ -135,14 +137,14 @@ export default function BrakePadReplacement() {
 
           <div className="relative mt-12">
             {/* Line joining the three numbers on desktop */}
-            <div className="absolute left-[16.5%] right-[16.5%] top-7 hidden h-0.5 bg-[#6A89A7]/40 md:block" aria-hidden="true" />
+            <div className="absolute left-[16.5%] right-[16.5%] top-7 hidden h-0.5 bg-brand-support/50 md:block" aria-hidden="true" />
             <ol className="relative grid gap-10 md:grid-cols-3 md:gap-6">
               {steps.map((step, i) => (
                 <li key={step.title} className="relative flex flex-col items-center">
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#384959] text-xl font-bold text-[#BDDDFC] ring-8 ring-[#E5F1FE]">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brand-support text-xl font-bold text-white ring-8 ring-brand-light-tint">
                     {i + 1}
                   </span>
-                  <p className="mt-4 text-xl font-bold text-[#384959]">{step.title}</p>
+                  <p className="mt-4 text-xl font-bold text-brand-dark">{step.title}</p>
                   <p className="mt-1 text-gray-600">{step.text}</p>
                 </li>
               ))}
@@ -158,7 +160,7 @@ export default function BrakePadReplacement() {
         aside={
           <p>
             Have a question about your brakes that isn&apos;t answered here? Call us at{" "}
-            <a href={business.phoneHref} className="font-bold text-[#384959] underline">{business.phone}</a>.
+            <a href={business.phoneHref} className="font-bold text-brand-dark underline">{business.phone}</a>.
           </p>
         }
       />

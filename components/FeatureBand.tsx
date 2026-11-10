@@ -13,10 +13,10 @@ export default function FeatureBand({
   children: React.ReactNode
 }) {
   return (
-    <section id={id} className={`scroll-mt-4 ${gray ? "bg-[#BDDDFC]/40 " : ""}px-6 py-16`}>
+    <section id={id} className={`scroll-mt-4 ${gray ? "bg-brand-light/40 " : ""}px-6 py-16`}>
       <div
         className={`mx-auto grid max-w-5xl gap-6 rounded-2xl p-8 md:p-10 lg:grid-cols-5 lg:gap-10 ${
-          gray ? "bg-white shadow-sm" : "bg-[#BDDDFC]"
+          gray ? "bg-white shadow-sm" : "bg-brand-support/15"
         }`}
       >
         <div className="lg:col-span-2">

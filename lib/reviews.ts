@@ -32,7 +32,7 @@ export const reviews: Review[] = [
     text: "Strongly recommended, really good job and fixed the problem professionally with saving your money as well. I have 2 cars do all the maintenance job here. … I will call him Dr. Leung (because he can fix all the car's problems).",
   },
   {
-    // The fluid part of the same review, for the System Flushes page
+    // The fluid part of the same review, for the Fluid Flushes page
     key: "Jiayi Yu (fluids)",
     name: "Jiayi Yu",
     rating: 5,
@@ -64,7 +64,7 @@ export const reviews: Review[] = [
     text: "Had my engine light go on recently, called and was able to get it checked out the next day. … I've had great, honest service so far.",
   },
   {
-    // The fluids part of a long review, for the System Flushes page
+    // The fluids part of a long review, for the Fluid Flushes page
     name: "Mariana Chan",
     rating: 5,
     text: "Leung’s only uses and sells premium, name-brand fluids. I even bought all the correct fluids for my son’s vehicle here—after several parts departments couldn’t help. I left with expert advice and top-notch products for less than I expected.",

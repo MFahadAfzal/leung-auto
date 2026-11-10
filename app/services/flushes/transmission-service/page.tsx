@@ -54,7 +54,7 @@ export default function TransmissionService() {
             <h2 className="accent-heading text-3xl font-bold">Signs You Need a Transmission Fluid Change</h2>
           </div>
           <div className="lg:col-span-3">
-            <ul className="checks text-lg text-[#384959]">
+            <ul className="checks text-lg text-brand-dark">
               <li>Transmission fluid that looks dark or smells burnt</li>
               <li>Rough, delayed, or slipping shifts</li>
               <li>The car hesitates before moving in drive or reverse</li>

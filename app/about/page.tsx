@@ -70,11 +70,10 @@ export default function About() {
   return (
     <main className="flex-1">
 
-      {/* Trial colour palette on this page only: #384959 slate, #6A89A7 steel blue, #BDDDFC light blue */}
 
       {/* ===== INTRO: shop photo behind the headline ===== */}
       <PageHero
-        heading="About Leung's Auto Service"
+        heading="About Leung's Auto Service, an Auto Repair Shop in Edmonton"
         eyebrow="West Edmonton · Since 2002"
         image={{ src: "/images/about-leungs-auto.jpg", alt: "Inside Leung's Auto Service, an independent auto repair shop in West Edmonton" }}
       >
@@ -87,8 +86,8 @@ export default function About() {
         <div className="relative z-10 mx-auto -mt-8 grid max-w-5xl grid-cols-2 gap-4 rounded-lg bg-white p-6 shadow-lg md:grid-cols-4">
           {facts.map((fact) => (
             <div key={fact.value} className="flex flex-col items-center text-center">
-              <fact.icon className="text-[#6A89A7]" size={28} />
-              <p className="mt-2 font-bold text-[#384959]">{fact.value}</p>
+              <fact.icon className="text-brand-accent" size={28} />
+              <p className="mt-2 font-bold text-brand-dark">{fact.value}</p>
               <p className="text-sm text-gray-600">{fact.label}</p>
             </div>
           ))}
@@ -100,7 +99,7 @@ export default function About() {
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 md:flex-row">
 
           {/* Shop photo */}
-          <div className="relative h-72 w-full overflow-hidden rounded-lg shadow-lg ring-4 ring-[#BDDDFC] md:h-[28rem] md:w-1/2">
+          <div className="relative h-72 w-full overflow-hidden rounded-lg shadow-lg ring-4 ring-brand-light md:h-[28rem] md:w-1/2">
             <Image
               src="/images/front.jpeg"
               alt="Front of Leung's Auto Service, an independent auto repair shop on 149 Street in West Edmonton"
@@ -112,8 +111,8 @@ export default function About() {
 
           {/* Story text */}
           <div className="md:w-1/2">
-            <h2 className="text-3xl font-bold text-[#384959] md:text-4xl">Honest Auto Repair at Fair Prices</h2>
-            <div className="mt-3 h-1 w-16 rounded bg-[#6A89A7]" />
+            <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">Honest Auto Repair at Fair Prices</h2>
+            <div className="mt-3 h-1 w-16 rounded bg-brand-accent" />
             <p className="mt-6 text-lg text-gray-700">
               We work on both domestic and import vehicles. Before any repair starts, we explain what is wrong
               and what it will take to fix, so you know what you are paying for.
@@ -126,15 +125,15 @@ export default function About() {
       </section>
 
       {/* ===== VALUES: how we treat every customer ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-16 text-center">
-        <h2 className="text-3xl font-bold text-[#384959] md:text-4xl">Why Edmonton Drivers Trust Our Shop</h2>
+      <section className="bg-brand-light/40 px-6 py-16 text-center">
+        <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">Why Edmonton Drivers Trust Our Shop</h2>
         <div className="mx-auto mt-10 grid max-w-5xl gap-6 text-left md:grid-cols-3">
           {values.map((value) => (
-            <div key={value.title} className="rounded-lg border-t-4 border-[#6A89A7] bg-white p-6 shadow">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+            <div key={value.title} className="rounded-lg border-t-4 border-brand-accent bg-white p-6 shadow">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-white">
                 <value.icon size={24} />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-[#384959]">{value.title}</h3>
+              <h3 className="mt-4 text-xl font-bold text-brand-dark">{value.title}</h3>
               <p className="mt-2 text-gray-700">{value.text}</p>
             </div>
           ))}
@@ -143,7 +142,7 @@ export default function About() {
 
       {/* ===== SERVICES: the work we do most ===== */}
       <section className="px-6 py-16 text-center">
-        <h2 className="text-3xl font-bold text-[#384959] md:text-4xl">Our Most Requested Auto Repairs</h2>
+        <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">Our Most Requested Auto Repairs</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-700">
           Most of our work is brakes, diagnostics, oil changes, and inspections.
         </p>
@@ -152,22 +151,22 @@ export default function About() {
             <Link
               key={service.href}
               href={service.href}
-              className="group flex items-center gap-3 rounded-lg border border-[#BDDDFC] p-5 transition hover:border-[#6A89A7] hover:bg-[#BDDDFC]/30 hover:shadow-md"
+              className="group flex items-center gap-3 rounded-lg border border-brand-light p-5 transition hover:border-brand-accent hover:bg-brand-light/30 hover:shadow-md"
             >
-              <service.icon className="shrink-0 text-[#6A89A7]" size={26} />
-              <span className="flex-1 font-bold text-[#384959]">{service.title}</span>
-              <ArrowRight className="shrink-0 text-[#6A89A7] transition group-hover:translate-x-1" size={18} />
+              <service.icon className="shrink-0 text-brand-accent" size={26} />
+              <span className="flex-1 font-bold text-brand-dark">{service.title}</span>
+              <ArrowRight className="shrink-0 text-brand-accent transition group-hover:translate-x-1" size={18} />
             </Link>
           ))}
         </div>
-        <Link href="/services" className="mt-8 inline-block font-bold text-[#384959] underline">
+        <Link href="/services" className="mt-8 inline-block font-bold text-brand-accent underline hover:text-brand-tint">
           See all our automotive services
         </Link>
       </section>
 
       {/* ===== CALL TO ACTION: address, hours, and booking ===== */}
       <section className="px-6 pb-16">
-        <div className="mx-auto max-w-5xl rounded-2xl bg-[#384959] px-6 py-12 text-center text-white shadow-lg md:px-12">
+        <div className="mx-auto max-w-5xl rounded-2xl bg-brand-accent px-6 py-12 text-center text-white shadow-lg md:px-12">
           <h2 className="text-3xl font-bold md:text-4xl">Visit Our Auto Repair Shop in West Edmonton</h2>
 
           <div className="mx-auto mt-6 flex max-w-3xl flex-col items-center justify-center gap-4 text-lg text-white/90 md:flex-row md:gap-10">
@@ -182,17 +181,17 @@ export default function About() {
             </a>
             <p className="flex items-center gap-2">
               <Clock size={20} />
-              {business.hoursDays}, {business.hoursTime}
+              {business.hours}
             </p>
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="rounded bg-[#BDDDFC] px-6 py-3 font-bold text-[#384959] hover:bg-white">
+            <Link href="/contact" className="rounded bg-white px-6 py-3 font-bold text-brand-accent hover:bg-brand-dark hover:text-white">
               Book Auto Repair
             </Link>
             <a
               href={business.phoneHref}
-              className="inline-flex items-center gap-2 rounded border border-[#BDDDFC] px-6 py-3 font-bold text-[#BDDDFC] hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded border border-white px-6 py-3 font-bold text-white hover:bg-white/10"
             >
               <Phone size={18} />
               Call {business.phone}

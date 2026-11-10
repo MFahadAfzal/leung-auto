@@ -51,7 +51,7 @@ export default function PrePurchaseInspection() {
       <PageHero
         heading="Pre-Purchase Inspection in Edmonton"
         cta="Book a Pre-Purchase Inspection"
-        image={{ src: "/images/pre-purchase-inspection.jpg", alt: "Mechanic doing a pre-purchase used car inspection at Leung's Auto Service in Edmonton" }}
+        image={{ src: "/images/pre-purchase-inspection.jpg", alt: "Mechanic doing a pre-purchase inspection and used car inspection at Leung's Auto Service in Edmonton" }}
       >
         Buying a used car? A pre-purchase used car inspection tells you what condition it's really in before you
           hand over your money. Leung's Auto Service does pre-purchase inspections on domestic and import vehicles
@@ -65,7 +65,7 @@ export default function PrePurchaseInspection() {
           <p className="mt-4 text-lg text-gray-700">
             Afterward, we walk you through what we found so you can decide whether the car is worth buying.
           </p>
-          <ul className="checks mt-6 text-lg text-[#384959]">
+          <ul className="checks mt-6 text-lg text-brand-dark">
             <li>Engine and transmission, including leaks and how the car runs and shifts</li>
             <li>Brakes, including pads, rotors, lines, and brake fluid</li>
             <li>Steering and suspension</li>
@@ -103,7 +103,7 @@ export default function PrePurchaseInspection() {
             Arrange with the seller to bring the car to our shop at 12025 149 St NW, then contact us to book a time.
               Do the inspection before you pay or sign anything. If the car is registered outside Alberta, it will
               also need an{" "}
-              <Link href="/services/inspection/out-of-province-inspection" className="text-[#384959] underline">out of province inspection</Link>{" "}
+              <Link href="/services/inspection/out-of-province-inspection" className="text-brand-accent underline hover:text-brand-tint">out of province inspection</Link>{" "}
               before you can register it.
           </>
         }

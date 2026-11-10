@@ -54,13 +54,13 @@ export default function AbsBrakeRepair() {
         tip={
           <>
             Longer stopping distances can also mean worn pads, so we check the whole brake system. See{" "}
-              <Link href="/services/brakes/brake-pad-replacement" className="text-[#384959] underline">brake pad replacement</Link> for more on worn pads.
+              <Link href="/services/brakes/brake-pad-replacement" className="text-brand-accent underline hover:text-brand-tint">brake pad replacement</Link> for more on worn pads.
           </>
         }
       >
         <Panel>
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need ABS Brake Repair</h2>
-          <ul className="checks mt-6 text-lg text-[#384959]">
+          <ul className="checks mt-6 text-lg text-brand-dark">
             <li>The ABS light is on</li>
             <li>The brake pedal pulses or feels different when you brake hard</li>
             <li>The brakes lock up on wet or icy roads</li>

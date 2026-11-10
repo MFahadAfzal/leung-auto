@@ -57,7 +57,7 @@ export default function WheelAlignment() {
       <PanelSection aside>
         <Panel>
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need a Wheel Alignment</h2>
-          <ul className="checks mt-6 text-lg text-[#384959]">
+          <ul className="checks mt-6 text-lg text-brand-dark">
             <li>The car pulls or drifts to one side</li>
             <li>The steering wheel is off-centre when driving straight</li>
             <li>Uneven or fast tire wear</li>
@@ -68,7 +68,7 @@ export default function WheelAlignment() {
         <Panel label="Good to know" dark>
           <p className="mt-4 text-lg text-white/90">
             Uneven tire wear can also mean your tires are due for a rotation, which we can do at your{" "}
-            <Link href="/services/maintenance/tire-change" className="text-[#BDDDFC] underline">seasonal tire change</Link>.
+            <Link href="/services/maintenance/tire-change" className="text-brand-light underline">seasonal tire change</Link>.
           </p>
         </Panel>
       </PanelSection>

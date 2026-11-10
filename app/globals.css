@@ -2,12 +2,29 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #384959;
+  --foreground: #001427;
+
+  /* Brand colours used across the site (as bg-brand-dark, text-brand-accent, etc.).
+     Change a value here to recolour every page, the navbar, and the footer at once. */
+  --brand-dark: #001427; /* Prussian Blue: navbar, footer, dark panels, headings */
+  --brand-darker: #000a14; /* footer bottom bar, button hovers */
+  --brand-accent: #bf0603; /* Brick Ember, the focus colour: buttons, icons, accent lines, links, CTA cards */
+  --brand-light: #c9d6e1; /* Muted light blue: text on dark, borders, tinted sections (as /40) */
+  --brand-light-tint: #e9eff3; /* brand-light at 40% over white, matches tinted sections */
+  --brand-support: #708d81; /* Deep Teal, the second colour: checkmarks, steps, eyebrows, FAQ arrows */
+  --brand-tint: #8d0801; /* Blood Red: hover on red buttons, corner of the page hero overlay */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-darker: var(--brand-darker);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-light: var(--brand-light);
+  --color-brand-light-tint: var(--brand-light-tint);
+  --color-brand-support: var(--brand-support);
+  --color-brand-tint: var(--brand-tint);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-sans: var(--font-montserrat);
@@ -31,12 +48,12 @@ html {
 }
 
 /* Lists on service pages (.checks and .steps): numbered rows with thin dividers between them,
-   the number small and steel blue on the left */
+   the number small and accent colour on the left */
 .checks,
 .steps {
   counter-reset: item;
-  border-top: 1px solid rgb(106 137 167 / 0.3);
-  border-bottom: 1px solid rgb(106 137 167 / 0.3);
+  border-top: 1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);
 }
 .checks > li,
 .steps > li {
@@ -46,7 +63,7 @@ html {
 }
 .checks > li + li,
 .steps > li + li {
-  border-top: 1px solid rgb(106 137 167 / 0.3);
+  border-top: 1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);
 }
 .checks > li::before,
 .steps > li::before {
@@ -56,10 +73,10 @@ html {
   top: 1.35rem;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #6a89a7;
+  color: var(--brand-accent);
 }
 
-/* Section headings in the text-heavy parts of service pages get a short navy line under them */
+/* Section headings in the text-heavy parts of service pages get a short accent line under them */
 .accent-heading::after {
   content: "";
   display: block;
@@ -67,10 +84,10 @@ html {
   height: 0.25rem;
   margin-top: 0.75rem;
   border-radius: 0.25rem;
-  background: #6a89a7;
+  background: var(--brand-accent);
 }
 
-/* Text inside dark slate panels (components/Panels.tsx): light headings, text, links, and list numbers */
+/* Text inside dark panels (components/Panels.tsx): light headings, text, links, and list numbers */
 .on-dark h2,
 .on-dark h3 {
   color: white;
@@ -80,10 +97,10 @@ html {
   color: rgb(255 255 255 / 0.9);
 }
 .on-dark a {
-  color: #bdddfc;
+  color: var(--brand-light);
 }
 .on-dark .panel-label {
-  color: #bdddfc;
+  color: var(--brand-support);
 }
 .on-dark .checks,
 .on-dark .steps,
@@ -93,5 +110,5 @@ html {
 }
 .on-dark .checks > li::before,
 .on-dark .steps > li::before {
-  color: #bdddfc;
+  color: var(--brand-support);
 }

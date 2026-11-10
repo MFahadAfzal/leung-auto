@@ -53,7 +53,7 @@ export default function BrakeFluidFlush() {
       <PanelSection aside>
         <Panel>
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need a Brake Fluid Flush</h2>
-          <ul className="checks mt-6 text-lg text-[#384959]">
+          <ul className="checks mt-6 text-lg text-brand-dark">
             <li>A soft or spongy brake pedal</li>
             <li>Brake fluid that looks dark or dirty instead of clear or light amber</li>
             <li>The brakes feel less responsive than they used to</li>
@@ -65,7 +65,7 @@ export default function BrakeFluidFlush() {
           <p className="mt-4 text-lg text-white/90">
             Some of these signs can also come from worn brake pads. When we check your brakes, we look at both, so
             you only pay for what your car needs. See{" "}
-            <Link href="/services/brakes/brake-pad-replacement" className="text-[#BDDDFC] underline">brake pad replacement</Link>{" "}
+            <Link href="/services/brakes/brake-pad-replacement" className="text-brand-light underline">brake pad replacement</Link>{" "}
             for more on worn pads.
           </p>
         </Panel>

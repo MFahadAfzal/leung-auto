@@ -59,7 +59,7 @@ export default function Breadcrumbs() {
             {i === crumbs.length - 1 ? (
               <span aria-current="page" className="font-bold text-white">{crumb.name}</span>
             ) : (
-              <Link href={crumb.href} className="text-[#BDDDFC] underline hover:text-white">{crumb.name}</Link>
+              <Link href={crumb.href} className="text-brand-light underline hover:text-white">{crumb.name}</Link>
             )}
           </li>
         ))}

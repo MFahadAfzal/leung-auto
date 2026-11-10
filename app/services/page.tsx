@@ -8,7 +8,7 @@ import { services } from "@/lib/services"
 export const metadata = {
   title: "Automotive Services in Edmonton | Leung's Auto Service",
   description:
-    "Brake repair, suspension, diagnostics, maintenance, inspections and more at Leung's Auto Service in West Edmonton.",
+    "Automotive services in West Edmonton: brake repair, steering and suspension, diagnostics, maintenance, inspections and fluid flushes at Leung's Auto Service.",
   alternates: {
     canonical: "/services",
   },
@@ -31,10 +31,10 @@ export default function Services() {
       <section className="px-6 py-14">
         <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div key={service.href} className="flex flex-col rounded-lg border border-[#BDDDFC] bg-white p-6 shadow-sm transition hover:shadow-md">
+            <div key={service.href} className="flex flex-col rounded-lg border border-brand-light bg-white p-6 shadow-sm transition hover:shadow-md">
 
               {/* Hub link */}
-              <h2 className="text-xl font-bold text-[#384959]">
+              <h2 className="text-xl font-bold text-brand-dark">
                 <Link href={service.href} className="group inline-flex items-center gap-2 hover:underline">
                   {service.title}
                   <ArrowRight className="transition group-hover:translate-x-1" size={18} aria-hidden="true" />
@@ -44,11 +44,11 @@ export default function Services() {
 
               {/* Specific repairs under this service */}
               {service.spokes.length > 0 && (
-                <ul className="mt-4 flex flex-col gap-2 border-t border-[#BDDDFC] pt-4">
+                <ul className="mt-4 flex flex-col gap-2 border-t border-brand-light pt-4">
                   {service.spokes.map((spoke) => (
                     <li key={spoke.href} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#384959]" aria-hidden="true" />
-                      <Link href={spoke.href} className="text-[#384959] hover:underline">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-dark" aria-hidden="true" />
+                      <Link href={spoke.href} className="text-brand-dark hover:underline">
                         {spoke.title}
                       </Link>
                     </li>

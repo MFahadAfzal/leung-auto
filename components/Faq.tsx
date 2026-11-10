@@ -26,7 +26,7 @@ export default function Faq({
     aside = (
       <p>
         Have a question that isn&apos;t answered here? Call us at{" "}
-        <a href={business.phoneHref} className="font-bold text-[#384959] underline">{business.phone}</a>.
+        <a href={business.phoneHref} className="font-bold text-brand-dark underline">{business.phone}</a>.
       </p>
     )
   }
@@ -42,7 +42,7 @@ export default function Faq({
   }
 
   return (
-    <section className={`${gray ? "bg-[#BDDDFC]/40 " : ""}px-6 py-16`}>
+    <section className={`${gray ? "bg-brand-light/40 " : ""}px-6 py-16`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -61,11 +61,11 @@ export default function Faq({
               <details
                 key={faq.question}
 
-                className={`group rounded-xl ${gray ? "bg-white shadow-sm" : "border border-[#BDDDFC] bg-[#BDDDFC]/20"}`}
+                className={`group rounded-xl border-l-4 border-l-brand-accent ${gray ? "bg-white shadow-sm" : "border border-brand-light bg-brand-light/20"}`}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 [&::-webkit-details-marker]:hidden">
-                  <h3 className="text-lg font-bold text-[#384959] md:text-xl">{faq.question}</h3>
-                  <ChevronDown className="shrink-0 text-[#6A89A7] transition group-open:rotate-180" size={22} />
+                  <h3 className="text-lg font-bold text-brand-dark md:text-xl">{faq.question}</h3>
+                  <ChevronDown className="shrink-0 text-brand-support transition group-open:rotate-180" size={22} />
                 </summary>
                 <p className="px-5 pb-5 text-lg text-gray-700">{faq.answer}</p>
               </details>
@@ -81,11 +81,11 @@ export default function Faq({
               <details
                 key={faq.question}
 
-                className={`group rounded-xl ${gray ? "bg-white shadow-sm" : "border border-[#BDDDFC] bg-[#BDDDFC]/20"}`}
+                className={`group rounded-xl border-l-4 border-l-brand-accent ${gray ? "bg-white shadow-sm" : "border border-brand-light bg-brand-light/20"}`}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 [&::-webkit-details-marker]:hidden">
-                  <h3 className="text-lg font-bold text-[#384959] md:text-xl">{faq.question}</h3>
-                  <ChevronDown className="shrink-0 text-[#6A89A7] transition group-open:rotate-180" size={22} />
+                  <h3 className="text-lg font-bold text-brand-dark md:text-xl">{faq.question}</h3>
+                  <ChevronDown className="shrink-0 text-brand-support transition group-open:rotate-180" size={22} />
                 </summary>
                 <p className="px-5 pb-5 text-lg text-gray-700">{faq.answer}</p>
               </details>

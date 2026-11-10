@@ -11,6 +11,7 @@ import { reviewsBy } from "@/lib/reviews"
 import { business } from "@/lib/business"
 import { services } from "@/lib/services"
 import PageHero from "@/components/PageHero"
+import WhyChooseUs from "@/components/WhyChooseUs"
 import { spokeIcon } from "@/lib/spokeIcons"
 
 export const metadata = {
@@ -127,14 +128,14 @@ export default function BrakeRepair() {
               <Link
                 key={spoke.href}
                 href={spoke.href}
-                className="group flex flex-col rounded-xl border border-[#BDDDFC] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#6A89A7] hover:shadow-lg"
+                className="group flex flex-col rounded-xl border border-brand-light border-t-4 border-t-brand-accent bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-accent hover:shadow-lg"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#384959] text-[#BDDDFC] transition group-hover:bg-[#6A89A7] group-hover:text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-accent text-white transition group-hover:bg-brand-support">
                   <Icon size={28} />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-[#384959]">{spoke.title}</h3>
+                <h3 className="mt-5 text-xl font-bold text-brand-dark group-hover:text-brand-accent">{spoke.title}</h3>
                 <p className="mt-2 flex-1 text-gray-600">{spoke.blurb}</p>
-                <ArrowRight className="mt-4 text-[#6A89A7] transition group-hover:translate-x-1" size={20} aria-hidden="true" />
+                <ArrowRight className="mt-4 text-brand-accent transition group-hover:translate-x-1" size={20} aria-hidden="true" />
               </Link>
             )
           })}
@@ -142,24 +143,24 @@ export default function BrakeRepair() {
       </section>
 
       {/* ===== SIGNS: heading and shortcuts on the left, the signs as a divided list on the right ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+      <section className="bg-brand-light/40 px-6 py-16">
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-5 lg:gap-10">
           <div className="lg:col-span-2">
             <h2 className="accent-heading text-3xl font-bold md:text-4xl">Signs You Need Brake Repair</h2>
             {/* Shortcut to the two pages people with these symptoms usually need */}
             <p className="mt-6 text-lg text-gray-700">
               Hearing a squeal or grind? See our{" "}
-              <Link href="/services/brakes/brake-pad-replacement" className="font-bold text-[#384959] underline">Brake Pad Replacement</Link>{" "}
+              <Link href="/services/brakes/brake-pad-replacement" className="font-bold text-brand-accent underline hover:text-brand-tint">Brake Pad Replacement</Link>{" "}
               page. ABS light on? See{" "}
-              <Link href="/services/brakes/abs-brake-repair" className="font-bold text-[#384959] underline">ABS Brake Repair</Link>.
+              <Link href="/services/brakes/abs-brake-repair" className="font-bold text-brand-accent underline hover:text-brand-tint">ABS Brake Repair</Link>.
             </p>
           </div>
 
-          <ul className="divide-y divide-[#6A89A7]/30 border-y border-[#6A89A7]/30 lg:col-span-3">
+          <ul className="divide-y divide-brand-accent/40 border-y border-brand-accent/40 lg:col-span-3">
             {signs.map((sign, i) => (
               <li key={sign} className="flex items-baseline gap-5 py-4">
-                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-lg text-[#384959]">{sign}</span>
+                <span className="w-6 shrink-0 text-sm font-bold text-brand-accent">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-lg text-brand-dark">{sign}</span>
               </li>
             ))}
           </ul>
@@ -181,13 +182,13 @@ export default function BrakeRepair() {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-[#384959] p-8 text-white shadow-xl">
+          <div className="rounded-2xl border-l-8 border-brand-accent bg-brand-dark p-8 text-white shadow-xl">
             <p className="text-xl font-bold">What we check</p>
-            <div className="mt-3 h-1 w-12 rounded bg-[#BDDDFC]" />
+            <div className="mt-3 h-1 w-12 rounded bg-brand-accent" />
             <ul className="mt-6 space-y-4">
               {inspectionChecks.map((check) => (
                 <li key={check} className="flex items-start gap-3 text-lg">
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#BDDDFC] text-[#384959]">
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-support text-white">
                     <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M20 6 9 17l-5-5" />
                     </svg>
@@ -201,7 +202,7 @@ export default function BrakeRepair() {
       </section>
 
       {/* ===== BRAKE SERVICE & MAINTENANCE: same layout as the signs section, text left and tips as a divided list ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+      <section className="bg-brand-support/15 px-6 py-16">
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-5 lg:gap-10">
           <div className="lg:col-span-2">
             <h2 className="accent-heading text-3xl font-bold md:text-4xl">Brake Service and Brake Maintenance</h2>
@@ -213,77 +214,69 @@ export default function BrakeRepair() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-2xl font-bold text-[#384959]">Brake Maintenance Tips</h3>
-            <ol className="mt-4 divide-y divide-[#6A89A7]/30 border-y border-[#6A89A7]/30">
+            <h3 className="text-2xl font-bold text-brand-dark">Brake Maintenance Tips</h3>
+            <div className="mt-3 h-1 w-12 rounded bg-brand-support" />
+            <ol className="mt-4 divide-y divide-brand-support/50 border-y border-brand-support/50">
               <li className="flex items-baseline gap-5 py-4">
-                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">01</span>
-                <span className="text-lg text-[#384959]">
+                <span className="w-6 shrink-0 text-sm font-bold text-brand-support">01</span>
+                <span className="text-lg text-brand-dark">
                   Have a brake inspection at least once a year, or at your{" "}
-                  <Link href="/services/maintenance/tire-change" className="font-bold underline">seasonal tire change</Link>
+                  <Link href="/services/maintenance/tire-change" className="font-bold text-brand-accent underline hover:text-brand-tint">seasonal tire change</Link>
                 </span>
               </li>
               <li className="flex items-baseline gap-5 py-4">
-                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">02</span>
-                <span className="text-lg text-[#384959]">Replace brake pads before they wear down to the metal, to save your rotors</span>
+                <span className="w-6 shrink-0 text-sm font-bold text-brand-support">02</span>
+                <span className="text-lg text-brand-dark">Replace brake pads before they wear down to the metal, to save your rotors</span>
               </li>
               <li className="flex items-baseline gap-5 py-4">
-                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">03</span>
-                <span className="text-lg text-[#384959]">
+                <span className="w-6 shrink-0 text-sm font-bold text-brand-support">03</span>
+                <span className="text-lg text-brand-dark">
                   Change the brake fluid on schedule. See our{" "}
-                  <Link href="/services/brakes/brake-fluid-flush" className="font-bold underline">Brake Fluid Flush</Link>{" "}
+                  <Link href="/services/brakes/brake-fluid-flush" className="font-bold text-brand-accent underline hover:text-brand-tint">Brake Fluid Flush</Link>{" "}
                   page
                 </span>
               </li>
               <li className="flex items-baseline gap-5 py-4">
-                <span className="w-6 shrink-0 text-sm font-bold text-[#6A89A7]">04</span>
-                <span className="text-lg text-[#384959]">Get any new noise, vibration, or warning light checked early</span>
+                <span className="w-6 shrink-0 text-sm font-bold text-brand-support">04</span>
+                <span className="text-lg text-brand-dark">Get any new noise, vibration, or warning light checked early</span>
               </li>
             </ol>
           </div>
         </div>
       </section>
 
-      {/* ===== WHY US + REVIEW: shop facts on the left, customer review on the right ===== */}
-      <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="accent-heading text-3xl font-bold md:text-4xl">Why Choose Our Brake Repair Shop</h2>
-            <p className="mt-6 text-lg text-gray-700">
-              Leung&apos;s Auto Service has served Edmonton drivers since 2002. We&apos;re an independent, AMVIC
-              certified brake repair shop at {business.street} in West Edmonton. We show you the worn parts and only
-              recommend the brake service your vehicle needs.
-            </p>
-            <div className="mt-8 grid gap-6 border-t border-[#BDDDFC] pt-6 sm:grid-cols-3">
-              {shopFacts.map((fact) => (
-                <div key={fact.value}>
-                  <p className="text-lg font-bold text-[#384959]">{fact.value}</p>
-                  <p className="mt-1 text-sm text-gray-600">{fact.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* TESTIMONIALS: real Google review */}
-          <div className="rounded-2xl bg-[#BDDDFC]/40 p-8 text-center">
+      {/* ===== WHY US + REVIEW: shared shop photo behind the section, customer review on the right ===== */}
+      <WhyChooseUs
+        heading="Why Choose Our Brake Repair Shop"
+        alt="Vehicle on a lift for brake service at Leung's Auto Service, an independent brake repair shop in West Edmonton"
+        facts={shopFacts}
+        aside={
+          <>
             <h2 className="text-2xl font-bold md:text-3xl">Brake Repair Reviews from Our Customers</h2>
             <p className="mt-4 text-lg text-gray-700">
               Here&apos;s what customers have said about their brake repair at Leung&apos;s Auto Service.
             </p>
-            <Reviews reviews={reviewsBy("Ace")} onGray />
-          </div>
-        </div>
-      </section>
+            <Reviews reviews={reviewsBy("Ace")} />
+          </>
+        }
+      >
+        <p>
+          Leung&apos;s Auto Service has served Edmonton drivers since 2002. We&apos;re an independent, AMVIC certified
+          brake repair shop at {business.street} in West Edmonton. We show you the worn parts and only recommend the
+          brake service your vehicle needs.
+        </p>
+      </WhyChooseUs>
 
       {/* ===== FAQ: click a question to open its answer (answers stay in the page for Google) ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-16">
+      <section className="bg-brand-light/40 px-6 py-16">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center text-3xl font-bold md:text-4xl">Brake Repair FAQ</h2>
           <div className="mt-10 space-y-3">
             {faqs.map((faq) => (
-              <details key={faq.question} className="group rounded-xl bg-white shadow-sm">
+              <details key={faq.question} className="group rounded-xl border-l-4 border-brand-accent bg-white shadow-sm">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 [&::-webkit-details-marker]:hidden">
-                  <h3 className="text-lg font-bold text-[#384959] md:text-xl">{faq.question}</h3>
-                  <ChevronDown className="shrink-0 text-[#6A89A7] transition group-open:rotate-180" size={22} />
+                  <h3 className="text-lg font-bold text-brand-dark md:text-xl">{faq.question}</h3>
+                  <ChevronDown className="shrink-0 text-brand-support transition group-open:rotate-180" size={22} />
                 </summary>
                 <p className="px-5 pb-5 text-lg text-gray-700">{faq.answer}</p>
               </details>

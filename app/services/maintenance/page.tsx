@@ -20,6 +20,16 @@ export default function CarMaintenance() {
       servicesHeading="Our Car Maintenance Services"
       ctaHeading="Not Sure What Car Maintenance Is Due?"
       ctaLabel="Book Car Maintenance"
+      whyUs={{
+        heading: "Why Choose Our Shop for Car Maintenance",
+        text: "Leung's Auto Service has kept Edmonton vehicles on schedule since 2002. We're an independent, AMVIC certified shop in West Edmonton doing car maintenance on domestic and import vehicles. We tell you what's due now and what can wait, so you only pay for the maintenance you need.",
+        alt: "Vehicle in the service bay for car maintenance at Leung's Auto Service in West Edmonton",
+        facts: [
+          { value: "Since 2002", label: "Serving Edmonton drivers" },
+          { value: "AMVIC Certified", label: "Independent auto repair shop" },
+          { value: "Domestic & Import", label: "Car maintenance for most vehicles" },
+        ],
+      }}
       reviews={{
         heading: "Car Maintenance Reviews from Our Customers",
         text: "Here's what customers have said about car maintenance at Leung's Auto Service.",

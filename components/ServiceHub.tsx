@@ -5,6 +5,7 @@ import BookingCta from "@/components/BookingCta"
 import OtherServices from "@/components/OtherServices"
 import PageHero from "@/components/PageHero"
 import Reviews, { type Review } from "@/components/Reviews"
+import WhyChooseUs, { type ShopFact } from "@/components/WhyChooseUs"
 import { services } from "@/lib/services"
 import { spokeIcon } from "@/lib/spokeIcons"
 
@@ -18,6 +19,7 @@ export default function ServiceHub({
   ctaHeading,
   ctaLabel,
   reviews,
+  whyUs,
   image,
 }: {
   href: string
@@ -27,6 +29,8 @@ export default function ServiceHub({
   ctaLabel: string
   // Optional customer reviews, shown the same way as on the home page
   reviews?: { heading: string; text: string; items: Review[] }
+  // "Why choose us" section over the shared shop photo, with this hub's keywords
+  whyUs?: { heading: string; text: React.ReactNode; alt: string; facts: ShopFact[] }
   // Background photo for the intro, with keyword alt text
   image?: { src: string; alt: string }
 }) {
@@ -50,22 +54,42 @@ export default function ServiceHub({
               <Link
                 key={spoke.href}
                 href={spoke.href}
-                className="group flex flex-col rounded-xl border border-[#BDDDFC] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#6A89A7] hover:shadow-lg"
+                className="group flex flex-col rounded-xl border border-brand-light border-t-4 border-t-brand-accent bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-accent hover:shadow-lg"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#384959] text-[#BDDDFC] transition group-hover:bg-[#6A89A7] group-hover:text-white">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-accent text-white transition group-hover:bg-brand-support">
                   <Icon size={28} />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-[#384959]">{spoke.title}</h3>
+                <h3 className="mt-5 text-xl font-bold text-brand-dark group-hover:text-brand-accent">{spoke.title}</h3>
                 <p className="mt-2 flex-1 text-gray-600">{spoke.blurb}</p>
-                <ArrowRight className="mt-4 text-[#6A89A7] transition group-hover:translate-x-1" size={20} aria-hidden="true" />
+                <ArrowRight className="mt-4 text-brand-accent transition group-hover:translate-x-1" size={20} aria-hidden="true" />
               </Link>
             )
           })}
         </div>
       </section>
 
-      {reviews && (
-        <section className="bg-[#BDDDFC]/40 px-6 py-16 text-center">
+      {/* With a "why choose us" section, the reviews sit in its white card (like the brakes page) */}
+      {whyUs && (
+        <WhyChooseUs
+          heading={whyUs.heading}
+          alt={whyUs.alt}
+          facts={whyUs.facts}
+          aside={
+            reviews && (
+              <>
+                <h2 className="text-2xl font-bold md:text-3xl">{reviews.heading}</h2>
+                <p className="mt-4 text-lg text-gray-700">{reviews.text}</p>
+                <Reviews reviews={reviews.items} carousel />
+              </>
+            )
+          }
+        >
+          <p>{whyUs.text}</p>
+        </WhyChooseUs>
+      )}
+
+      {reviews && !whyUs && (
+        <section className="bg-brand-light/40 px-6 py-16 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">{reviews.heading}</h2>
           <p className="mt-4 text-lg text-gray-700 md:text-xl">{reviews.text}</p>
           <Reviews reviews={reviews.items} onGray />

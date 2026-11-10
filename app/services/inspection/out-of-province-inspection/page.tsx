@@ -73,10 +73,10 @@ export default function OutOfProvinceInspection() {
           </p>
           <p className="mt-4 text-lg text-gray-700">
             Buying a used vehicle from out of province? Get a{" "}
-            <Link href="/services/inspection/pre-purchase-inspection" className="text-[#384959] underline">pre-purchase inspection</Link> before you pay, so you
+            <Link href="/services/inspection/pre-purchase-inspection" className="text-brand-accent underline hover:text-brand-tint">pre-purchase inspection</Link> before you pay, so you
             know what you&apos;re buying.
           </p>
-          <ol className="steps mt-6 text-lg text-[#384959]">
+          <ol className="steps mt-6 text-lg text-brand-dark">
             <li>Buy a Request for Vehicle Inspection form from any Alberta registry agent.</li>
             <li>Book your inspection with us and bring the vehicle and the form to our shop.</li>
             <li>We inspect the vehicle against Alberta's safety and equipment standards. Most inspections take about two hours.</li>

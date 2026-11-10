@@ -58,7 +58,7 @@ export default function Home() {
         {/* Background photo (file lives in public/images) */}
         <Image
           src="/images/front.jpeg"
-          alt="Mechanic working on a car at Leung's Auto Service in Edmonton"
+          alt="Mechanic doing car repair at Leung's Auto Service in Edmonton"
           fill
           priority
           className="object-cover"
@@ -77,7 +77,7 @@ export default function Home() {
 
           {/* Buttons stack on phones, sit side by side from sm up */}
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="rounded px-6 py-3 bg-[#BDDDFC] font-bold text-[#384959] hover:bg-white">
+            <Link href="/contact" className="rounded bg-brand-accent px-6 py-3 font-bold text-white hover:bg-brand-tint">
               Book Car Repair
             </Link>
             <a href={business.phoneHref} className="rounded border border-white px-6 py-3 font-bold text-white hover:bg-white/10">
@@ -95,14 +95,14 @@ export default function Home() {
           Leung's Auto Service is an independent car repair shop in West Edmonton, owned by Allan Leung and serving
           Edmonton drivers since 2002. Our certified technicians explain the work before they start, and our prices
           keep car repair in Edmonton affordable.{" "}
-          <Link href="/about" className="text-[#384959] underline">Learn more about our shop</Link>.
+          <Link href="/about" className="text-brand-accent underline hover:text-brand-tint">Learn more about our shop</Link>.
         </p>
 
         {/* 1 column on phones, 3 side by side from md up */}
         <div className="mx-auto mt-8 grid max-w-5xl gap-6 text-left md:grid-cols-3">
           {reasons.map((reason) => (
-            <div key={reason.title} className="rounded-lg border border-[#BDDDFC] bg-[#BDDDFC]/20 p-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+            <div key={reason.title} className="rounded-lg border border-brand-light bg-brand-light/20 p-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-white">
                 <reason.icon size={24} />
               </div>
               <h3 className="mt-4 text-xl font-bold">{reason.title}</h3>
@@ -113,7 +113,7 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES: one card per hub, so every service is a click away ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-14 text-center">
+      <section className="bg-brand-light/40 px-6 py-14 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Our Automotive Services</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
           Our automotive services cover routine maintenance and major repairs on domestic and import vehicles.
@@ -126,9 +126,9 @@ export default function Home() {
               href={service.href}
               className="group flex flex-col rounded-lg bg-white p-6 shadow transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              <h3 className="text-xl font-bold text-[#384959]">{service.title}</h3>
+              <h3 className="text-xl font-bold text-brand-dark">{service.title}</h3>
               <p className="mt-2 flex-1 text-gray-600">{service.blurb}</p>
-              <ArrowRight className="mt-4 text-[#384959] transition group-hover:translate-x-1" size={20} aria-hidden="true" />
+              <ArrowRight className="mt-4 text-brand-accent transition group-hover:translate-x-1" size={20} aria-hidden="true" />
             </Link>
           ))}
         </div>
@@ -140,14 +140,14 @@ export default function Home() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full border border-[#6A89A7]/40 bg-white px-4 py-2 text-[#384959] transition hover:border-[#384959] hover:bg-[#384959] hover:text-white"
+              className="rounded-full border border-brand-accent/40 bg-white px-4 py-2 text-brand-dark transition hover:border-brand-dark hover:bg-brand-dark hover:text-white"
             >
               {item.title}
             </Link>
           ))}
         </div>
 
-        <Link href="/services" className="mt-8 inline-block font-bold text-[#384959] underline">
+        <Link href="/services" className="mt-8 inline-block font-bold text-brand-accent underline hover:text-brand-tint">
           See all automotive services
         </Link>
       </section>
@@ -163,15 +163,15 @@ export default function Home() {
       </section>
 
       {/* ===== LOCATION: name, address, phone, and hours for local search ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-14 text-center">
+      <section className="bg-brand-light/40 px-6 py-14 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Affordable Auto Repair in West Edmonton</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
           Visit our shop at {business.street}, {business.city}, {business.province} {business.postalCode}. We're
-          open {business.hoursDays}, {business.hoursTime}.
+          open {business.hours}.
         </p>
         <div className="mx-auto mt-8 grid max-w-3xl gap-4 text-left sm:grid-cols-2">
           <div className="flex items-center gap-4 rounded-lg bg-white p-5 shadow">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white">
               <MapPin size={22} />
             </div>
             <div>
@@ -180,12 +180,13 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center gap-4 rounded-lg bg-white p-5 shadow">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white">
               <Clock size={22} />
             </div>
             <div>
-              <p className="font-bold">{business.hoursDays}</p>
-              <p className="text-gray-600">{business.hoursTime}</p>
+              <p className="font-bold">{business.hoursTime}</p>
+              <p className="text-gray-600">{business.hoursDays}</p>
+              <p className="text-gray-600">{business.hoursClosed}</p>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs"
 import { business } from "@/lib/business"
 
 // Intro banner at the top of an inner page: the page's photo fills the banner behind the text,
-// with a slate overlay so the white text stays readable. Shows the H1, the intro text, and
+// with a dark navy overlay so the white text stays readable. Shows the H1, the intro text, and
 // a keyword booking button with tap-to-call beside it (or custom `actions`).
 //
 // The photo always renders with its alt text, even before the file exists in public/images,
@@ -33,7 +33,7 @@ export default function PageHero({
     actions ??
     (cta && (
       <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <Link href="/contact" className="rounded bg-[#BDDDFC] px-6 py-3 font-bold text-[#384959] shadow-md hover:bg-white">
+        <Link href="/contact" className="rounded bg-brand-accent px-6 py-3 font-bold text-white shadow-md hover:bg-brand-tint">
           {cta}
         </Link>
         <a
@@ -47,7 +47,7 @@ export default function PageHero({
     ))
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#384959] px-6 pb-16 pt-6 text-center md:pb-24">
+    <section className="relative isolate overflow-hidden bg-brand-dark px-6 pb-16 pt-6 text-center [text-shadow:0_2px_10px_rgb(0_0_0/0.7)] md:pb-24">
       {image && (
         <Image
           src={image.src}
@@ -60,10 +60,10 @@ export default function PageHero({
         />
       )}
 
-      {/* Overlay: dark enough for white text over any photo, and steel blue toward one corner so the
-          banner never looks like a continuation of the slate navbar */}
+      {/* Overlay: a light navy tint so the photo stays visible, a little darker at the top and bottom
+          where the breadcrumbs and buttons sit. The text shadow below keeps white text readable. */}
       <div
-        className="absolute inset-0 -z-10 bg-linear-to-br from-[#384959]/90 via-[#384959]/75 to-[#6A89A7]/70"
+        className="absolute inset-0 -z-10 bg-linear-to-b from-brand-dark/55 via-brand-dark/30 to-brand-dark/55"
         aria-hidden="true"
       />
 
@@ -71,9 +71,14 @@ export default function PageHero({
       <Breadcrumbs />
 
       <div className="pt-8 md:pt-14">
-        {eyebrow && <p className="text-sm font-bold uppercase tracking-widest text-[#BDDDFC]">{eyebrow}</p>}
-        <h1 className={`${eyebrow ? "mt-3 " : ""}text-4xl font-bold text-white md:text-5xl`}>{heading}</h1>
-        <div className="mx-auto mt-4 h-1 w-16 rounded bg-[#BDDDFC]" />
+        {/* Small dark pill so the teal label stays readable over a bright photo */}
+        {eyebrow && (
+          <p className="inline-block rounded-full bg-brand-dark/75 px-4 py-1 text-sm font-bold uppercase tracking-widest text-brand-support [text-shadow:none]">
+            {eyebrow}
+          </p>
+        )}
+        <h1 className={`${eyebrow ? "mt-4 " : ""}text-4xl font-bold text-white md:text-5xl`}>{heading}</h1>
+        <div className="mx-auto mt-4 h-1 w-16 rounded bg-brand-accent" />
         <p className="mx-auto mt-6 max-w-3xl text-lg text-white/90 md:text-xl">{children}</p>
         {buttons}
       </div>

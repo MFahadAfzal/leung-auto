@@ -52,7 +52,7 @@ export default function SteeringRepair() {
             <h2 className="accent-heading text-3xl font-bold">Common Steering Problems</h2>
           </div>
           <div className="lg:col-span-3">
-            <ul className="checks text-lg text-[#384959]">
+            <ul className="checks text-lg text-brand-dark">
               <li>Power steering fluid leaking under the car, or a fluid level that keeps dropping</li>
               <li>The power steering warning light is on</li>
               <li>Loose steering, or play in the steering wheel</li>
@@ -91,7 +91,7 @@ export default function SteeringRepair() {
         <p className="mt-4 text-lg text-gray-700">
           Loose steering often comes from worn tie rod ends or a worn steering rack. Clunking when turning can come
           from tie rods, ball joints, or{" "}
-          <Link href="/services/suspension/car-suspension-replacement" className="text-[#384959] underline">worn suspension parts</Link>. We inspect the steering and front end to find which
+          <Link href="/services/suspension/car-suspension-replacement" className="text-brand-accent underline hover:text-brand-tint">worn suspension parts</Link>. We inspect the steering and front end to find which
           part is worn before we replace anything.
         </p>
       </FeatureBand>

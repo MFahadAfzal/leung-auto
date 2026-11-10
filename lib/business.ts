@@ -11,9 +11,11 @@ export const business = {
   city: "Edmonton",
   province: "AB",
   postalCode: "T5L 2J2",
-  hours: "Monday - Friday: 8:30 AM - 6 PM",
-  hoursDays: "Monday - Friday",
+  // Hours are always written the same way everywhere: time, then days, then closed weekends
+  hours: "8:30 AM - 6 PM Monday-Friday, closed weekends",
   hoursTime: "8:30 AM - 6 PM",
+  hoursDays: "Monday-Friday",
+  hoursClosed: "Closed weekends",
   mapsQuery: "Leung's Auto Service, 12025 149 St NW, Edmonton, AB T5L 2J2",
 }
 

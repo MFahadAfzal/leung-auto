@@ -56,7 +56,7 @@ export default function AntifreezeCoolantFlush() {
       <PanelSection>
         <Panel>
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need an Antifreeze Flush</h2>
-          <ul className="checks mt-6 text-lg text-[#384959]">
+          <ul className="checks mt-6 text-lg text-brand-dark">
             <li>The temperature gauge runs higher than normal</li>
             <li>Antifreeze that looks rusty, cloudy, or has bits floating in it</li>
             <li>A sweet smell from the engine bay</li>

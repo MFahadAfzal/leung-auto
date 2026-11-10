@@ -13,12 +13,12 @@ export default function ClusterLinks({ current, also = [] }: { current: string; 
   const siblings = hub.spokes.filter((spoke) => spoke.href !== current)
 
   return (
-    <section className="border-t border-[#BDDDFC] bg-[#BDDDFC]/20 px-6 py-12">
+    <section className="border-t border-brand-light bg-brand-light/20 px-6 py-12">
       <div className="mx-auto max-w-5xl">
         <h2 className="text-center text-2xl font-bold">Related Services</h2>
         <p className="mt-2 text-center text-lg">
           Part of our{" "}
-          <Link href={hub.href} className="text-[#384959] underline">{hub.title}</Link>{" "}
+          <Link href={hub.href} className="text-brand-dark underline">{hub.title}</Link>{" "}
           services.
         </p>
 
@@ -28,13 +28,13 @@ export default function ClusterLinks({ current, also = [] }: { current: string; 
             <Link
               key={spoke.href}
               href={spoke.href}
-              className="group flex items-start gap-4 rounded-lg border border-[#BDDDFC] bg-white p-6 transition hover:border-[#384959] hover:shadow-md"
+              className="group flex items-start gap-4 rounded-lg border border-brand-light bg-white p-6 transition hover:border-brand-dark hover:shadow-md"
             >
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-[#384959]">{spoke.title}</h3>
+                <h3 className="text-xl font-bold text-brand-dark">{spoke.title}</h3>
                 <p className="mt-2 text-gray-600">{spoke.blurb}</p>
               </div>
-              <ArrowRight className="mt-1 shrink-0 text-[#384959] transition group-hover:translate-x-1" size={20} />
+              <ArrowRight className="mt-1 shrink-0 text-brand-accent transition group-hover:translate-x-1" size={20} />
             </Link>
           ))}
         </div>
@@ -45,7 +45,7 @@ export default function ClusterLinks({ current, also = [] }: { current: string; 
             {also.map((item, i) => (
               <span key={item.href}>
                 {i > 0 && " · "}
-                <Link href={item.href} className="text-[#384959] underline">{item.title}</Link>
+                <Link href={item.href} className="text-brand-dark underline">{item.title}</Link>
               </span>
             ))}
           </p>

@@ -7,15 +7,17 @@ import { services } from "@/lib/services"
 const mapsQuery = encodeURIComponent(business.mapsQuery)
 
 export default function Footer() {
+  const icon = "mt-1 shrink-0 text-brand-accent"
+
   return (
-    <footer className="bg-[#384959] text-[#BDDDFC]">
+    <footer className="border-t-4 border-brand-accent bg-brand-dark text-brand-light">
 
       <div className="mx-auto grid max-w-6xl gap-10 px-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
 
         {/* Shop details */}
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#BDDDFC] text-[#384959]">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white">
               <Wrench size={20} />
             </span>
             <p className="text-xl font-bold text-white">{business.name}</p>
@@ -23,7 +25,7 @@ export default function Footer() {
           <p className="mt-4">
             Independent auto repair shop in West Edmonton, serving domestic and import vehicles since 2002.
           </p>
-          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#6A89A7] px-3 py-1 text-sm">
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-brand-accent px-3 py-1 text-sm">
             <BadgeCheck size={16} />
             AMVIC Certified
           </p>
@@ -38,7 +40,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="mt-4 flex gap-3 hover:text-white"
           >
-            <MapPin size={18} className="mt-1 shrink-0 text-[#6A89A7]" />
+            <MapPin size={18} className={icon} />
             <span>
               {business.street}
               <br />
@@ -46,17 +48,17 @@ export default function Footer() {
             </span>
           </a>
           <a href={business.phoneHref} className="mt-3 flex gap-3 hover:text-white">
-            <Phone size={18} className="mt-1 shrink-0 text-[#6A89A7]" />
+            <Phone size={18} className={icon} />
             {business.phone}
           </a>
           <div className="mt-3 flex gap-3">
-            <Clock size={18} className="mt-1 shrink-0 text-[#6A89A7]" />
+            <Clock size={18} className={icon} />
             <span>
-              {business.hoursDays}
-              <br />
               {business.hoursTime}
               <br />
-              Closed weekends
+              {business.hoursDays}
+              <br />
+              {business.hoursClosed}
             </span>
           </div>
         </div>
@@ -85,7 +87,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="bg-[#2A3744] px-8 py-4">
+      <div className="bg-brand-darker px-8 py-4">
         <p className="mx-auto max-w-6xl text-center text-sm md:text-left">
           © 2026 {business.name}. All rights reserved.
         </p>

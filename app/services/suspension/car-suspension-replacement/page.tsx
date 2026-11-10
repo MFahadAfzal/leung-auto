@@ -48,7 +48,7 @@ export default function CarSuspensionReplacement() {
       <PanelSection aside>
         <Panel>
           <h2 className="accent-heading text-2xl font-bold md:text-3xl">Signs You Need Car Suspension Replacement</h2>
-          <ul className="checks mt-6 text-lg text-[#384959]">
+          <ul className="checks mt-6 text-lg text-brand-dark">
             <li>The car bounces or keeps moving after going over bumps</li>
             <li>A clunking or knocking noise from the front end, especially over bumps</li>
             <li>The front end dips when you brake, or the back squats when you accelerate</li>
@@ -62,7 +62,7 @@ export default function CarSuspensionReplacement() {
           <p className="mt-4 text-lg text-white/90">
             Worn tie rods or a power steering leak can also cause loose or wandering steering. If your symptoms are
             mostly in the steering, see{" "}
-            <Link href="/services/suspension/steering-repair" className="text-[#BDDDFC] underline">steering repair</Link>.
+            <Link href="/services/suspension/steering-repair" className="text-brand-light underline">steering repair</Link>.
           </p>
         </Panel>
       </PanelSection>
@@ -91,7 +91,7 @@ export default function CarSuspensionReplacement() {
             car dips under braking, and stopping distances can get longer. Shock and strut replacement is usually
             done in pairs, front or rear, so both sides handle the same. Because struts affect wheel alignment, we
             may recommend a{" "}
-            <Link href="/services/maintenance/wheel-alignment" className="text-[#384959] underline">wheel alignment</Link>{" "}
+            <Link href="/services/maintenance/wheel-alignment" className="text-brand-accent underline hover:text-brand-tint">wheel alignment</Link>{" "}
             afterward.
           </p>
         </Panel>

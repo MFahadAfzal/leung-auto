@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero"
 export const metadata = {
   title: "Book an Appointment | Leung's Auto Service Edmonton",
   description:
-    "Book car repair at Leung's Auto Service in West Edmonton. Call 780-452-0134 or visit us at 12025 149 St NW. Open Monday to Friday, 8:30 AM to 6 PM.",
+    "Book an appointment or book car repair in West Edmonton: call 780-452-0134 or visit 12025 149 St NW. 8:30 AM - 6 PM Monday-Friday, closed weekends.",
   alternates: {
     canonical: "/contact",
   },
@@ -21,11 +21,11 @@ export default function Contact() {
       {/* ===== INTRO: call is the main action, since most visitors are on phones ===== */}
       <PageHero
         heading="Book an Appointment"
-        image={{ src: "/images/book-appointment.jpg", alt: "Leung's Auto Service in West Edmonton, where you can book car repair, maintenance, or an inspection" }}
+        image={{ src: "/images/book-appointment.jpg", alt: "Leung's Auto Service in West Edmonton, where you can book an appointment or book car repair, maintenance, or an inspection" }}
         actions={
           <a
             href={business.phoneHref}
-            className="mt-8 inline-flex items-center gap-2 rounded bg-[#BDDDFC] px-8 py-4 text-xl font-bold text-[#384959] shadow-lg hover:bg-white"
+            className="mt-8 inline-flex items-center gap-2 rounded bg-brand-accent px-8 py-4 text-xl font-bold text-white shadow-lg hover:bg-brand-tint"
           >
             <Phone size={22} />
             Call {business.phone}
@@ -40,18 +40,18 @@ export default function Contact() {
       <section className="px-6 py-14">
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
 
-          <div className="rounded-lg border border-[#BDDDFC] bg-white p-6 text-center shadow-sm">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+          <div className="rounded-lg border border-brand-light bg-white p-6 text-center shadow-sm">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-white">
               <Phone size={22} />
             </div>
             <h2 className="mt-4 text-xl font-bold">Call to Book</h2>
-            <a href={business.phoneHref} className="mt-2 block text-lg text-[#384959] underline">
+            <a href={business.phoneHref} className="mt-2 block text-lg text-brand-dark underline">
               {business.phone}
             </a>
           </div>
 
-          <div className="rounded-lg border border-[#BDDDFC] bg-white p-6 text-center shadow-sm">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+          <div className="rounded-lg border border-brand-light bg-white p-6 text-center shadow-sm">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-white">
               <MapPin size={22} />
             </div>
             <h2 className="mt-4 text-xl font-bold">Shop Address</h2>
@@ -61,27 +61,27 @@ export default function Contact() {
               href={`https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-block text-[#384959] underline"
+              className="mt-2 inline-block text-brand-dark underline"
             >
               Get directions to our shop
             </a>
           </div>
 
-          <div className="rounded-lg border border-[#BDDDFC] bg-white p-6 text-center shadow-sm">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#384959] text-[#BDDDFC]">
+          <div className="rounded-lg border border-brand-light bg-white p-6 text-center shadow-sm">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-white">
               <Clock size={22} />
             </div>
             <h2 className="mt-4 text-xl font-bold">Hours of Operation</h2>
-            <p className="mt-2 text-lg">{business.hoursDays}</p>
-            <p className="text-lg">{business.hoursTime}</p>
-            <p className="text-lg text-gray-600">Closed weekends</p>
+            <p className="mt-2 text-lg">{business.hoursTime}</p>
+            <p className="text-lg">{business.hoursDays}</p>
+            <p className="text-lg text-gray-600">{business.hoursClosed}</p>
           </div>
 
         </div>
       </section>
 
       {/* ===== MAP ===== */}
-      <section className="bg-[#BDDDFC]/40 px-6 py-14">
+      <section className="bg-brand-light/40 px-6 py-14">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-3xl font-bold md:text-4xl">Find Our Shop in West Edmonton</h2>
           <iframe

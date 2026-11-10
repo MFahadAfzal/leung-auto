@@ -61,7 +61,7 @@ export default function TireChange() {
             <h2 className="accent-heading text-3xl font-bold">When You Need a Tire Change</h2>
           </div>
           <div className="lg:col-span-3">
-            <ul className="checks text-lg text-[#384959]">
+            <ul className="checks text-lg text-brand-dark">
               <li>The season is changing and it's time for a winter tire change or summer tire change</li>
               <li>The tread is worn down low</li>
               <li>Cracks, bulges, or cuts in the sidewall</li>
@@ -114,7 +114,7 @@ export default function TireChange() {
           pressure, torque the wheel nuts to spec, and check the tread. Signs you need a tire rotation include
           front tires that are more worn than the back, uneven wear across the tread, and more vibration at
           highway speeds. If a tire is wearing down on one edge, you may need a{" "}
-          <Link href="/services/maintenance/wheel-alignment" className="text-[#384959] underline">wheel alignment</Link> as well.
+          <Link href="/services/maintenance/wheel-alignment" className="text-brand-accent underline hover:text-brand-tint">wheel alignment</Link> as well.
         </p>
       </FeatureBand>
 

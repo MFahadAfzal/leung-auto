@@ -49,7 +49,7 @@ export const services = [
     ],
   },
   {
-    title: "System Flushes",
+    title: "Fluid Flushes",
     href: "/services/flushes",
     blurb: "Fresh fluids to keep your systems running efficiently.",
     spokes: [
