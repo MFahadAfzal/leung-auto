@@ -64,7 +64,7 @@ export default function CarDiagnostics() {
       <PageHero
         heading="Car Diagnostic Services in Edmonton"
         cta="Book a Car Diagnostic"
-        image={{ src: "/images/car-diagnostic.jpg", alt: "Technician doing a car diagnostic and check engine light diagnosis in Edmonton" }}
+        image={{ src: "/images/car-diagnostic.jpg", alt: "Technician using a laptop and a diagnostic cable plugged into a car during a car diagnostic and check engine light diagnosis in Edmonton" }}
       >
         Warning lights and strange behaviour need a proper car diagnostic before a repair. Leung&apos;s Auto
           Service tracks down the cause on domestic and import vehicles at our shop in West Edmonton, from a check
@@ -228,7 +228,7 @@ export default function CarDiagnostics() {
       {/* ===== WHY US + REVIEW: shared shop photo behind the section, customer review on the right ===== */}
       <WhyChooseUs
         heading="Why Choose Our Shop for Car Diagnostics"
-        alt="Technician running a car diagnostic at Leung's Auto Service, an independent auto repair shop in West Edmonton"
+        alt="Mechanic and customer looking under the hood of a car together for a car diagnostic at an independent auto repair shop in West Edmonton"
         facts={[
           { value: "Since 2002", label: "Serving Edmonton drivers" },
           { value: "AMVIC Certified", label: "Independent auto repair shop" },

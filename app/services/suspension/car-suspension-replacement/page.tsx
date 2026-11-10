@@ -38,7 +38,7 @@ export default function CarSuspensionReplacement() {
       <PageHero
         heading="Car Suspension Replacement in Edmonton"
         cta="Book a Suspension Inspection"
-        image={{ src: "/images/car-suspension-replacement.jpg", alt: "Mechanic doing car suspension replacement and shock and strut replacement in Edmonton" }}
+        image={{ src: "/images/car-suspension-replacement.jpg", alt: "Mechanic working under a car with old shock absorbers on the floor during a shock and strut replacement in Edmonton" }}
       >
         Your suspension keeps your tires on the road and your ride smooth and controlled. Leung's Auto Service does
           car suspension replacement and suspension auto repair on domestic and import vehicles at our shop in West

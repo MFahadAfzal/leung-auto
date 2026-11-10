@@ -39,7 +39,7 @@ export default function SteeringRepair() {
       <PageHero
         heading="Power Steering Leak Repair and Steering Repair in Edmonton"
         cta="Book Power Steering Leak Repair"
-        image={{ src: "/images/power-steering-leak-repair.jpg", alt: "Mechanic doing power steering leak repair and fixing a power steering fluid leak in Edmonton" }}
+        image={{ src: "/images/power-steering.jpg", alt: "Driver's hands on the steering wheel of a car that needs power steering repair or power steering leak repair in Edmonton" }}
       >
         Your steering keeps the car tracking straight and responding when you turn the wheel. Leung's Auto Service
           does power steering leak repair and fixes steering problems on domestic and import vehicles at our shop in

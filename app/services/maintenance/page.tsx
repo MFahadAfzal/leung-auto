@@ -14,7 +14,7 @@ export const metadata = {
 export default function CarMaintenance() {
   return (
     <ServiceHub
-      image={{ src: "/images/car-maintenance.jpg", alt: "Mechanic doing car maintenance on a vehicle at Leung's Auto Service in Edmonton" }}
+      image={{ src: "/images/car-maintenance.jpg", alt: "Mechanic using a socket wrench on a car engine during routine car maintenance in Edmonton" }}
       href="/services/maintenance"
       intro="Regular maintenance keeps your vehicle running well and helps avoid bigger repairs. Pick the service below that you need."
       servicesHeading="Our Car Maintenance Services"

@@ -21,7 +21,7 @@ export default function Services() {
       {/* ===== INTRO ===== */}
       <PageHero
         heading="Automotive Services in Edmonton"
-        image={{ src: "/images/automotive-services.jpg", alt: "Mechanic working on a vehicle at Leung's Auto Service, offering automotive services in West Edmonton" }}
+        image={{ src: "/images/automotive-services.jpg", alt: "Several cars up on lifts with their wheels removed in a busy workshop offering automotive services in West Edmonton" }}
       >
         Leung&apos;s Auto Service is an independent shop in West Edmonton. Choose a service below to see the
         specific repairs we handle for domestic and import vehicles.

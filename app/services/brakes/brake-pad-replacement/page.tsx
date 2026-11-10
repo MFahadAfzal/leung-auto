@@ -76,7 +76,7 @@ export default function BrakePadReplacement() {
       <PageHero
         heading="Brake Pad Replacement in Edmonton"
         cta="Book Brake Pad Replacement"
-        image={{ src: "/images/brake-pad-replacement.jpg", alt: "Mechanic doing a brake pad replacement and brake rotor replacement in Edmonton" }}
+        image={{ src: "/images/brake-pad-replacement.jpg", alt: "Brake caliper and drilled brake rotor exposed with the wheel off for a brake pad replacement and brake rotor replacement in Edmonton" }}
       >
         Brakes squealing, brakes grinding, or a soft brake pedal are signs your brake pads are wearing out.
         Leung&apos;s Auto Service does brake pad replacement and brake rotor replacement on domestic and import

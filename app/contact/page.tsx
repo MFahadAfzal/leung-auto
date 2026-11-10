@@ -21,7 +21,7 @@ export default function Contact() {
       {/* ===== INTRO: call is the main action, since most visitors are on phones ===== */}
       <PageHero
         heading="Book an Appointment"
-        image={{ src: "/images/book-appointment.jpg", alt: "Leung's Auto Service in West Edmonton, where you can book an appointment or book car repair, maintenance, or an inspection" }}
+        image={{ src: "/images/book-appointment.jpg", alt: "Mechanic working at a laptop on a workbench in an auto repair shop, where you can book car repair or book an appointment in West Edmonton" }}
         actions={
           <a
             href={business.phoneHref}

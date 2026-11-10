@@ -43,7 +43,7 @@ export default function BrakeFluidFlush() {
       <PageHero
         heading="Brake Fluid Flush in Edmonton"
         cta="Book a Brake Fluid Flush"
-        image={{ src: "/images/brake-fluid-flush.jpg", alt: "Mechanic doing a brake fluid flush to change brake fluid at Leung's Auto Service in Edmonton" }}
+        image={{ src: "/images/brake-fluid-flush.jpg", alt: "Mechanic leaning over an open engine bay near the fluid reservoirs during a brake fluid flush in Edmonton" }}
       >
         Brake fluid absorbs moisture over time, which lowers its performance and can damage brake parts from the
           inside. A brake fluid flush replaces the old fluid with fresh fluid. Leung's Auto Service changes brake

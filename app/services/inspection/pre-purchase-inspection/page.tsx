@@ -51,7 +51,7 @@ export default function PrePurchaseInspection() {
       <PageHero
         heading="Pre-Purchase Inspection in Edmonton"
         cta="Book a Pre-Purchase Inspection"
-        image={{ src: "/images/pre-purchase-inspection.jpg", alt: "Mechanic doing a pre-purchase inspection and used car inspection at Leung's Auto Service in Edmonton" }}
+        image={{ src: "/images/pre-purchase-inspection.jpg", alt: "Mechanic with a tablet showing a customer the underside of a car on a lift during a pre-purchase inspection in Edmonton" }}
       >
         Buying a used car? A pre-purchase used car inspection tells you what condition it's really in before you
           hand over your money. Leung's Auto Service does pre-purchase inspections on domestic and import vehicles

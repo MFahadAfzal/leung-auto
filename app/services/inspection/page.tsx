@@ -14,7 +14,7 @@ export const metadata = {
 export default function CarInspections() {
   return (
     <ServiceHub
-      image={{ src: "/images/car-inspection.jpg", alt: "Technician doing a car inspection at Leung's Auto Service in Edmonton" }}
+      image={{ src: "/images/car-inspection.jpg", alt: "Mechanic checking under the open hood of an SUV during a car inspection in Edmonton" }}
       href="/services/inspection"
       intro="An inspection tells you the real condition of a vehicle, whether you're registering it in Alberta or getting a used car inspection before you buy. Pick the type of inspection below that fits your situation."
       servicesHeading="Our Car Inspection Services"

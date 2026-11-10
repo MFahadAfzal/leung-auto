@@ -75,7 +75,7 @@ export default function About() {
       <PageHero
         heading="About Leung's Auto Service, an Auto Repair Shop in Edmonton"
         eyebrow="West Edmonton · Since 2002"
-        image={{ src: "/images/about-leungs-auto.jpg", alt: "Inside Leung's Auto Service, an independent auto repair shop in West Edmonton" }}
+        image={{ src: "/images/about-leungs-auto.jpg", alt: "Mechanic working on a car with its hood open in a bright auto repair shop with vehicle lifts, like an independent auto repair shop in West Edmonton" }}
       >
         Leung&apos;s Auto Service is an independent auto repair shop in West Edmonton, run by owner Allan Leung
         and serving local drivers since 2002.
@@ -102,7 +102,7 @@ export default function About() {
           <div className="relative h-72 w-full overflow-hidden rounded-lg shadow-lg ring-4 ring-brand-light md:h-[28rem] md:w-1/2">
             <Image
               src="/images/front.jpeg"
-              alt="Front of Leung's Auto Service, an independent auto repair shop on 149 Street in West Edmonton"
+              alt="Mechanic leaning into a car's open engine bay at an independent auto repair shop in West Edmonton"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"

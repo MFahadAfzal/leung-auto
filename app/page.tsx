@@ -58,7 +58,7 @@ export default function Home() {
         {/* Background photo (file lives in public/images) */}
         <Image
           src="/images/front.jpeg"
-          alt="Mechanic doing car repair at Leung's Auto Service in Edmonton"
+          alt="Mechanic leaning into a car's open engine bay during car repair in Edmonton"
           fill
           priority
           className="object-cover"

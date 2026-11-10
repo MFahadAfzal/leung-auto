@@ -41,7 +41,7 @@ export default function TransmissionService() {
       <PageHero
         heading="Transmission Service in Edmonton"
         cta="Book a Transmission Service"
-        image={{ src: "/images/transmission-service.jpg", alt: "Mechanic doing a transmission service and transmission fluid change in Edmonton" }}
+        image={{ src: "/images/transmission-service.jpg", alt: "Automatic transmission gear shifter in a car that is due for a transmission service in Edmonton" }}
       >
         Transmission fluid cools and protects the parts inside your transmission, and it wears out with heat and
           time. Leung's Auto Service does transmission service, including transmission fluid change service and

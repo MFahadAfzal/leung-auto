@@ -48,7 +48,7 @@ export default function TireChange() {
       <PageHero
         heading="Tire Change and Tire Rotation in Edmonton"
         cta="Book a Tire Change"
-        image={{ src: "/images/tire-change.jpg", alt: "Mechanic doing a winter tire change and tire rotation at Leung's Auto Service in Edmonton" }}
+        image={{ src: "/images/tire-change.jpg", alt: "Mechanic in work gloves removing a car tire during a tire change and tire rotation in Edmonton" }}
       >
         Edmonton winters call for winter tires, and summer driving calls for something else. Leung's Auto Service
           does winter tire changes, summer tire changes, and tire rotations on domestic and import vehicles at our

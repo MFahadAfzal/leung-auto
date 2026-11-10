@@ -46,7 +46,7 @@ export default function AntifreezeCoolantFlush() {
       <PageHero
         heading="Antifreeze Coolant Flush in Edmonton"
         cta="Book an Antifreeze Flush"
-        image={{ src: "/images/antifreeze-coolant-flush.jpg", alt: "Mechanic doing an antifreeze coolant flush and radiator flush at Leung's Auto Service in Edmonton" }}
+        image={{ src: "/images/antifreeze-coolant-flush.jpg", alt: "Open car engine bay with the cooling system hoses ready for an antifreeze coolant flush in Edmonton" }}
       >
         Antifreeze keeps your engine from overheating in summer and freezing in an Edmonton winter. Over time it
           breaks down and stops protecting the cooling system. Leung's Auto Service does antifreeze flushes and

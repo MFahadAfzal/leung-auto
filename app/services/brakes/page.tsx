@@ -112,7 +112,7 @@ export default function BrakeRepair() {
         heading="Brake Repair in Edmonton"
         cta="Book Brake Repair"
         eyebrow="West Edmonton Brake Shop"
-        image={{ src: "/images/brake-repair.jpg", alt: "Mechanic doing a brake inspection and brake repair at an Edmonton brake repair shop" }}
+        image={{ src: "/images/brake-repair.jpg", alt: "Brake rotor and caliper mounted on a stand, ready for a brake inspection and brake repair in Edmonton" }}
       >
         Leung&apos;s Auto Service is an independent brake repair shop in West Edmonton. We do brake inspections and
         full brake service on domestic and import vehicles, and tell you what your brakes need before we start.
@@ -248,7 +248,7 @@ export default function BrakeRepair() {
       {/* ===== WHY US + REVIEW: shared shop photo behind the section, customer review on the right ===== */}
       <WhyChooseUs
         heading="Why Choose Our Brake Repair Shop"
-        alt="Vehicle on a lift for brake service at Leung's Auto Service, an independent brake repair shop in West Edmonton"
+        alt="Mechanic and customer going over a car under the open hood before brake service at an independent brake repair shop in West Edmonton"
         facts={shopFacts}
         aside={
           <>

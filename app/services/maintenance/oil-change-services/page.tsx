@@ -47,7 +47,7 @@ export default function OilChangeServices() {
       <PageHero
         heading="Oil Change Services in Edmonton"
         cta="Book a Quick Oil Change"
-        image={{ src: "/images/oil-change-services.jpg", alt: "Mechanic doing a quick oil change at Leung's Auto Service, offering oil change services in Edmonton" }}
+        image={{ src: "/images/oil-change-services.jpg", alt: "Fresh motor oil being poured into a car engine through a funnel during a quick oil change in Edmonton" }}
       >
         Fresh oil protects your engine's moving parts from wear. Leung's Auto Service
           offers quick oil change services for domestic and import vehicles at our shop in West Edmonton, with

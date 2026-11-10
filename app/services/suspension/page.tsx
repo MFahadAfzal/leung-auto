@@ -13,7 +13,7 @@ export const metadata = {
 export default function SteeringSuspensionRepair() {
   return (
     <ServiceHub
-      image={{ src: "/images/steering-suspension-repair.jpg", alt: "Mechanic doing steering and suspension repair on a car in Edmonton" }}
+      image={{ src: "/images/steering-suspension-repair.jpg", alt: "Mechanic lying under a car with the front wheel removed for steering and suspension repair in Edmonton" }}
       href="/services/suspension"
       intro="Steering problems, clunking, pulling, or a bouncy ride usually mean something in the steering or suspension is worn. Pick the service below that matches what your vehicle is doing."
       servicesHeading="Our Steering and Suspension Services"

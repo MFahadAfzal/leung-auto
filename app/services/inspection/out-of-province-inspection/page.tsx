@@ -50,7 +50,7 @@ export default function OutOfProvinceInspection() {
       <PageHero
         heading="Out of Province Inspection in Edmonton"
         cta="Book an Out of Province Inspection"
-        image={{ src: "/images/out-of-province-inspection.jpg", alt: "Technician doing an Alberta out of province inspection at Leung's Auto Service in Edmonton" }}
+        image={{ src: "/images/out-of-province-inspection.jpg", alt: "Mechanic lying under a vehicle checking its underside during an Alberta out of province inspection" }}
       >
         Moving to Alberta or buying a vehicle from another province? You need an out of province inspection before
           you can register it here. Leung's Auto Service does out of province inspections on domestic and import

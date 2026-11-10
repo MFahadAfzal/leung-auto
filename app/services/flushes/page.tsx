@@ -14,7 +14,7 @@ export const metadata = {
 export default function FluidFlushes() {
   return (
     <ServiceHub
-      image={{ src: "/images/fluid-flushes.jpg", alt: "Mechanic doing a fluid flush to replace vehicle fluids in Edmonton" }}
+      image={{ src: "/images/fluid-flushes.jpg", alt: "Mechanic in gloves pouring fluid into a car engine during a fluid flush in Edmonton" }}
       href="/services/flushes"
       intro="Old fluids wear out parts and lower performance. Pick the system below that needs fresh fluid."
       servicesHeading="Our Fluid Flush Services"
