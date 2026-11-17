@@ -3,8 +3,8 @@
 // and Google structured data never disagree.
 export const business = {
   name: "Leung's Auto Service",
-  // TODO: replace with the real domain before launch (used in Google structured data)
-  siteUrl: "https://yourdomain.com",
+  // Live Vercel URL. Swap for the custom domain if one is added later (used in sitemap, robots, canonicals, structured data)
+  siteUrl: "https://leung-auto.vercel.app",
   phone: "780-452-0134",
   phoneHref: "tel:+17804520134",
   street: "12025 149 St NW",
