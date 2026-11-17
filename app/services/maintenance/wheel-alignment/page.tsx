@@ -47,7 +47,7 @@ export default function WheelAlignment() {
       <PageHero
         heading="Wheel Alignment in Edmonton"
         cta="Book an Appointment"
-        image={{ src: "/images/wheel-alignment.jpg", alt: "Silver car raised on a lift, ready for a wheel alignment and tire alignment in Edmonton" }}
+        image={{ src: "/images/wheel-alignment.jpg", alt: "Silver car raised on a lift, ready for a wheel alignment in Edmonton" }}
       >
         Potholes and curbs can knock your wheels out of alignment, which wears your tires faster and makes the car
           pull. Leung&apos;s Auto Service does wheel alignments, also called tire alignments, on domestic and import

@@ -38,7 +38,7 @@ export default function SuspensionRepair() {
       <PageHero
         heading="Suspension Repair in Edmonton"
         cta="Book a Suspension Inspection"
-        image={{ src: "/images/suspension-repair.jpg", alt: "Mechanic under a car with old shock absorbers on the floor during suspension repair, including shock and strut replacement, in Edmonton" }}
+        image={{ src: "/images/suspension-repair.jpg", alt: "Mechanic under a car with old shock absorbers on the floor during suspension repair in Edmonton" }}
       >
         Your suspension keeps your tires on the road and your ride smooth and controlled. Leung&apos;s Auto Service does
           suspension repair on domestic and import vehicles at our shop in West Edmonton, from finding the cause of a

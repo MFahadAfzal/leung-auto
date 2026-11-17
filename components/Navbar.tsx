@@ -26,9 +26,11 @@ export default function Navbar() {
   // A link is "current" on its own page, and Services stays current on every service page
   const isCurrent = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href))
 
-  // Shop name with a wrench badge, used in both the desktop and mobile bars
+  // Shop name with a wrench badge, used in both the desktop and mobile bars.
+  // Only the shop name is the link text (the tagline sits outside it); the link's ::after
+  // overlay still makes the whole badge, name and tagline clickable.
   const brand = (onDark: boolean) => (
-    <Link href="/" className="flex items-center gap-3" onClick={close}>
+    <div className="relative flex items-center gap-3 rounded has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-brand-accent">
       <span
         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${
           "bg-brand-accent text-white"
@@ -37,14 +39,18 @@ export default function Navbar() {
         <Wrench size={20} />
       </span>
       <span className="leading-tight">
-        <span className={`block text-lg font-bold sm:text-xl ${onDark ? "text-white" : "text-brand-dark"}`}>
+        <Link
+          href="/"
+          onClick={close}
+          className={`block text-lg font-bold after:absolute after:inset-0 focus-visible:outline-none sm:text-xl ${onDark ? "text-white" : "text-brand-dark"}`}
+        >
           {business.name}
-        </span>
+        </Link>
         <span className={`hidden text-xs sm:block ${onDark ? "text-brand-light" : "text-brand-accent"}`}>
           Auto Repair in West Edmonton · Since 2002
         </span>
       </span>
-    </Link>
+    </div>
   )
 
   return (

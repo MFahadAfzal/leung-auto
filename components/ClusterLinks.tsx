@@ -25,17 +25,16 @@ export default function ClusterLinks({ current, also = [] }: { current: string; 
         {/* Sibling pages in the same group */}
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
           {siblings.map((spoke) => (
-            <Link
+            <div
               key={spoke.href}
-              href={spoke.href}
-              className="group flex items-start gap-4 rounded-lg border border-brand-light bg-white p-6 transition hover:border-brand-dark hover:shadow-md"
+              className="group relative flex items-start gap-4 rounded-lg border border-brand-light bg-white p-6 transition hover:border-brand-dark hover:shadow-md has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-brand-accent"
             >
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-brand-dark">{spoke.title}</h3>
+                <h3 className="text-xl font-bold text-brand-dark"><Link href={spoke.href} className="after:absolute after:inset-0 focus-visible:outline-none">{spoke.title}</Link></h3>
                 <p className="mt-2 text-gray-600">{spoke.blurb}</p>
               </div>
               <ArrowRight className="mt-1 shrink-0 text-brand-accent transition group-hover:translate-x-1" size={20} />
-            </Link>
+            </div>
           ))}
         </div>
 

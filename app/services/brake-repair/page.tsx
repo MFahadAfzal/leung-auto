@@ -125,18 +125,17 @@ export default function BrakeRepair() {
           {brakes.spokes.map((spoke) => {
             const Icon = spokeIcon(spoke.href)
             return (
-              <Link
+              <div
                 key={spoke.href}
-                href={spoke.href}
-                className="group flex flex-col rounded-xl border border-brand-light border-t-4 border-t-brand-accent bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-accent hover:shadow-lg"
+                className="group relative flex flex-col rounded-xl border border-brand-light border-t-4 border-t-brand-accent bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-accent hover:shadow-lg has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-brand-accent"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-accent text-white transition group-hover:bg-brand-support">
                   <Icon size={28} />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-brand-dark group-hover:text-brand-accent">{spoke.title}</h3>
+                <h3 className="mt-5 text-xl font-bold text-brand-dark group-hover:text-brand-accent"><Link href={spoke.href} className="after:absolute after:inset-0 focus-visible:outline-none">{spoke.title}</Link></h3>
                 <p className="mt-2 flex-1 text-gray-600">{spoke.blurb}</p>
                 <ArrowRight className="mt-4 text-brand-accent transition group-hover:translate-x-1" size={20} aria-hidden="true" />
-              </Link>
+              </div>
             )
           })}
         </div>
@@ -248,7 +247,7 @@ export default function BrakeRepair() {
       {/* ===== WHY US + REVIEW: shared shop photo behind the section, customer review on the right ===== */}
       <WhyChooseUs
         heading="Why Choose Our Brake Repair Shop"
-        alt="Mechanic and customer going over a car under the open hood before brake service at an independent brake repair shop in West Edmonton"
+        alt="Mechanic and customer going over a car under the open hood at a brake repair shop in West Edmonton"
         facts={shopFacts}
         aside={
           <>

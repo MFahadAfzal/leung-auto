@@ -121,15 +121,14 @@ export default function Home() {
 
         <div className="mx-auto mt-8 grid max-w-5xl gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <Link
+            <div
               key={service.href}
-              href={service.href}
-              className="group flex flex-col rounded-lg bg-white p-6 shadow transition hover:-translate-y-0.5 hover:shadow-md"
+              className="group relative flex flex-col rounded-lg bg-white p-6 shadow transition hover:-translate-y-0.5 hover:shadow-md has-[a:focus-visible]:ring-2 has-[a:focus-visible]:ring-brand-accent"
             >
-              <h3 className="text-xl font-bold text-brand-dark">{service.title}</h3>
+              <h3 className="text-xl font-bold text-brand-dark"><Link href={service.href} className="after:absolute after:inset-0 focus-visible:outline-none">{service.title}</Link></h3>
               <p className="mt-2 flex-1 text-gray-600">{service.blurb}</p>
               <ArrowRight className="mt-4 text-brand-accent transition group-hover:translate-x-1" size={20} aria-hidden="true" />
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -196,7 +195,7 @@ export default function Home() {
       <BookingCta
         heading="Book Car Repair in Edmonton"
         text="Ready to get your vehicle looked at? Call our West Edmonton shop or book an appointment today."
-        label="Book Affordable Car Repair"
+        label="Book an Appointment"
       />
 
     </main>
