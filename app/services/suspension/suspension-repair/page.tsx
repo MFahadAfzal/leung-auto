@@ -21,7 +21,7 @@ const faqs = [
   {
     question: "How much does suspension repair cost?",
     answer:
-      "It depends on what needs fixing, your vehicle, and the type of parts. A single ball joint costs far less than a full car suspension replacement, and shocks and struts are usually replaced in pairs. We inspect the suspension first and give you a price before any work starts.",
+      "It depends on what needs fixing, your vehicle, and the type of parts. A single ball joint costs far less than a full car suspension replacement, and shocks and struts are usually replaced in pairs. We inspect the suspension first, so the quote only covers what's worn.",
   },
   {
     question: "How much does ball joint replacement cost?",
@@ -40,9 +40,8 @@ export default function SuspensionRepair() {
         cta="Book a Suspension Inspection"
         image={{ src: "/images/suspension-repair.jpg", alt: "Mechanic under a car with old shock absorbers on the floor during suspension repair in Edmonton" }}
       >
-        Your suspension keeps your tires on the road and your ride smooth and controlled. Leung&apos;s Auto Service does
-          suspension repair on domestic and import vehicles at our shop in West Edmonton, from finding the cause of a
-          clunk or bouncy ride to replacing shocks, struts, ball joints, and control arms.
+        Your suspension keeps your tires on the road and your ride smooth and controlled. Leung&apos;s Auto Service handles
+          suspension repair in West Edmonton, from finding the cause of a clunk or bouncy ride to replacing shocks, struts, ball joints, and control arms.
       </PageHero>
 
       <PanelSection aside>
@@ -73,13 +72,13 @@ export default function SuspensionRepair() {
         steps={[
           { title: "Lift the vehicle", text: "So we can see the suspension from underneath" },
           { title: "Check every part", text: "Shocks, struts, mounts, springs, ball joints, control arms, and bushings" },
-          { title: "You approve, we start", text: "The work and the price, before we begin" },
+          { title: "Explain what we find", text: "What's worn now, and what can wait" },
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          Every suspension auto repair starts with a suspension inspection. We lift the vehicle and check the
-          shocks, struts, mounts, springs, ball joints, control arms, and bushings for wear, leaks, and play. Then
-          we explain what we find, and you approve the work and the price before we start.
+          Every suspension auto repair starts with a suspension inspection, so we only replace parts that are
+          actually worn. We look for wear, leaks, and play in each part, and you approve the work and the price
+          before we start.
         </p>
       </StepsSection>
 

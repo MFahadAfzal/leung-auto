@@ -31,22 +31,22 @@ const faqs = [
   {
     question: "How do I know if I need brake repair?",
     answer:
-      "You likely need brake repair if your brakes squeal, squeak, or grind, the brake pedal feels soft or sinks toward the floor, the car pulls to one side when you brake, the steering wheel or pedal shakes when stopping, or a brake or ABS warning light comes on. If you notice any of these, book a brake inspection so we can find the cause.",
+      "If you notice any of the signs listed above, book a brake inspection and we'll find the cause. A squeal often means only the pads are due, while a pedal that sinks or feels spongy points to the brake fluid or a brake line, so the fix depends on what we find.",
   },
   {
     question: "What are the signs of failing brakes?",
     answer:
-      "Common signs of failing brakes are a high-pitched squeal, a metal-on-metal grinding noise, a soft or spongy pedal, longer stopping distances, vibration when braking, a burning smell after driving, fluid leaking near a wheel, and a brake warning light on the dashboard.",
+      "The most serious signs are a metal-on-metal grinding noise, a pedal that sinks to the floor, a burning smell after driving, fluid leaking near a wheel, or the red brake warning light. These mean your stopping power may already be reduced, so have the car checked right away instead of waiting for your next service.",
   },
   {
     question: "How often should my brakes be inspected?",
     answer:
-      "Have your brakes inspected at least once a year, and any time you notice a change in how they sound or feel. Many Edmonton drivers have them checked during their seasonal tire change, since the wheels are already off and the pads and rotors are easy to see.",
+      "At least once a year for most drivers. If you do a lot of city driving, tow a trailer, or drive a heavier vehicle, have them checked more often, since all three wear brakes faster.",
   },
   {
     question: "What does a brake service include?",
     answer:
-      "A brake service starts with a brake inspection of the pads, rotors, calipers, brake lines and hoses, brake fluid, and parking brake. Depending on what we find, it can include replacing brake pads, replacing or resurfacing rotors, cleaning and lubricating the caliper slides, and flushing the brake fluid. You approve the work and the price before we start.",
+      "A brake service starts with a brake inspection of the pads, rotors, calipers, brake lines and hoses, brake fluid, and parking brake. Depending on what we find, it can include replacing brake pads, replacing or resurfacing rotors, cleaning and lubricating the caliper slides, and flushing the brake fluid.",
   },
   {
     question: "How long does a brake repair take?",
@@ -56,7 +56,7 @@ const faqs = [
   {
     question: "Is it safe to drive with grinding brakes?",
     answer:
-      "No. Grinding usually means the brake pads are worn down to the metal backing plate, which is scraping against the rotor. This reduces stopping power and quickly damages the rotors, turning a pad replacement into a more expensive repair. Have your brakes checked as soon as possible and avoid driving more than you need to.",
+      "No. Grinding usually means the brake pads are worn down to the metal backing plate, which is scraping against the rotor and reducing your stopping power. Have your brakes checked as soon as possible and drive as little as you can until then.",
   },
 ]
 
@@ -94,7 +94,7 @@ const inspectionChecks = [
 const shopFacts = [
   { value: "Since 2002", label: "Serving Edmonton drivers" },
   { value: "AMVIC Certified", label: "Independent brake repair shop" },
-  { value: "See the Worn Parts", label: "Only the brake service you need" },
+  { value: "See the Worn Parts", label: "Before we replace anything" },
 ]
 
 export default function BrakeRepair() {
@@ -173,7 +173,7 @@ export default function BrakeRepair() {
             <h2 className="accent-heading text-3xl font-bold md:text-4xl">Brake Inspection</h2>
             <p className="mt-6 text-lg text-gray-700">
               Every brake repair starts with a brake inspection, so you only pay for the parts that actually need
-              replacing. We check:
+              replacing.
             </p>
             <p className="mt-4 text-lg text-gray-700">
               We show you what we find and explain what&apos;s urgent and what can wait. You approve the work and the
@@ -261,8 +261,7 @@ export default function BrakeRepair() {
       >
         <p>
           Leung&apos;s Auto Service has served Edmonton drivers since 2002. We&apos;re an independent, AMVIC certified
-          brake repair shop at {business.street} in West Edmonton. We show you the worn parts and only recommend the
-          brake service your vehicle needs.
+          brake repair shop at {business.street} in West Edmonton.
         </p>
       </WhyChooseUs>
 

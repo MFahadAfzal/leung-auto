@@ -46,8 +46,8 @@ export default function BrakeFluidFlush() {
         image={{ src: "/images/brake-fluid-flush.jpg", alt: "Mechanic leaning over an open engine bay near the fluid reservoirs during a brake fluid flush in Edmonton" }}
       >
         Over time, the fluid in your brakes absorbs moisture, which weakens braking and can damage parts from the
-          inside. A brake fluid flush swaps the old fluid for fresh. Leung&apos;s Auto Service does this on
-          domestic and import vehicles at our shop in West Edmonton.
+          inside. A brake fluid flush swaps the old fluid for fresh, and Leung&apos;s Auto Service
+          does it for all makes and models at our West Edmonton shop.
       </PageHero>
 
       <PanelSection aside>
@@ -63,8 +63,8 @@ export default function BrakeFluidFlush() {
         </Panel>
         <Panel label="Good to know" dark>
           <p className="mt-4 text-lg text-white/90">
-            Some of these signs can also come from worn brake pads. When we check your brakes, we look at both, so
-            you only pay for what your car needs. See{" "}
+            Some of these signs can also come from worn brake pads. When we check your brakes, we look at both before
+            recommending anything. See{" "}
             <Link href="/services/brake-repair/brake-pad-replacement" className="text-brand-light underline">brake pad replacement</Link>{" "}
             for more on worn pads.
           </p>
@@ -75,15 +75,14 @@ export default function BrakeFluidFlush() {
         heading="What's Involved"
         gray
         steps={[
-          { title: "Remove the old fluid", text: "Drain the old fluid from the system" },
+          { title: "Remove the old fluid", text: "From the reservoir and every brake line" },
           { title: "Refill with fresh fluid", text: "Fluid that meets your vehicle's specification" },
           { title: "Check for leaks", text: "Before your car goes back to you" },
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          During the service, we drain the old fluid, refill the system with fresh fluid that
-          meets your vehicle&apos;s specification, and check the brakes for leaks. You approve the work and the price
-          before we start.
+          A flush replaces the fluid in every brake line, not just what&apos;s in the reservoir. You approve the
+          work and the price before we start.
         </p>
       </StepsSection>
 
@@ -91,7 +90,7 @@ export default function BrakeFluidFlush() {
 
       <BookingCta
         heading="Book a Brake Fluid Flush in West Edmonton"
-        text="Not sure if yours is due? We can test the fluid and give you a price before any work starts."
+        text="Not sure if yours is due? We can test the fluid and tell you."
         label="Get a Price Quote"
         gray
       />

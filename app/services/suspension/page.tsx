@@ -39,6 +39,7 @@ export default function SteeringSuspensionRepair() {
       intro="Steering problems, clunking, pulling, or a bouncy ride usually mean something in the steering or suspension is worn and it's time for front end repair. Pick the service below that matches what your vehicle is doing."
       servicesHeading="Our Steering and Suspension Services"
       ctaHeading="Not Sure If It's Steering or Suspension?"
+      ctaText="Describe what you're hearing or feeling, and we'll find which part is causing it."
       ctaLabel="Book a Steering or Suspension Check"
       details={
         <section className="bg-brand-light/40 px-6 py-16">
@@ -60,7 +61,7 @@ export default function SteeringSuspensionRepair() {
       }
       whyUs={{
         heading: "Why Choose Our Shop for Steering and Suspension Repair",
-        text: "Leung's Auto Service has fixed steering and suspension problems for Edmonton drivers since 2002. We're an independent, AMVIC certified shop in West Edmonton. We find the worn part causing the clunk, pull, or loose steering, show you what we found, and only replace what needs replacing.",
+        text: "Leung's Auto Service has fixed steering and suspension problems for Edmonton drivers since 2002. A clunk, a pull, or loose steering can come from several different parts, so we track down the one that's actually worn before we replace anything.",
         alt: "Mechanic and customer looking under the hood of a car together before a steering or suspension check in West Edmonton",
         facts: [
           { value: "Since 2002", label: "Serving Edmonton drivers" },

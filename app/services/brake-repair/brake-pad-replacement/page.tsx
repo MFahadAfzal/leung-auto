@@ -130,9 +130,7 @@ export default function BrakePadReplacement() {
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-3xl font-bold md:text-4xl">What&apos;s Involved</h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
-            We inspect the brake pads, measure the rotors, and check the calipers and brake fluid, then explain what
-            we find. If you need new pads or rotors, you approve the work and the price
-            before we start.
+            Most pad and rotor jobs are done the same day. Here&apos;s how it works.
           </p>
 
           <div className="relative mt-12">
@@ -167,7 +165,7 @@ export default function BrakePadReplacement() {
 
       <BookingCta
         heading="Book Brake Pad Replacement in West Edmonton"
-        text="Tell us what your brakes are doing and we'll give you a price before any work starts."
+        text="Find out whether you need pads, rotors, or both, with a price before any work starts."
         label="Get a Price Quote"
         gray
       />

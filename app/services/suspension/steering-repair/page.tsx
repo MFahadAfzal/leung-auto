@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Does power steering leak repair fluid work?",
     answer:
-      "Sometimes, for a while. Power steering leak repair fluid, often called stop-leak, can swell a dried-out seal and slow a small leak. It won't fix a cracked hose, a loose fitting, or a failing pump or rack, and the leak usually comes back. For a lasting power steering fluid fix, we find the source and replace the part that's leaking.",
+      "Sometimes, for a while. Power steering leak repair fluid, often called stop-leak, can swell a dried-out seal and slow a small leak. It won't fix a cracked hose, a loose fitting, or a failing pump or rack, and the leak usually comes back. To fix it for good, we find the source and replace the part that's leaking.",
   },
   {
     question: "What does the power steering warning light mean?",
@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "How much does power steering leak repair cost?",
     answer:
-      "The price depends on what's causing the problem. Replacing a leaking hose or a tie rod end costs much less than replacing a power steering pump or steering rack. Fixing a small leak early can save the pump.",
+      "It depends on which part has failed. Replacing a leaking hose or a tie rod end costs much less than replacing a power steering pump or steering rack. Fixing a small leak early can save the pump.",
   },
 ]
 
@@ -47,8 +47,7 @@ export default function SteeringRepair() {
         image={{ src: "/images/power-steering.jpg", alt: "Driver's hands on the steering wheel of a car that needs power steering leak repair in Edmonton" }}
       >
         Your steering keeps the car tracking straight and responding when you turn the wheel. Leung&apos;s Auto Service
-          does power steering fluid leak repair and fixes other steering problems on domestic and import vehicles at
-          our shop in West Edmonton.
+          does power steering fluid leak repair and fixes other steering problems for drivers across West Edmonton.
       </PageHero>
 
       <section className="px-6 py-16">
@@ -106,14 +105,13 @@ export default function SteeringRepair() {
         gray
         steps={[
           { title: "Inspect the front end", text: "Pump, hoses, steering rack, and tie rod ends" },
-          { title: "Explain what we find", text: "What's worn and what it will take to fix" },
-          { title: "You approve, we start", text: "The work and the price, before we begin" },
+          { title: "Show you the problem", text: "The worn or leaking part, and the price to fix it" },
+          { title: "Repair and align", text: "Replace the part, then align the wheels if needed" },
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We inspect the power steering pump, hoses, steering rack, tie rod ends, and other front end parts, and
-          explain what we find. If parts need replacing, you approve the work and the price before we start. Many
-          steering repairs are followed by a wheel alignment.
+          New tie rods or a new steering rack change the angle of the wheels, so many steering repairs are
+          followed by a wheel alignment. You approve the work and the price before we start.
         </p>
       </StepsSection>
 

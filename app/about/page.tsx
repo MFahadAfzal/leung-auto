@@ -114,11 +114,8 @@ export default function About() {
             <h2 className="text-3xl font-bold text-brand-dark md:text-4xl">Honest Work at Fair Prices</h2>
             <div className="mt-3 h-1 w-16 rounded bg-brand-accent" />
             <p className="mt-6 text-lg text-gray-700">
-              We work on both domestic and import vehicles. Before any repair starts, we explain what is wrong
-              and what it will take to fix, so you know what you are paying for.
-            </p>
-            <p className="mt-4 text-lg text-gray-700">
-              The shop is AMVIC certified, and most of our customers come back or send their friends and family.
+              Car repair shouldn&apos;t feel like a guessing game. Our job is to find the actual problem, fix it
+              properly, and keep you on the road.
             </p>
           </div>
         </div>

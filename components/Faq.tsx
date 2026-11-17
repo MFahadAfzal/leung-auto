@@ -1,6 +1,5 @@
 // components/Faq.tsx
 import { ChevronDown } from "lucide-react"
-import { business } from "@/lib/business"
 
 export type FaqItem = { question: string; answer: string }
 
@@ -19,17 +18,10 @@ export default function Faq({
   // Optional content under the heading. When given, the heading and this sit on the left
   // and the questions on the right (stacked on phones).
   aside?: React.ReactNode
-  // Split layout with the default "call us" line on the left
+  // Split layout (heading on the left, questions on the right) even without aside content.
+  // There's no default "call us" line here: the booking section right after every FAQ has the phone number.
   split?: boolean
 }) {
-  if (split && !aside) {
-    aside = (
-      <p>
-        Have a question that isn&apos;t answered here? Call us at{" "}
-        <a href={business.phoneHref} className="font-bold text-brand-dark underline">{business.phone}</a>.
-      </p>
-    )
-  }
 
   const schema = {
     "@context": "https://schema.org",
@@ -49,11 +41,11 @@ export default function Faq({
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
         }}
       />
-      {aside ? (
+      {aside || split ? (
         <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-5 lg:gap-10">
           <div className="lg:col-span-2">
             <h2 className="accent-heading text-3xl font-bold md:text-4xl">{title}</h2>
-            <div className="mt-6 text-lg text-gray-700">{aside}</div>
+            {aside && <div className="mt-6 text-lg text-gray-700">{aside}</div>}
           </div>
           {/* Click a question to open its answer. Answers stay in the page, so Google still reads them. */}
           <div className="space-y-3 lg:col-span-3">

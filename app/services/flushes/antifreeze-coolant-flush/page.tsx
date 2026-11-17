@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "How often should I change engine coolant?",
     answer:
-      "About every 2 years or 50,000 km for conventional coolant, and every 5 years or more for long-life coolant. The type in your vehicle decides which applies. Check your owner's manual, or ask us what your vehicle needs. Fall is a good time for an antifreeze flush, before the cold sets in.",
+      "About every 2 years or 50,000 km for conventional coolant, and every 5 years or more for long-life coolant. Your owner's manual lists which type your vehicle uses. Fall is a good time for an antifreeze flush, before the cold sets in.",
   },
   {
     question: "Is an antifreeze flush the same as a radiator flush?",
@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "How much does an antifreeze coolant flush cost?",
     answer:
-      "The price depends on your vehicle, the size of its cooling system, and the type of coolant it uses. An antifreeze flush costs far less than replacing a radiator or repairing an overheated engine.",
+      "It depends on your vehicle, the size of its cooling system, and the type of coolant it uses. An antifreeze flush costs far less than replacing a radiator or repairing an overheated engine.",
   },
 ]
 
@@ -49,8 +49,7 @@ export default function AntifreezeCoolantFlush() {
         image={{ src: "/images/antifreeze-coolant-flush.jpg", alt: "Open car engine bay with the cooling system hoses ready for an antifreeze coolant flush in Edmonton" }}
       >
         Antifreeze keeps your engine from overheating in summer and freezing in an Edmonton winter. Over time it
-          breaks down and stops protecting the cooling system. Leung&apos;s Auto Service does antifreeze flushes and
-          radiator flushes on domestic and import vehicles at our shop in West Edmonton.
+          breaks down and stops protecting the cooling system. Leung&apos;s Auto Service does antifreeze flushes and radiator flushes in West Edmonton.
       </PageHero>
 
       <PanelSection>
@@ -85,10 +84,7 @@ export default function AntifreezeCoolantFlush() {
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We drain the old antifreeze, do a radiator flush to clear out rust and buildup, and refill the system
-          with coolant that meets your vehicle&apos;s specification. We also check the hoses, radiator, and cap for
-          leaks or wear, and test that the new coolant protects against Edmonton&apos;s coldest days. You approve the
-          work and the price before we start.
+          A radiator flush clears out the rust and scale that a simple drain leaves behind, and we test that the new coolant protects against Edmonton&apos;s coldest days. You approve the work and the price before we start.
         </p>
       </StepsSection>
 
@@ -96,7 +92,7 @@ export default function AntifreezeCoolantFlush() {
 
       <BookingCta
         heading="Book an Antifreeze Coolant Flush in West Edmonton"
-        text="Get your coolant ready for winter. We'll give you a price before any work starts."
+        text="Get your coolant ready for winter, before the first cold snap."
         label="Get an Antifreeze Coolant Flush Quote"
         gray
       />

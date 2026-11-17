@@ -26,17 +26,17 @@ const faqs = [
   {
     question: "Synthetic vs. conventional oil: which is better?",
     answer:
-      "Synthetic oil protects better in cold weather and lasts longer, while conventional oil costs less. Conventional oil is refined from crude oil. Synthetic oil is engineered to flow better in the cold, resist breaking down under heat, and last longer between changes. In an Edmonton winter, that faster flow on a cold start means better protection for your engine. Many newer engines require synthetic oil. We use the oil your vehicle's manufacturer calls for, and explain your options if you have a choice.",
+      "Synthetic oil protects better and lasts longer, while conventional oil costs less. Conventional oil is refined from crude oil, while synthetic oil is engineered to flow better in the cold and resist breaking down under heat. In an Edmonton winter, that faster flow on a cold start means better protection for your engine. Many newer engines require synthetic oil. We use the oil your vehicle's manufacturer calls for, and explain your options if you have a choice.",
   },
   {
     question: "How much does an oil change cost?",
     answer:
-      "The price depends on your vehicle, how much oil it takes, and whether it needs conventional or synthetic oil. Call us for a quote on your vehicle.",
+      "It depends on your vehicle, how much oil it takes, and whether it needs conventional or synthetic oil. Call us for a quote on your vehicle.",
   },
   {
     question: "Is the cheapest oil change the best deal?",
     answer:
-      "Not always. A low price can mean cheap filters, the wrong oil for your engine, or a long list of upsells once your car is on the hoist. If you're shopping on price, compare what's included. We use oil and filters that meet your vehicle's specification and quote the price up front.",
+      "Not always. A low price can mean cheap filters, the wrong oil for your engine, or a long list of upsells once your car is on the hoist. If you're shopping on price, compare what's included. We use quality filters and the right oil for your engine, and quote the price up front.",
   },
 ]
 
@@ -49,8 +49,7 @@ export default function OilChangeServices() {
         cta="Book an Appointment"
         image={{ src: "/images/oil-change-services.jpg", alt: "Fresh motor oil being poured into a car engine through a funnel, part of oil change services in Edmonton" }}
       >
-        Fresh oil protects your engine&apos;s moving parts from wear. Leung&apos;s Auto Service
-          offers quick oil change services for domestic and import vehicles at our shop in West Edmonton, with
+        Fresh oil protects your engine&apos;s moving parts from wear. Leung&apos;s Auto Service offers quick oil change services in West Edmonton, with
           synthetic or conventional oil to match your engine.
       </PageHero>
 
@@ -93,7 +92,7 @@ export default function OilChangeServices() {
 
       <BookingCta
         heading="Book a Quick Oil Change in West Edmonton"
-        text="Book ahead and we'll have you in and out quickly, with the price up front."
+        text="Book ahead so you're not waiting around, and ask for a quote when you call."
         label="Get a Price Quote"
         gray
       />

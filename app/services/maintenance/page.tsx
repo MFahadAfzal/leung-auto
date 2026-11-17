@@ -19,10 +19,11 @@ export default function CarMaintenance() {
       intro="Regular vehicle maintenance keeps your car running well and helps avoid bigger repairs. Pick the service below that you need."
       servicesHeading="Our Maintenance Services"
       ctaHeading="Not Sure What's Due?"
+      ctaText="Give us your kilometres and the date of your last service, and we'll check your vehicle's schedule."
       ctaLabel="Book an Appointment"
       whyUs={{
         heading: "Why Choose Our Shop for Car Maintenance",
-        text: "Leung's Auto Service has kept Edmonton vehicles on schedule since 2002. We're an independent, AMVIC certified shop in West Edmonton working on domestic and import vehicles. We tell you what's due now and what can wait, so you only pay for the maintenance you need.",
+        text: "Leung's Auto Service has kept Edmonton vehicles on schedule since 2002. We tell you what's due now and what can wait, so you only pay for the maintenance you need.",
         alt: "Mechanic and customer looking under the hood of a car together to plan upcoming maintenance in West Edmonton",
         facts: [
           { value: "Since 2002", label: "Serving Edmonton drivers" },
@@ -32,7 +33,7 @@ export default function CarMaintenance() {
       }}
       reviews={{
         heading: "Maintenance Reviews from Our Customers",
-        text: "Here's what customers have said about maintenance at Leung's Auto Service.",
+        text: "A few words from drivers who bring their vehicles to us for regular upkeep.",
         items: reviewsBy("Ed", "Jiayi Yu"),
       }}
     />

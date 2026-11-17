@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "Can I drive with the check engine light on?",
     answer:
-      "Usually yes if the light is steady, but not if it's flashing. If the check engine light is on and steady, the car is usually safe to drive for a short time, but book a check engine light diagnosis soon. If the light is flashing, the engine may be misfiring badly. Reduce your speed and have it checked right away to avoid damaging the engine or catalytic converter.",
+      "Usually yes if the light is steady, but not if it's flashing. A steady light is generally safe for a short drive, but book a check engine light diagnosis soon. A flashing light means the engine is likely misfiring, so slow down and have it looked at right away.",
   },
   {
     question: "Can an auto parts store code reader replace a car diagnostic?",
@@ -68,7 +68,7 @@ export default function CarDiagnostics() {
         image={{ src: "/images/car-diagnostic.jpg", alt: "Technician using a laptop and a diagnostic cable plugged into a car during a car diagnostic in Edmonton" }}
       >
         Warning lights and strange behaviour need a proper car diagnostic before a repair. Leung&apos;s Auto
-          Service tracks down the cause on domestic and import vehicles at our shop in West Edmonton, from a check
+          Service tracks down the cause at our West Edmonton shop, from a check
           engine light diagnosis to transmission and electrical problems.
       </PageHero>
 
@@ -123,9 +123,7 @@ export default function CarDiagnostics() {
 
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">What a Check Engine Light Diagnosis Involves</h3>
             <p className="mt-4 text-lg text-gray-700">
-              We scan the vehicle&apos;s computer for fault codes, then test the parts and systems those codes point to.
-              A code alone doesn&apos;t always tell you which part has failed, so we confirm the cause before recommending
-              a repair. You approve the work and the price before we start.
+              We scan the vehicle&apos;s computer for fault codes, then test the parts involved, from sensors to spark plugs, until the cause is confirmed. You approve the work and the price before we start.
             </p>
 
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">Check Engine Light Diagnostic Near Me</h3>
@@ -136,7 +134,7 @@ export default function CarDiagnostics() {
 
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">Check Engine Light Diagnosis Cost</h3>
             <p className="mt-4 text-lg text-gray-700">
-              The price depends on your vehicle and how much testing it takes to find the cause.
+              It depends on your vehicle and how much testing it takes to pin down the cause.
             </p>
             <Link href="/contact" className="mt-6 inline-block rounded bg-brand-accent px-6 py-3 font-bold text-white hover:bg-brand-tint">
               Book a Check Engine Light Diagnosis
@@ -170,13 +168,12 @@ export default function CarDiagnostics() {
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">What a Transmission Diagnostic Involves</h3>
             <p className="mt-4 text-lg text-gray-700">
               We scan for fault codes, check the transmission fluid level and condition, look for leaks, and test drive
-              the vehicle to see how it shifts. We explain what we find, and you approve any repairs and the price
-              before we start.
+              the vehicle to see how it shifts.
             </p>
 
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">Transmission Diagnostic Cost</h3>
             <p className="mt-4 text-lg text-gray-700">
-              The price depends on your vehicle and what the problem turns out to be. Some issues are fixed with a
+              That depends on what the problem turns out to be. Some issues are fixed with a
               fluid service or a sensor, not a full rebuild.
             </p>
             <p className="mt-4 text-lg text-gray-700">
@@ -212,13 +209,12 @@ export default function CarDiagnostics() {
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">What a Car Electrical Diagnostic Involves</h3>
             <p className="mt-4 text-lg text-gray-700">
               We test the battery, alternator, and starter, scan for fault codes, and trace the wiring and circuits
-              involved to find the cause. We explain what we find, and you approve any repairs and the price before we
-              start.
+              involved to find the cause.
             </p>
 
             <h3 className="mt-10 text-2xl font-bold text-brand-dark">Car Electrical Diagnostic Cost</h3>
             <p className="mt-4 text-lg text-gray-700">
-              The price depends on your vehicle and how long it takes to find the cause. A weak battery is quick to
+              Most of the cost is the time it takes to trace the fault. A weak battery is quick to
               find, while an intermittent wiring fault can take longer.
             </p>
           </div>
@@ -238,16 +234,14 @@ export default function CarDiagnostics() {
           <>
             <h2 className="text-2xl font-bold md:text-3xl">Car Diagnostic Reviews from Our Customers</h2>
             <p className="mt-4 text-lg text-gray-700">
-              Here&apos;s what customers have said about car diagnostics at Leung&apos;s Auto Service.
+              Feedback on our car diagnostic work.
             </p>
             <Reviews reviews={reviewsBy("J P")} />
           </>
         }
       >
         <p>
-          Leung&apos;s Auto Service has diagnosed problems on Edmonton vehicles since 2002. We&apos;re an independent,
-          AMVIC certified shop in West Edmonton working on domestic and import vehicles. We find the cause before we
-          recommend a repair, then explain what we found and what it will cost.
+          Leung&apos;s Auto Service has diagnosed problems on domestic and import vehicles in Edmonton since 2002, from a simple warning light to faults that only show up now and then.
         </p>
       </WhyChooseUs>
 

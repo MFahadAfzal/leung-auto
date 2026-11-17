@@ -26,17 +26,17 @@ const faqs = [
   {
     question: "How often do you need a wheel alignment?",
     answer:
-      "Have your alignment checked about once a year, and any time you hit a big pothole or curb, get new tires, or have steering repair or suspension replacement done. If the car pulls or the steering wheel is off-centre, have it checked sooner.",
+      "Have your alignment checked about once a year, and after new tires, steering repair, or suspension replacement. If you notice any of the signs above, have it checked sooner.",
   },
   {
     question: "Do potholes affect wheel alignment?",
     answer:
-      "Yes. A hard hit from a pothole or curb can knock your wheels out of alignment or damage suspension parts. Edmonton's spring pothole season is a common time to need one.",
+      "Yes. A hard hit can shift the angle of your wheels or bend suspension parts. Edmonton's spring pothole season is a common time to need one.",
   },
   {
     question: "How much does a wheel alignment cost?",
     answer:
-      "The price depends on your vehicle and whether it needs a front-end or four-wheel alignment. An alignment costs far less than replacing tires that have worn out early.",
+      "That varies with your vehicle and whether it needs a front-end or four-wheel alignment. An alignment costs far less than replacing tires that have worn out early.",
   },
 ]
 
@@ -50,8 +50,7 @@ export default function WheelAlignment() {
         image={{ src: "/images/wheel-alignment.jpg", alt: "Silver car raised on a lift, ready for a wheel alignment in Edmonton" }}
       >
         Potholes and curbs can knock your wheels out of alignment, which wears your tires faster and makes the car
-          pull. Leung&apos;s Auto Service does wheel alignments, also called tire alignments, on domestic and import
-          vehicles at our shop in West Edmonton.
+          pull. Leung&apos;s Auto Service does wheel alignments, also called tire alignments, at our West Edmonton shop.
       </PageHero>
 
       <PanelSection aside>
@@ -83,9 +82,7 @@ export default function WheelAlignment() {
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We check the angles of your wheels and adjust them back to your vehicle&apos;s specification. If we find worn
-          steering or suspension parts that would stop the alignment from holding, we explain what we find and you
-          approve any extra work and the price before we start.
+          An alignment won&apos;t hold if a tie rod or ball joint is worn, so we check those parts too. If anything needs replacing, you approve the extra work and the price before we start.
         </p>
       </StepsSection>
 

@@ -22,12 +22,12 @@ const reasons = [
   {
     icon: ShieldCheck,
     title: "Trusted Mechanics",
-    text: "Independent and family-run since 2002. We show you what's wrong and only recommend work your vehicle needs.",
+    text: "Independent and family-run. We show you what's wrong and only recommend work your vehicle needs.",
   },
   {
     icon: BadgeCheck,
     title: "Certified Technicians",
-    text: "Our certified technicians work on domestic and import vehicles in an AMVIC certified shop.",
+    text: "We work on domestic and import vehicles in an AMVIC certified shop.",
   },
   {
     icon: DollarSign,
@@ -116,7 +116,7 @@ export default function Home() {
       <section className="bg-brand-light/40 px-6 py-14 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Our Automotive Services</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Our automotive services cover routine maintenance and major repairs on domestic and import vehicles.
+          Our automotive services cover everything from routine maintenance to major repairs.
         </p>
 
         <div className="mx-auto mt-8 grid max-w-5xl gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
@@ -165,8 +165,7 @@ export default function Home() {
       <section className="bg-brand-light/40 px-6 py-14 text-center">
         <h2 className="text-3xl font-bold md:text-4xl">Affordable Auto Repair in West Edmonton</h2>
         <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl">
-          Visit our shop at {business.street}, {business.city}, {business.province} {business.postalCode}. We&apos;re
-          open {business.hours}.
+          Drop by our West Edmonton shop, or call ahead to book a time.
         </p>
         <div className="mx-auto mt-8 grid max-w-3xl gap-4 text-left sm:grid-cols-2">
           <div className="flex items-center gap-4 rounded-lg bg-white p-5 shadow">

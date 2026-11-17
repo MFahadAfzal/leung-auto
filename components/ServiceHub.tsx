@@ -17,6 +17,7 @@ export default function ServiceHub({
   intro,
   servicesHeading,
   ctaHeading,
+  ctaText,
   ctaLabel,
   reviews,
   whyUs,
@@ -27,6 +28,8 @@ export default function ServiceHub({
   intro: string
   servicesHeading: string
   ctaHeading: string
+  // One line under the closing heading, written for this hub so it isn't the same on every page
+  ctaText: string
   ctaLabel: string
   // Optional customer reviews, shown the same way as on the home page
   reviews?: { heading: string; text: string; items: Review[] }
@@ -103,7 +106,7 @@ export default function ServiceHub({
       {/* ===== CALL TO ACTION ===== */}
       <BookingCta
         heading={ctaHeading}
-        text="Tell us what your vehicle is doing and we'll point you in the right direction."
+        text={ctaText}
         label={ctaLabel}
       >
         <Link href="/services" className="underline hover:text-white">See all automotive services</Link>

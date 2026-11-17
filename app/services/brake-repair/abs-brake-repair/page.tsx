@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "How much does ABS brake repair cost?",
     answer:
-      "The price depends on what's causing the fault. ABS sensor replacement costs much less than replacing a failed ABS module. We find the cause first and give you a price before any work starts.",
+      "The price depends on what's causing the fault. ABS sensor replacement costs much less than replacing a failed ABS module. We find the cause first, so you only pay to fix the part that failed.",
   },
 ]
 
@@ -46,15 +46,16 @@ export default function AbsBrakeRepair() {
         image={{ src: "/images/abs-brake-repair.jpg", alt: "Wheel and brake assembly with the brake line and sensor wiring visible, ready for ABS brake repair in Edmonton" }}
       >
         The anti-lock braking system (ABS) helps you keep control when you brake hard on wet, icy, or snowy
-          roads. If your ABS light is on, Leung&apos;s Auto Service can find the cause. We do ABS brake repair and ABS
-          sensor replacement on domestic and import vehicles at our shop in West Edmonton.
+          roads. If your ABS light is on, Leung&apos;s Auto Service can find the cause. We handle ABS brake repair and ABS
+          sensor replacement in West Edmonton, from a single sensor to a failed ABS module.
       </PageHero>
 
       <PanelSection
         tip={
           <>
-            Longer stopping distances can also mean worn pads, so we check the whole brake system. See{" "}
-              <Link href="/services/brake-repair/brake-pad-replacement" className="text-brand-accent underline hover:text-brand-tint">brake pad replacement</Link> for more on worn pads.
+            Longer stopping distances can also mean worn pads rather than an ABS fault, so we check the whole brake
+            system. If it&apos;s the pads, see{" "}
+              <Link href="/services/brake-repair/brake-pad-replacement" className="text-brand-accent underline hover:text-brand-tint">brake pad replacement</Link>.
           </>
         }
       >
@@ -85,13 +86,12 @@ export default function AbsBrakeRepair() {
         steps={[
           { title: "Scan the system", text: "Find the ABS fault code" },
           { title: "Inspect the likely causes", text: "Wheel speed sensors, wiring, and the ABS module" },
-          { title: "You approve, we start", text: "The work and the price, before we begin" },
+          { title: "Repair and re-test", text: "Then we clear the code and test drive" },
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We scan the system to find the fault code, then inspect the likely causes, such as wheel speed sensors,
-          wiring, and the ABS module. We explain what we find, and you approve the work and the price before we
-          start.
+          A fault code points to the area of the problem, not always the exact part, so we test before replacing
+          anything. You approve the work and the price before we start.
         </p>
       </StepsSection>
 
@@ -99,7 +99,7 @@ export default function AbsBrakeRepair() {
 
       <BookingCta
         heading="Book ABS Brake Repair in West Edmonton"
-        text="ABS light on? We'll find the cause and give you a price before any work starts."
+        text="ABS light on? We'll scan the system and find the cause."
         label="Get Your ABS Light Checked"
         gray
       />

@@ -25,12 +25,12 @@ const faqs = [
   {
     question: "How often should you change transmission fluid?",
     answer:
-      "Every 50,000 to 100,000 km for most automatic transmissions, though some manufacturers list longer intervals. How often to change transmission fluid depends on your vehicle and transmission type. Towing, heavy loads, and short trips in Edmonton's cold winters count as severe driving and shorten the interval. Check your owner's manual, or ask us what your vehicle needs.",
+      "Every 50,000 to 100,000 km for most automatic transmissions, though some manufacturers list longer intervals. How often to change transmission fluid depends on your vehicle and transmission type. Towing, heavy loads, and short trips in Edmonton's cold winters count as severe driving and shorten the interval. Ask us if you're not sure what yours needs.",
   },
   {
     question: "How much does a transmission service cost?",
     answer:
-      "The price depends on your vehicle, how much fluid it takes, the type of fluid it needs, and whether it needs a fluid change or a flush. Either one costs far less than a transmission rebuild.",
+      "Your vehicle, how much fluid it takes, the type of fluid, and whether it needs a fluid change or a flush all affect the price. Either one costs far less than a transmission rebuild.",
   },
 ]
 
@@ -44,8 +44,7 @@ export default function TransmissionService() {
         image={{ src: "/images/transmission-service.jpg", alt: "Automatic transmission gear shifter in a car that is due for a transmission service in Edmonton" }}
       >
         Transmission fluid cools and protects the parts inside your transmission, and it wears out with heat and
-          time. Leung&apos;s Auto Service does transmission service, including transmission fluid change service and
-          transmission flushes, on domestic and import vehicles at our shop in West Edmonton.
+          time. Leung&apos;s Auto Service does transmission service in West Edmonton, including transmission fluid change service and transmission flushes.
       </PageHero>
 
       <section className="px-6 py-16">
@@ -85,14 +84,12 @@ export default function TransmissionService() {
         heading="What's Included"
         steps={[
           { title: "Check the old fluid", text: "Its condition tells us how the transmission is doing" },
-          { title: "Replace the fluid", text: "Fluid that meets your vehicle's specification" },
+          { title: "Replace the fluid", text: "Fresh fluid, as a change or a flush" },
           { title: "Check for leaks", text: "And explain anything we find before going further" },
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We check the condition of the old fluid, replace it with fluid that meets your vehicle&apos;s specification,
-          and check for leaks. If the fluid points to a deeper problem, we explain what we find before going any
-          further. You approve the work and the price before we start.
+          Some transmissions need a specific fluid, and the wrong one can cause shifting problems, so we match the fluid to your vehicle&apos;s specification. You approve the work and the price before we start.
         </p>
       </StepsSection>
 
@@ -100,7 +97,7 @@ export default function TransmissionService() {
 
       <BookingCta
         heading="Book a Transmission Service in West Edmonton"
-        text="We'll check your transmission fluid and give you a price before any work starts."
+        text="Due for a fluid change, or noticing rough shifts? We'll check your transmission fluid first."
         label="Get a Price Quote"
       />
 

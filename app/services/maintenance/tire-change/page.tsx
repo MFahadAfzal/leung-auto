@@ -22,12 +22,12 @@ const faqs = [
   {
     question: "When should I switch to winter tires in Edmonton?",
     answer:
-      "Once temperatures stay at 7°C or colder, which is when the Tire and Rubber Association of Canada recommends switching. Below 7°C, all-season tires stiffen and lose grip. In Edmonton, that's usually by mid-October, before the first snow. Book early, since fall is one of the busiest times of year at the shop. Switch back to summer or all-season tires once it stays above 7°C in spring.",
+      "Once temperatures stay at 7°C or colder, which is when the Tire and Rubber Association of Canada recommends switching. Below 7°C, all-season tires stiffen and lose grip. In Edmonton, that's usually by mid-October, before the first snow. Book early, since fall is one of the busiest times of year at the shop.",
   },
   {
     question: "How often should you rotate tires?",
     answer:
-      "Every 8,000 to 12,000 km, which is what many manufacturers recommend. An easy way to stay on schedule is to rotate your tires at each seasonal swap, so each set wears evenly from year to year. Check your owner's manual, or ask us what your vehicle needs.",
+      "Every 8,000 to 12,000 km, which is what many manufacturers recommend. Your owner's manual lists the interval for your vehicle.",
   },
   {
     question: "Can you rotate my tires during a tire change?",
@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "How much does a tire change cost?",
     answer:
-      "The price depends on your vehicle and whether your tires are already on rims or need to be mounted and balanced. Adding a tire rotation when we swap your tires is an easy way to get both done in one visit.",
+      "That comes down to your vehicle and whether your tires are already on rims or need to be mounted and balanced.",
   },
 ]
 
@@ -50,9 +50,7 @@ export default function TireChange() {
         cta="Book an Appointment"
         image={{ src: "/images/tire-change.jpg", alt: "Mechanic in work gloves removing a car tire during a tire change and tire rotation in Edmonton" }}
       >
-        Edmonton winters call for winter tires, and summer driving calls for something else. Leung&apos;s Auto Service
-          does winter tire changes, summer tire changes, and tire rotations on domestic and import vehicles at our
-          shop in West Edmonton.
+        Edmonton winters call for winter tires, and summer driving calls for something else. Leung&apos;s Auto Service does winter tire changes, summer tire changes, and tire rotations in West Edmonton.
       </PageHero>
 
       <section className="px-6 py-16">
@@ -96,22 +94,19 @@ export default function TireChange() {
         steps={[
           { title: "Swap the tires", text: "Your seasonal or new tires go on" },
           { title: "Set the pressure", text: "Every tire to the right pressure" },
-          { title: "Torque to spec", text: "Wheel nuts tightened to spec" },
-          { title: "Look at your brakes", text: "While the wheels are off" },
+          { title: "Torque to spec", text: "So the wheels stay secure" },
+          { title: "Look at your brakes", text: "And tell you what we find" },
         ]}
       >
         <p className="mt-4 text-lg text-gray-700">
-          We remove your current tires, install your seasonal or new tires, set the tire pressure, and torque the
-          wheel nuts to spec. While the wheels are off, we can take a look at your brakes and let you know what we
-          find.
+          With the wheels already off, a seasonal swap is a good time to catch other problems early.
         </p>
       </StepsSection>
 
       <FeatureBand heading="Tire Rotation" id="tire-rotation" gray>
         <p className="mt-4 text-lg text-gray-700">
           Rotating your tires helps them wear evenly, so they last longer and grip better. During a tire rotation,
-          we move each tire to a different position following the right pattern for your vehicle, set the tire
-          pressure, torque the wheel nuts to spec, and check the tread. Signs you need a tire rotation include
+          we move each tire to a different position following the right pattern for your vehicle, and check the pressure and tread. Signs you need a tire rotation include
           front tires that are more worn than the back, uneven wear across the tread, and more vibration at
           highway speeds. If a tire is wearing down on one edge, you may need a{" "}
           <Link href="/services/maintenance/wheel-alignment" className="text-brand-accent underline hover:text-brand-tint">wheel alignment</Link> as well.

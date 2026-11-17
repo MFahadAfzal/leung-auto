@@ -26,7 +26,7 @@ const faqs = [
   {
     question: "What does a pre-purchase inspection check?",
     answer:
-      "We check the engine, transmission, brakes, steering, suspension, tires, fluids, battery, and the underbody for rust, leaks, and signs of past accident damage. We also scan the computer for stored fault codes.",
+      "All the major systems, from the engine and transmission to the brakes, suspension, and underbody, plus a computer scan for fault codes. The full checklist is at the top of this page.",
   },
   {
     question: "Can I get a pre-purchase inspection on a car from a private seller?",
@@ -41,7 +41,7 @@ const faqs = [
   {
     question: "How much does a pre-purchase inspection cost?",
     answer:
-      "The price depends on the vehicle. It's usually a small cost compared to the repairs it can help you avoid. Call us for a quote.",
+      "It depends on the vehicle. Call us for a quote.",
   },
 ]
 
@@ -55,8 +55,7 @@ export default function PrePurchaseInspection() {
         image={{ src: "/images/pre-purchase-inspection.jpg", alt: "Mechanic with a tablet showing a customer the underside of a car on a lift during a pre-purchase inspection in Edmonton" }}
       >
         Buying a used car? A pre-purchase used car inspection tells you what condition it&apos;s really in before you
-          hand over your money. Leung&apos;s Auto Service does pre-purchase inspections on domestic and import vehicles
-          at our shop in West Edmonton, for cars from dealers and private sellers.
+          hand over your money. Leung&apos;s Auto Service does pre-purchase inspections in West Edmonton on cars from dealers and private sellers.
       </PageHero>
 
       <PanelSection>
@@ -101,8 +100,7 @@ export default function PrePurchaseInspection() {
         heading="How to Book a Pre-Purchase Inspection in Edmonton"
         text={
           <>
-            Arrange with the seller to bring the car to our shop at {business.street}, then contact us to book a time.
-              Do the inspection before you pay or sign anything. If the car is registered outside Alberta, it will
+            Agree on a time with the seller, then contact us to book. Our shop is at {business.street}. If the car is registered outside Alberta, it will
               also need an{" "}
               <Link href="/services/car-inspection/out-of-province-inspection" className="text-brand-accent underline hover:text-brand-tint">out of province inspection</Link>{" "}
               before you can register it.

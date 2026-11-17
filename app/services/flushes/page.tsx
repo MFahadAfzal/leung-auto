@@ -19,10 +19,11 @@ export default function FluidFlushes() {
       intro="Old fluids wear out parts and lower performance. Pick the system below that needs fresh fluid."
       servicesHeading="Our Flush Services"
       ctaHeading="Not Sure Which Flush You Need?"
+      ctaText="Bring it in and we'll test the fluids to see which one is due."
       ctaLabel="Book an Appointment"
       whyUs={{
         heading: "Why Choose Our Shop for Fluid Flush Services",
-        text: "Leung's Auto Service has been changing fluids for Edmonton drivers since 2002. We're an independent, AMVIC certified shop in West Edmonton working on domestic and import vehicles. We check your fluids first and tell you which system needs a flush before we start.",
+        text: "Leung's Auto Service has been changing fluids for Edmonton drivers since 2002. We use fluid that meets your vehicle maker's specification, not one product for every car.",
         alt: "Mechanic and customer looking under the hood of a car together before a fluid check in West Edmonton",
         facts: [
           { value: "Since 2002", label: "Serving Edmonton drivers" },
@@ -32,7 +33,7 @@ export default function FluidFlushes() {
       }}
       reviews={{
         heading: "Reviews from Our Customers",
-        text: "Here's what customers have said about fluid changes at Leung's Auto Service.",
+        text: "From drivers who've had their fluids changed with us.",
         items: reviewsBy("Sumanta Pal", "Jiayi Yu (fluids)", "Mariana Chan"),
       }}
     />

@@ -53,7 +53,7 @@ const faqs = [
   {
     question: "How long is the inspection certificate valid?",
     answer:
-      "14 days. Under the Government of Alberta's rules, you must take your inspection certificate to an Alberta registry agent within 14 days. After that, the certificate is no longer accepted and the vehicle has to be checked again.",
+      "14 days. Under the Government of Alberta's rules, you must take your inspection certificate to an Alberta registry agent within 14 days. After that, the certificate is no longer accepted and you'll need a new inspection.",
   },
   {
     question: "How much does an OOP inspection cost?",
@@ -71,8 +71,7 @@ export default function OutOfProvinceInspection() {
         image={{ src: "/images/out-of-province-inspection.jpg", alt: "Mechanic lying under a vehicle checking its underside during an Alberta out of province inspection" }}
       >
         Moving to Alberta or buying a vehicle from another province? You need an out of province (OOP) inspection before
-          you can register it here. Leung&apos;s Auto Service does OOP inspections on domestic and import
-          vehicles at our shop in West Edmonton.
+          you can register it here. Leung&apos;s Auto Service does OOP inspections at our shop in West Edmonton.
       </PageHero>
 
       <PanelSection>
