@@ -108,7 +108,7 @@ export default function TransmissionService() {
       <ClusterLinks
         current="/services/flushes/transmission-service"
         also={[
-          { title: "Transmission Diagnostic", href: "/services/diagnostics#transmission-diagnostics" },
+          { title: "Transmission Diagnostic", href: "/services/car-diagnostic#transmission-diagnostics" },
           { title: "Oil Change Services", href: "/services/maintenance/oil-change-services" },
         ]}
       />

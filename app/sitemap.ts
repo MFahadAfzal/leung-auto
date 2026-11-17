@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const service of services) {
     paths.push(service.href)
     for (const spoke of service.spokes) {
-      // Skip jump links to a section of another page (like /services/diagnostics#check-engine-light)
+      // Skip jump links to a section of another page (like /services/car-diagnostic#check-engine-light)
       if (!spoke.href.includes("#")) paths.push(spoke.href)
     }
   }

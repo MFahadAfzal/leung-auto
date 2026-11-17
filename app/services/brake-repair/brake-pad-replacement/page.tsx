@@ -10,13 +10,13 @@ export const metadata = {
   description:
     "Brake pad replacement in West Edmonton. We fix squealing or grinding brakes, do brake rotor replacement when needed, and give you the price before we start.",
   alternates: {
-    canonical: "/services/brakes/brake-pad-replacement",
+    canonical: "/services/brake-repair/brake-pad-replacement",
   },
   openGraph: {
     title: "Brake Pad Replacement in Edmonton",
     description:
     "Brake pad replacement in West Edmonton. We fix squealing or grinding brakes, do brake rotor replacement when needed, and give you the price before we start.",
-    url: "/services/brakes/brake-pad-replacement",
+    url: "/services/brake-repair/brake-pad-replacement",
     type: "website",
   },
 }
@@ -119,7 +119,7 @@ export default function BrakePadReplacement() {
             <span className="font-bold">Good to know: </span>
             A soft brake pedal can also come from air in the brake lines or old brake fluid, so we check the pads,
             lines, and fluid to find the cause. If the fluid is the problem, a{" "}
-            <Link href="/services/brakes/brake-fluid-flush" className="font-bold text-brand-accent underline hover:text-brand-tint">brake fluid flush</Link>{" "}
+            <Link href="/services/brake-repair/brake-fluid-flush" className="font-bold text-brand-accent underline hover:text-brand-tint">brake fluid flush</Link>{" "}
             may be what your car needs.
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function BrakePadReplacement() {
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks
-        current="/services/brakes/brake-pad-replacement"
+        current="/services/brake-repair/brake-pad-replacement"
         also={[
           { title: "Wheel Alignment", href: "/services/maintenance/wheel-alignment" },
           { title: "Tire Change and Tire Rotation", href: "/services/maintenance/tire-change" },

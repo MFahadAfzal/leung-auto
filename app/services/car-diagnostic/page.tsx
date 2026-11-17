@@ -1,4 +1,4 @@
-// app/services/diagnostics/page.tsx
+// app/services/car-diagnostic/page.tsx
 import Link from "next/link"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import BookingCta from "@/components/BookingCta"
@@ -16,11 +16,11 @@ export const metadata = {
   description:
     "Car diagnostic in West Edmonton: check engine light diagnosis, transmission diagnostic, and car electrical diagnostic for domestic and import vehicles.",
   alternates: {
-    canonical: "/services/diagnostics",
+    canonical: "/services/car-diagnostic",
   },
 }
 
-const diagnostics = services.find((s) => s.href === "/services/diagnostics")!
+const diagnostics = services.find((s) => s.href === "/services/car-diagnostic")!
 
 // Questions shown in the FAQ section, also sent to Google as FAQ structured data
 const faqs = [
@@ -280,7 +280,7 @@ export default function CarDiagnostics() {
         <Link href="/services" className="underline hover:text-white">See all automotive services</Link>
       </BookingCta>
 
-      <OtherServices current="/services/diagnostics" />
+      <OtherServices current="/services/car-diagnostic" />
 
     </main>
   )

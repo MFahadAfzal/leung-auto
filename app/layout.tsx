@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  // Base for every page's canonical URL, so pages can use relative paths like "/services/brakes"
+  // Base for every page's canonical URL, so pages can use relative paths like "/services/brake-repair"
   metadataBase: new URL(business.siteUrl),
   title: "Leung's Auto Service | Auto Repair in Edmonton",
   description: `Honest auto repair in Edmonton: brakes, oil changes, diagnostics and more. Call ${business.phone} to book.`,

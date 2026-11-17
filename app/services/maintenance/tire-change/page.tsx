@@ -131,7 +131,7 @@ export default function TireChange() {
       <ClusterLinks
         current="/services/maintenance/tire-change"
         also={[
-          { title: "Brake Inspection", href: "/services/brakes" },
+          { title: "Brake Inspection", href: "/services/brake-repair" },
         ]}
       />
 

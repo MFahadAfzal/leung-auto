@@ -1,4 +1,4 @@
-// app/services/brakes/brake-fluid-flush/page.tsx
+// app/services/brake-repair/brake-fluid-flush/page.tsx
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "Brake fluid flush in West Edmonton. Learn the signs your fluid is due, how often to change brake fluid, and what a flush costs. Book today.",
   alternates: {
-    canonical: "/services/brakes/brake-fluid-flush",
+    canonical: "/services/brake-repair/brake-fluid-flush",
   },
 }
 
@@ -65,7 +65,7 @@ export default function BrakeFluidFlush() {
           <p className="mt-4 text-lg text-white/90">
             Some of these signs can also come from worn brake pads. When we check your brakes, we look at both, so
             you only pay for what your car needs. See{" "}
-            <Link href="/services/brakes/brake-pad-replacement" className="text-brand-light underline">brake pad replacement</Link>{" "}
+            <Link href="/services/brake-repair/brake-pad-replacement" className="text-brand-light underline">brake pad replacement</Link>{" "}
             for more on worn pads.
           </p>
         </Panel>
@@ -98,7 +98,7 @@ export default function BrakeFluidFlush() {
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks
-        current="/services/brakes/brake-fluid-flush"
+        current="/services/brake-repair/brake-fluid-flush"
         also={[
           { title: "Antifreeze Coolant Flush", href: "/services/flushes/antifreeze-coolant-flush" },
         ]}

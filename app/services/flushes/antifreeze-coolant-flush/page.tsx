@@ -106,7 +106,7 @@ export default function AntifreezeCoolantFlush() {
         current="/services/flushes/antifreeze-coolant-flush"
         also={[
           { title: "Oil Change Services", href: "/services/maintenance/oil-change-services" },
-          { title: "Check Engine Light Diagnosis", href: "/services/diagnostics#check-engine-light" },
+          { title: "Check Engine Light Diagnosis", href: "/services/car-diagnostic#check-engine-light" },
         ]}
       />
 

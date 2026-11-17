@@ -1,4 +1,4 @@
-// app/services/brakes/abs-brake-repair/page.tsx
+// app/services/brake-repair/abs-brake-repair/page.tsx
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import BookingCta from "@/components/BookingCta"
@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "ABS brake repair in West Edmonton. ABS light on? Learn what causes the ABS light to turn on, and book ABS sensor replacement and diagnostics with us.",
   alternates: {
-    canonical: "/services/brakes/abs-brake-repair",
+    canonical: "/services/brake-repair/abs-brake-repair",
   },
 }
 
@@ -54,7 +54,7 @@ export default function AbsBrakeRepair() {
         tip={
           <>
             Longer stopping distances can also mean worn pads, so we check the whole brake system. See{" "}
-              <Link href="/services/brakes/brake-pad-replacement" className="text-brand-accent underline hover:text-brand-tint">brake pad replacement</Link> for more on worn pads.
+              <Link href="/services/brake-repair/brake-pad-replacement" className="text-brand-accent underline hover:text-brand-tint">brake pad replacement</Link> for more on worn pads.
           </>
         }
       >
@@ -106,9 +106,9 @@ export default function AbsBrakeRepair() {
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks
-        current="/services/brakes/abs-brake-repair"
+        current="/services/brake-repair/abs-brake-repair"
         also={[
-          { title: "Car Diagnostics", href: "/services/diagnostics" },
+          { title: "Car Diagnostics", href: "/services/car-diagnostic" },
         ]}
       />
 

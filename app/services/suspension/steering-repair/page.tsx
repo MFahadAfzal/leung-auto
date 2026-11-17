@@ -131,7 +131,7 @@ export default function SteeringRepair() {
         current="/services/suspension/steering-repair"
         also={[
           { title: "Wheel Alignment", href: "/services/maintenance/wheel-alignment" },
-          { title: "Car Diagnostics", href: "/services/diagnostics" },
+          { title: "Car Diagnostics", href: "/services/car-diagnostic" },
         ]}
       />
 

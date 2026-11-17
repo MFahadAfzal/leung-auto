@@ -2,12 +2,12 @@
 export const services = [
   {
     title: "Brake Repair",
-    href: "/services/brakes",
+    href: "/services/brake-repair",
     blurb: "Brake repair, brake inspection, and brake service to keep you stopping safely.",
     spokes: [
-      { title: "Brake Pad Replacement", href: "/services/brakes/brake-pad-replacement", blurb: "Brakes squealing or grinding, a soft brake pedal, or brake rotor replacement." },
-      { title: "Brake Fluid Flush", href: "/services/brakes/brake-fluid-flush", blurb: "Signs you need a brake fluid flush: a soft pedal, or old, dark brake fluid." },
-      { title: "ABS Brake Repair", href: "/services/brakes/abs-brake-repair", blurb: "An ABS warning light on the dashboard, or ABS acting up when you brake." },
+      { title: "Brake Pad Replacement", href: "/services/brake-repair/brake-pad-replacement", blurb: "Brakes squealing or grinding, a soft brake pedal, or brake rotor replacement." },
+      { title: "Brake Fluid Flush", href: "/services/brake-repair/brake-fluid-flush", blurb: "Signs you need a brake fluid flush: a soft pedal, or old, dark brake fluid." },
+      { title: "ABS Brake Repair", href: "/services/brake-repair/abs-brake-repair", blurb: "An ABS warning light on the dashboard, or ABS acting up when you brake." },
     ],
   },
   {
@@ -21,12 +21,12 @@ export const services = [
   },
   {
     title: "Car Diagnostics",
-    href: "/services/diagnostics",
+    href: "/services/car-diagnostic",
     blurb: "Car diagnostic for check engine lights, transmission, and electrical problems.",
     spokes: [
-      { title: "Check Engine Light Diagnosis", href: "/services/diagnostics#check-engine-light", blurb: "The check engine light is on or flashing." },
-      { title: "Transmission Diagnostic", href: "/services/diagnostics#transmission-diagnostics", blurb: "Slipping, rough or delayed shifts, or a transmission warning light." },
-      { title: "Car Electrical Diagnostic", href: "/services/diagnostics#electrical-diagnostics", blurb: "Dead batteries, flickering lights, or electrical parts that stop working." },
+      { title: "Check Engine Light Diagnosis", href: "/services/car-diagnostic#check-engine-light", blurb: "The check engine light is on or flashing." },
+      { title: "Transmission Diagnostic", href: "/services/car-diagnostic#transmission-diagnostics", blurb: "Slipping, rough or delayed shifts, or a transmission warning light." },
+      { title: "Car Electrical Diagnostic", href: "/services/car-diagnostic#electrical-diagnostics", blurb: "Dead batteries, flickering lights, or electrical parts that stop working." },
     ],
   },
   {
@@ -41,11 +41,11 @@ export const services = [
   },
   {
     title: "Car Inspections",
-    href: "/services/inspection",
+    href: "/services/car-inspection",
     blurb: "Out of province inspections and pre-purchase used car inspections.",
     spokes: [
-      { title: "Out of Province Inspection", href: "/services/inspection/out-of-province-inspection", blurb: "You are registering a vehicle from another province or country in Alberta." },
-      { title: "Pre-Purchase Inspection", href: "/services/inspection/pre-purchase-inspection", blurb: "Have a used car checked before you buy it, from a dealer or a private seller." },
+      { title: "Out of Province Inspection", href: "/services/car-inspection/out-of-province-inspection", blurb: "You are registering a vehicle from another province or country in Alberta." },
+      { title: "Pre-Purchase Inspection", href: "/services/car-inspection/pre-purchase-inspection", blurb: "Have a used car checked before you buy it, from a dealer or a private seller." },
     ],
   },
   {

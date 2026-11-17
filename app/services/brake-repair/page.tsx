@@ -1,4 +1,4 @@
-// app/services/brakes/page.tsx
+// app/services/brake-repair/page.tsx
 import Link from "next/link"
 import {
   ArrowRight,
@@ -19,11 +19,11 @@ export const metadata = {
   description:
     `Brake repair shop in West Edmonton. Brake inspection, brake service, and brake maintenance for domestic and import vehicles. Call ${business.phone} to book.`,
   alternates: {
-    canonical: "/services/brakes",
+    canonical: "/services/brake-repair",
   },
 }
 
-const brakes = services.find((s) => s.href === "/services/brakes")!
+const brakes = services.find((s) => s.href === "/services/brake-repair")!
 
 
 // Questions shown in the FAQ section, also sent to Google as FAQ structured data
@@ -150,9 +150,9 @@ export default function BrakeRepair() {
             {/* Shortcut to the two pages people with these symptoms usually need */}
             <p className="mt-6 text-lg text-gray-700">
               Hearing a squeal or grind? See our{" "}
-              <Link href="/services/brakes/brake-pad-replacement" className="font-bold text-brand-accent underline hover:text-brand-tint">Brake Pad Replacement</Link>{" "}
+              <Link href="/services/brake-repair/brake-pad-replacement" className="font-bold text-brand-accent underline hover:text-brand-tint">Brake Pad Replacement</Link>{" "}
               page. ABS light on? See{" "}
-              <Link href="/services/brakes/abs-brake-repair" className="font-bold text-brand-accent underline hover:text-brand-tint">ABS Brake Repair</Link>.
+              <Link href="/services/brake-repair/abs-brake-repair" className="font-bold text-brand-accent underline hover:text-brand-tint">ABS Brake Repair</Link>.
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function BrakeRepair() {
                 <span className="w-6 shrink-0 text-sm font-bold text-brand-support">03</span>
                 <span className="text-lg text-brand-dark">
                   Change the brake fluid on schedule. See our{" "}
-                  <Link href="/services/brakes/brake-fluid-flush" className="font-bold text-brand-accent underline hover:text-brand-tint">Brake Fluid Flush</Link>{" "}
+                  <Link href="/services/brake-repair/brake-fluid-flush" className="font-bold text-brand-accent underline hover:text-brand-tint">Brake Fluid Flush</Link>{" "}
                   page
                 </span>
               </li>
@@ -294,7 +294,7 @@ export default function BrakeRepair() {
         <Link href="/services" className="underline hover:text-white">See all automotive services</Link>
       </BookingCta>
 
-      <OtherServices current="/services/brakes" />
+      <OtherServices current="/services/brake-repair" />
 
     </main>
   )

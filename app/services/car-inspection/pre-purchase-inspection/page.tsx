@@ -1,4 +1,4 @@
-// app/services/inspection/pre-purchase-inspection/page.tsx
+// app/services/car-inspection/pre-purchase-inspection/page.tsx
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import Faq from "@/components/Faq"
@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "Pre-purchase used car inspection in West Edmonton. See what a pre-purchase inspection checks, why it's worth it, and how Edmonton winters affect used cars.",
   alternates: {
-    canonical: "/services/inspection/pre-purchase-inspection",
+    canonical: "/services/car-inspection/pre-purchase-inspection",
   },
 }
 
@@ -104,7 +104,7 @@ export default function PrePurchaseInspection() {
             Arrange with the seller to bring the car to our shop at {business.street}, then contact us to book a time.
               Do the inspection before you pay or sign anything. If the car is registered outside Alberta, it will
               also need an{" "}
-              <Link href="/services/inspection/out-of-province-inspection" className="text-brand-accent underline hover:text-brand-tint">out of province inspection</Link>{" "}
+              <Link href="/services/car-inspection/out-of-province-inspection" className="text-brand-accent underline hover:text-brand-tint">out of province inspection</Link>{" "}
               before you can register it.
           </>
         }
@@ -113,10 +113,10 @@ export default function PrePurchaseInspection() {
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks
-        current="/services/inspection/pre-purchase-inspection"
+        current="/services/car-inspection/pre-purchase-inspection"
         also={[
-          { title: "Brake Inspection", href: "/services/brakes" },
-          { title: "Car Diagnostics", href: "/services/diagnostics" },
+          { title: "Brake Inspection", href: "/services/brake-repair" },
+          { title: "Car Diagnostics", href: "/services/car-diagnostic" },
         ]}
       />
 

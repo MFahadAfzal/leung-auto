@@ -58,10 +58,10 @@ const values = [
 
 // The work the shop does most, each linked with keyword anchor text
 const mainServices = [
-  { icon: Disc, title: "Brake repair", href: "/services/brakes" },
-  { icon: Gauge, title: "Car diagnostics", href: "/services/diagnostics" },
+  { icon: Disc, title: "Brake repair", href: "/services/brake-repair" },
+  { icon: Gauge, title: "Car diagnostics", href: "/services/car-diagnostic" },
   { icon: Droplet, title: "Oil changes", href: "/services/maintenance/oil-change-services" },
-  { icon: ClipboardCheck, title: "Out of province inspections", href: "/services/inspection/out-of-province-inspection" },
+  { icon: ClipboardCheck, title: "Out of province inspections", href: "/services/car-inspection/out-of-province-inspection" },
 ]
 
 const mapsQuery = encodeURIComponent(business.mapsQuery)

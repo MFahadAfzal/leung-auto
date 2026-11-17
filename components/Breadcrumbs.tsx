@@ -22,7 +22,7 @@ for (const service of services) {
 export default function Breadcrumbs() {
   const pathname = usePathname()
 
-  // Build each step from the URL: /services, /services/brakes, /services/brakes/brake-pad-replacement
+  // Build each step from the URL: /services, /services/brake-repair, /services/brake-repair/brake-pad-replacement
   const parts = pathname.split("/").filter(Boolean)
   const crumbs = [{ name: "Home", href: "/" }]
   parts.forEach((_, i) => {

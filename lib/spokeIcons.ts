@@ -19,19 +19,19 @@ import {
 } from "lucide-react"
 
 export const spokeIcons: Record<string, LucideIcon> = {
-  "/services/brakes/brake-pad-replacement": Disc,
-  "/services/brakes/brake-fluid-flush": Droplet,
-  "/services/brakes/abs-brake-repair": TriangleAlert,
+  "/services/brake-repair/brake-pad-replacement": Disc,
+  "/services/brake-repair/brake-fluid-flush": Droplet,
+  "/services/brake-repair/abs-brake-repair": TriangleAlert,
   "/services/suspension/suspension-repair": CarFront,
   "/services/suspension/steering-repair": LifeBuoy,
-  "/services/diagnostics#check-engine-light": Gauge,
-  "/services/diagnostics#transmission-diagnostics": Cog,
-  "/services/diagnostics#electrical-diagnostics": BatteryCharging,
+  "/services/car-diagnostic#check-engine-light": Gauge,
+  "/services/car-diagnostic#transmission-diagnostics": Cog,
+  "/services/car-diagnostic#electrical-diagnostics": BatteryCharging,
   "/services/maintenance/oil-change-services": Droplets,
   "/services/maintenance/tire-change": Disc3,
   "/services/maintenance/wheel-alignment": MoveHorizontal,
-  "/services/inspection/out-of-province-inspection": FileCheck,
-  "/services/inspection/pre-purchase-inspection": Search,
+  "/services/car-inspection/out-of-province-inspection": FileCheck,
+  "/services/car-inspection/pre-purchase-inspection": Search,
   "/services/flushes/transmission-service": Cog,
   "/services/flushes/antifreeze-coolant-flush": Thermometer,
 }

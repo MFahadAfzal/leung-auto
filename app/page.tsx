@@ -39,11 +39,11 @@ const reasons = [
 // Most-booked services, linked straight from the home page
 const popular = [
   { title: "Oil Change Services", href: "/services/maintenance/oil-change-services" },
-  { title: "Brake Pad Replacement", href: "/services/brakes/brake-pad-replacement" },
+  { title: "Brake Pad Replacement", href: "/services/brake-repair/brake-pad-replacement" },
   { title: "Winter Tire Change", href: "/services/maintenance/tire-change" },
-  { title: "Check Engine Light Diagnosis", href: "/services/diagnostics#check-engine-light" },
-  { title: "Out of Province Inspection", href: "/services/inspection/out-of-province-inspection" },
-  { title: "Pre-Purchase Inspection", href: "/services/inspection/pre-purchase-inspection" },
+  { title: "Check Engine Light Diagnosis", href: "/services/car-diagnostic#check-engine-light" },
+  { title: "Out of Province Inspection", href: "/services/car-inspection/out-of-province-inspection" },
+  { title: "Pre-Purchase Inspection", href: "/services/car-inspection/pre-purchase-inspection" },
   { title: "Wheel Alignment", href: "/services/maintenance/wheel-alignment" },
   { title: "Power Steering Leak Repair", href: "/services/suspension/steering-repair" },
 ]

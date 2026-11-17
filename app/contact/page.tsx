@@ -4,7 +4,7 @@ import { business } from "@/lib/business"
 import PageHero from "@/components/PageHero"
 
 export const metadata = {
-  title: "Book an Appointment | Leung's Auto Service Edmonton",
+  title: "Contact Leung's Auto Service | Book an Appointment Edmonton",
   description:
     `Book an appointment or book car repair in West Edmonton: call ${business.phone} or visit ${business.street}. ${business.hours}.`,
   alternates: {

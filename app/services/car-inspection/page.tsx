@@ -1,13 +1,13 @@
-// app/services/inspection/page.tsx
+// app/services/car-inspection/page.tsx
 import ServiceHub from "@/components/ServiceHub"
 import { reviewsBy } from "@/lib/reviews"
 
 export const metadata = {
-  title: "Car Inspections Edmonton | Leung's Auto Service",
+  title: "Car Inspection Edmonton | Leung's Auto Service",
   description:
     "Car inspections in West Edmonton: out of province inspections for vehicles registering in Alberta, and pre-purchase used car inspections.",
   alternates: {
-    canonical: "/services/inspection",
+    canonical: "/services/car-inspection",
   },
 }
 
@@ -15,7 +15,7 @@ export default function CarInspections() {
   return (
     <ServiceHub
       image={{ src: "/images/car-inspection.jpg", alt: "Mechanic checking under the open hood of an SUV during a car inspection in Edmonton" }}
-      href="/services/inspection"
+      href="/services/car-inspection"
       intro="A vehicle inspection tells you its real condition, whether you're registering it in Alberta or getting a used car checked before you buy. Pick the type of inspection below that fits your situation."
       servicesHeading="Our Inspection Services"
       ctaHeading="Not Sure Which Inspection You Need?"

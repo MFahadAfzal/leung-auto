@@ -1,4 +1,4 @@
-// app/services/inspection/out-of-province-inspection/page.tsx
+// app/services/car-inspection/out-of-province-inspection/page.tsx
 import Link from "next/link"
 import ClusterLinks from "@/components/ClusterLinks"
 import Faq from "@/components/Faq"
@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "Out of province inspection in West Edmonton. Find out if you need one in Alberta, what is checked, and how to book your inspection.",
   alternates: {
-    canonical: "/services/inspection/out-of-province-inspection",
+    canonical: "/services/car-inspection/out-of-province-inspection",
   },
 }
 
@@ -91,7 +91,7 @@ export default function OutOfProvinceInspection() {
           </p>
           <p className="mt-4 text-lg text-gray-700">
             Buying a used vehicle from out of province? Get a{" "}
-            <Link href="/services/inspection/pre-purchase-inspection" className="text-brand-accent underline hover:text-brand-tint">pre-purchase inspection</Link> before you pay, so you
+            <Link href="/services/car-inspection/pre-purchase-inspection" className="text-brand-accent underline hover:text-brand-tint">pre-purchase inspection</Link> before you pay, so you
             know what you&apos;re buying.
           </p>
           <ol className="steps mt-6 text-lg text-brand-dark">
@@ -156,9 +156,9 @@ export default function OutOfProvinceInspection() {
 
       {/* ===== RELATED PAGES: the rest of this group, plus a couple of related pages elsewhere ===== */}
       <ClusterLinks
-        current="/services/inspection/out-of-province-inspection"
+        current="/services/car-inspection/out-of-province-inspection"
         also={[
-          { title: "Brake Repair", href: "/services/brakes" },
+          { title: "Brake Repair", href: "/services/brake-repair" },
           { title: "Steering and Suspension Repair", href: "/services/suspension" },
         ]}
       />

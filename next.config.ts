@@ -13,12 +13,12 @@ const nextConfig: NextConfig = {
       // Brakes
       {
         source: "/services/brakes/brake-pad-rotor-replacement",
-        destination: "/services/brakes/brake-pad-replacement",
+        destination: "/services/brake-repair/brake-pad-replacement",
         permanent: true,
       },
       {
         source: "/services/brakes/brake-rotor-replacement",
-        destination: "/services/brakes/brake-pad-replacement",
+        destination: "/services/brake-repair/brake-pad-replacement",
         permanent: true,
       },
       // Steering and suspension
@@ -45,7 +45,7 @@ const nextConfig: NextConfig = {
       // Inspections
       {
         source: "/services/inspection/safety-inspection",
-        destination: "/services/inspection",
+        destination: "/services/car-inspection",
         permanent: true,
       },
       // Flushes
@@ -78,17 +78,33 @@ const nextConfig: NextConfig = {
       // Diagnostics
       {
         source: "/services/diagnostics/check-engine-light",
-        destination: "/services/diagnostics#check-engine-light",
+        destination: "/services/car-diagnostic#check-engine-light",
         permanent: true,
       },
       {
         source: "/services/diagnostics/transmission-diagnostics",
-        destination: "/services/diagnostics#transmission-diagnostics",
+        destination: "/services/car-diagnostic#transmission-diagnostics",
         permanent: true,
       },
       {
         source: "/services/diagnostics/electrical-diagnostics",
-        destination: "/services/diagnostics#electrical-diagnostics",
+        destination: "/services/car-diagnostic#electrical-diagnostics",
+        permanent: true,
+      },
+      // Hub folders renamed to match their keywords (2026-11-17). Covers the hub and every page under it.
+      {
+        source: "/services/brakes/:path*",
+        destination: "/services/brake-repair/:path*",
+        permanent: true,
+      },
+      {
+        source: "/services/diagnostics/:path*",
+        destination: "/services/car-diagnostic/:path*",
+        permanent: true,
+      },
+      {
+        source: "/services/inspection/:path*",
+        destination: "/services/car-inspection/:path*",
         permanent: true,
       },
     ];
