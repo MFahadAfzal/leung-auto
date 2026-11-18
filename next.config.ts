@@ -91,20 +91,38 @@ const nextConfig: NextConfig = {
         destination: "/services/car-diagnostic#electrical-diagnostics",
         permanent: true,
       },
-      // Hub folders renamed to match their keywords (2026-11-17). Covers the hub and every page under it.
+      // Hub folders renamed to match their keywords (2026-11-17).
+      // The hub itself gets its own rule so it redirects in one hop with no trailing slash
+      // (":path*" can match nothing, which left "/services/brake-repair/" and a second redirect).
       {
-        source: "/services/brakes/:path*",
-        destination: "/services/brake-repair/:path*",
+        source: "/services/brakes",
+        destination: "/services/brake-repair",
         permanent: true,
       },
       {
-        source: "/services/diagnostics/:path*",
-        destination: "/services/car-diagnostic/:path*",
+        source: "/services/diagnostics",
+        destination: "/services/car-diagnostic",
         permanent: true,
       },
       {
-        source: "/services/inspection/:path*",
-        destination: "/services/car-inspection/:path*",
+        source: "/services/inspection",
+        destination: "/services/car-inspection",
+        permanent: true,
+      },
+      // Every page under the old hubs (":path+" needs at least one segment)
+      {
+        source: "/services/brakes/:path+",
+        destination: "/services/brake-repair/:path+",
+        permanent: true,
+      },
+      {
+        source: "/services/diagnostics/:path+",
+        destination: "/services/car-diagnostic/:path+",
+        permanent: true,
+      },
+      {
+        source: "/services/inspection/:path+",
+        destination: "/services/car-inspection/:path+",
         permanent: true,
       },
     ];
